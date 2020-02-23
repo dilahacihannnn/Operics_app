@@ -4,7 +4,27 @@ angular.module('starter.controllers', [])
 
     //$rootScope.user = {id:13,ad:'Ali',Soyad:'Veli',yas:19};
 
-    $rootScope.lan = { detayButon: 'Ön Başvuru Yap', geriButton: 'Geri' };
+
+ $rootScope.webServiceUrl = "https://www.microwebservice.net/operics_web/webservice.php" 
+
+ $scope.create_user = function() {
+        var ServiceRequest = {
+            service_type: "create_user",
+            telephone: $scope.newuser.telephone,
+            email: $scope.newuser.email,
+            password: $scope.newuser.password,
+            user_type: $scope.newuser.user_type,
+            name: $scope.newuser.name
+        }
+
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+            $scope.gelendata = data
+        })
+    }
+
+ $rootScope.lan = { detayButon:'Ön Başvuru Yap',geriButton:'Geri'};
+
 
 
 
