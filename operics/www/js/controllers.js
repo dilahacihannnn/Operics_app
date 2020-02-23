@@ -1,25 +1,47 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $http) {
 
     //$rootScope.user = {id:13,ad:'Ali',Soyad:'Veli',yas:19};
 
 
- $rootScope.webServiceUrl = "https://www.microwebservice.net/operics_web/webservice.php" 
+ $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php" 
 
- $scope.create_user = function() {
+// Kullanıcı Girişi
+ $scope.doLogin = function() {
         var ServiceRequest = {
-            service_type: "create_user",
-            telephone: $scope.newuser.telephone,
-            email: $scope.newuser.email,
-            password: $scope.newuser.password,
-            user_type: $scope.newuser.user_type,
-            name: $scope.newuser.name
+            service_type: "giris",
+            email:$scope.loginData.email,
+            sifre: $scope.loginData.password
         }
-
         // Yeni user isteği post edilir ve veritabanına eklenir.
-        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-            $scope.gelendata = data
+       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+            $scope.giris= data
+        })
+    }
+
+//Kullanıcı Ekleme
+    
+$scope.createUser = function() {
+        var ServiceRequest = {
+            service_type: "kayit",
+            ad:$scope.createData.name,
+            soyad:$scope.createData.surname,
+            tel:$scope.createData.tel,
+            firma:$scope.createData.corp,
+            departman:$scope.createData.assigm,
+            email:$scope.createData.email,   
+            sifre: $scope.createData.password,
+            sifrekntrl: $scope.createData.passcheck
+
+        }
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+            $scope.kayit= data
+            window.localStorage.removeItem('user_type')
+            window.localStorage.getItem('user_type')
+            window.localStorage.setItem('user_type', 'admin')
+
         })
     }
 
@@ -60,24 +82,14 @@ angular.module('starter.controllers', [])
         $scope.modal.show();
     };
 
-    // Perform the login action when the user submits the login form
-    $scope.doLogin = function() {
-        console.log('Doing login', $scope.loginData);
-
-        // Simulate a login delay. Remove this and replace with your login
-        // code if using a login system
-        $timeout(function() {
-            $scope.closeLogin();
-        }, 1000);
-    };
 })
 
 
-.controller('PlaylistsCtrl', function($scope,$stateParams,$rootScope) {
-  $rootScope.playlists = [
+.controller('AnasayfaCtrl', function($scope,$stateParams,$rootScope) {
+  $rootScope.egitimler = [
     { title: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',img:'img/egitim/1.jpg',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 0 },
     { title: 'Boya Teknikleri Uzmanlık Eğitimi',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 1 },
-    { title: 'Patlayıcı Ortam Eğitmi',img:'img/egitim/3.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 2 },
+    { title: 'Patlayıcı Ortam Eğitimi',img:'img/egitim/3.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 2 },
     { title: 'Indie',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 3 },
     { title: 'Rap',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 4 },
     { title: 'Cowbell',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 5 }
@@ -92,14 +104,12 @@ angular.module('starter.controllers', [])
    ];
 
     if ($stateParams) {
-        $rootScope.detay = $rootScope.playlists[$stateParams.detayId];
+        $rootScope.detay = $rootScope.egitimler[$stateParams.detayId];
     }
 
 })
 
-.controller('MainPageCtrl', function($scope, $stateParams) {
 
-})
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 
