@@ -17,6 +17,7 @@ angular.module('starter.controllers', [])
     //});
     $scope.linkURL = function(path) {
 
+
             window.location.href = path;
         }
         // Form data for the login modal
@@ -51,15 +52,24 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('PlaylistsCtrl', function($scope, $stateParams, $rootScope) {
-    $rootScope.playlists = [
-        { title: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi', img: 'img/egitim/1.jpg', sure: '20 saat', lokasyon: 'Marmara Form AVM İstanbul', tarih: '12.02.2020-19.02.2020', id: 0 },
-        { title: 'Boya Teknikleri Uzmanlık Eğitimi', img: 'img/egitim/2.png', sure: '20 saat', lokasyon: 'Marmara Form AVM İstanbul', tarih: '12.02.2020-19.02.2020', id: 1 },
-        { title: 'Patlayıcı Ortam Eğitmi', img: 'img/egitim/3.png', sure: '20 saat', lokasyon: 'Marmara Form AVM İstanbul', tarih: '12.02.2020-19.02.2020', id: 2 },
-        { title: 'Indie', img: 'img/egitim/2.png', sure: '20 saat', lokasyon: 'Marmara Form AVM İstanbul', tarih: '12.02.2020-19.02.2020', id: 3 },
-        { title: 'Rap', img: 'img/egitim/2.png', sure: '20 saat', lokasyon: 'Marmara Form AVM İstanbul', tarih: '12.02.2020-19.02.2020', id: 4 },
-        { title: 'Cowbell', img: 'img/egitim/2.png', sure: '20 saat', lokasyon: 'Marmara Form AVM İstanbul', tarih: '12.02.2020-19.02.2020', id: 5 }
-    ];
+
+.controller('PlaylistsCtrl', function($scope,$stateParams,$rootScope) {
+  $rootScope.playlists = [
+    { title: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',img:'img/egitim/1.jpg',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 0 },
+    { title: 'Boya Teknikleri Uzmanlık Eğitimi',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 1 },
+    { title: 'Patlayıcı Ortam Eğitmi',img:'img/egitim/3.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 2 },
+    { title: 'Indie',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 3 },
+    { title: 'Rap',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 4 },
+    { title: 'Cowbell',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 5 }
+ 
+   ];
+ $rootScope.hizmet = [
+    { title: 'İŞ GÜVENLİĞİ UZMANLIĞI HİZMETLERİ', id: 0 },
+    { title: 'İŞYERİ HEKİMLİĞİ HİZMETİ', id: 1 },
+    { title: 'MOBİL SAĞLIK HİZMETLERİ',id: 2 },
+    { title: 'İŞYERİ ORTAM ÖLÇÜMLERİ', id: 3 },
+    { title: 'SIFIR KAZA PROJESİ', id: 4 },
+   ];
 
     if ($stateParams) {
         $rootScope.detay = $rootScope.playlists[$stateParams.detayId];

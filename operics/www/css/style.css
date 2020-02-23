@@ -26,3 +26,15 @@
 	background: black !important;
 
 }
+.bg-h
+{
+
+	background-color: gainsboro;
+	font-family: sans-serif;
+    color: black;
+
+}
+.border-h
+{
+	border-radius: 25px !important;
+}
