@@ -95,6 +95,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
     })
 
+    .state('app.hizmetdetayi', {
+        url: '/hizmetler/:detayId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/hizmet_detay.html',
+                controller: 'AnasayfaCtrl'
+            }
+        }
+    })
+
     .state('app.takim', {
         url: '/takim',
         views: {
