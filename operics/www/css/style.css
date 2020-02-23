@@ -18,6 +18,11 @@
 
 .bg-b{
 	background: black !important;
+	margin-top: 45px;
+}
+.bg-bb{
+	background: black !important;
+	
 }
 
 .bg-bc{
@@ -69,4 +74,7 @@
     min-height: 72px;
     background: center;
     border: solid;
+}
+.crd{
+	font-size: larger;
 }
