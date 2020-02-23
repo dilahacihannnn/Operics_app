@@ -32,12 +32,41 @@
 	background-color: gainsboro;
 	font-family: sans-serif;
     color: black;
+    margin-top: -6px;
+}
+.bg-hh
+{
 
+	background-color: gainsboro;
+	font-family: sans-serif;
+    color: black;
+    margin-top: -26px;
 }
 .border-h
 {
 	border-radius: 25px !important;
+
+}
+.border-hh
+{
+	border-radius: 25px !important;
+
 }
 .fnt{
 	 font-size: 22px;
+
+}
+.brder
+{
+	width: 62px;
+    height: 68px;
+    margin-top: 16px;
+    margin-left: -8px;
+}
+.avatr
+{
+	padding-left: 72px;
+    min-height: 72px;
+    background: center;
+    border: solid;
 }
