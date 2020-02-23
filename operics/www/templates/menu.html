@@ -11,13 +11,17 @@
 
 
       <ion-nav-buttons side="right">
+
         <button class="push button button-icon button-clear ion-android-notifications" menu-toggle="right">
+
         </button>
-      </ion-nav-buttons>
+
+</ion-nav-buttons>
 
 
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
+
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
@@ -27,18 +31,32 @@
     </ion-header-bar>
     <ion-content class="bg-b">
       <ion-list>
-        <ion-item class="bg-bc" menu-close ng-click="login()">
-          Login
+        <ion-item class="bg-bc" menu-close ng-click="login()" style="font-size: large;">
+          Giriş
         </ion-item>
 
-        <ion-item class="bg-bc" menu-close ng-click="linkURL('#/app/search')">
-          Search
+        <ion-item class="bg-bc" menu-close ng-click="linkURL('#/app/hakkimizda')" style="font-size: large;">
+         Hakkımızda
         </ion-item>
 
 
-        <ion-item class="bg-bc" menu-close ng-click="linkURL('#/app/browse')">
-          browse
+        <ion-item class="bg-bc" menu-close ng-click="linkURL('#/app/browse')" style="font-size: large;">
+         Referanslar
         </ion-item>
+
+ <ion-item class="bg-bc" menu-close ng-click="linkURL('#/app/hizmetlerimiz')" style="font-size: large;">
+         Hizmetlerimiz
+        </ion-item>
+ <ion-item class="bg-bc" menu-close ng-click="linkURL('#/app/browse')" style="font-size: large;">
+          Takımımız
+        </ion-item>
+ <ion-item class="bg-bc" menu-close ng-click="linkURL('#/app/browse')"style="font-size: large;">
+          Eğitimlerimiz
+        </ion-item>
+ <ion-item class="bg-bc" menu-close ng-click="linkURL('#/app/browse')"style="font-size: large;">
+          İSG Sözlük
+        </ion-item>
+
 
       </ion-list>
     </ion-content>
@@ -48,9 +66,9 @@
 
 
 
-  <ion-side-menu side="right">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+  <ion-side-menu side="right " class="bg-b">
+    <ion-header-bar class="bar-dark">
+      <h1 class="title ">Bildirimler</h1>
     </ion-header-bar>
     <ion-content>
      BOŞŞŞŞŞŞ

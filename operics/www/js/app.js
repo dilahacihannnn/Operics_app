@@ -53,6 +53,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
+.state('app.hakkimizda', {
+      url: '/hakkimizda',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/hakkimizda.html'
+
+        }
+      }
+    })
+.state('app.hizmetlerimiz', {
+      url: '/hizmetlerimiz',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/hizmetlerimiz.html'
+          
+        }
+      }
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {
