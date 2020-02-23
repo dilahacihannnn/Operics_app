@@ -5,12 +5,12 @@
 <div class="list list-inset">
   <label class="item item-input border-r">
     <i class="icon ion-search placeholder-icon"></i>
-    <input type="text" placeholder="Search">
+    <input ng-model='ara' type="text" placeholder="Search">
   </label>
 </div>
 
 
-<div class="list card" ng-click="linkURL('#/app/anasayfa/'+egitim.id)" ng-repeat="egitim in egitimler">
+<div class="list card" ng-click="linkURL('#/app/anasayfa/'+egitim.id)" ng-repeat="egitim in egitimler | filter:ara">
 
 
   <div class="item item-body">
