@@ -46,29 +46,40 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 
     .state('app.single', {
-            url: '/playlists/:detayId',
-            views: {
-                'menuContent': {
-                    templateUrl: 'templates/playlist.html',
-                    controller: 'PlaylistsCtrl'
-                }
+        url: '/playlists/:detayId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/playlist.html',
+                controller: 'PlaylistsCtrl'
             }
-        })
-        .state('app.hakkimizda', {
-            url: '/hakkimizda',
-            views: {
-                'menuContent': {
-                    templateUrl: 'templates/menu/hakkimizda.html',
-                    controller: 'MainPageCtrl'
-                }
+        }
+    })
+
+    .state('app.playlists', {
+        url: '/playlists',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/playlists.html',
+                controller: 'PlaylistsCtrl'
             }
-        })
+        }
+    })
+
+    .state('app.hakkimizda', {
+        url: '/hakkimizda',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/hakkimizda.html',
+                controller: 'MainPageCtrl'
+            }
+        }
+    })
 
     .state('app.referanslar', {
         url: '/referanslar',
         views: {
             'menuContent': {
-                templateUrl: 'templates/menu/referanslar.html',
+                templateUrl: 'templates/referanslar.html',
                 controller: 'MainPageCtrl'
             }
         }
@@ -78,7 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         url: '/hizmetler',
         views: {
             'menuContent': {
-                templateUrl: 'templates/menu/hizmetler.html',
+                templateUrl: 'templates/hizmetler.html',
                 controller: 'MainPageCtrl'
             }
         }
@@ -88,17 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         url: '/takim',
         views: {
             'menuContent': {
-                templateUrl: 'templates/menu/takim.html',
-                controller: 'MainPageCtrl'
-            }
-        }
-    })
-
-    .state('app.training_detail', {
-        url: '/training_detail/:trainingID',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/menu/training_detail.html',
+                templateUrl: 'templates/takim.html',
                 controller: 'MainPageCtrl'
             }
         }
@@ -108,12 +109,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         url: '/sozluk',
         views: {
             'menuContent': {
-                templateUrl: 'templates/menu/sozluk.html',
+                templateUrl: 'templates/sozluk.html',
                 controller: 'MainPageCtrl'
             }
         }
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/anasayfa');
+    $urlRouterProvider.otherwise('/app/playlists');
 });
