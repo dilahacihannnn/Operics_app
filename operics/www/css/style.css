@@ -1,0 +1,28 @@
+/* Empty. Add your own CSS if you like */
+.title-image {
+    margin-top: 4px;
+    height: 38px;
+}
+
+.push{
+	transform: rotate(-30deg);
+}
+
+.border-r{
+	border-radius: 25px !important;
+}
+
+.border-c{
+	border-color: #fff;
+}
+
+.bg-b{
+	background: black !important;
+}
+
+.bg-bc{
+	border: 1px solid black;
+	color: #fff;
+	background: black !important;
+
+}
