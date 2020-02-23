@@ -45,22 +45,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
     })
 
-    .state('app.single', {
-        url: '/playlists/:detayId',
+    .state('app.detay', {
+        url: '/anasayfa/:detayId',
         views: {
             'menuContent': {
-                templateUrl: 'templates/playlist.html',
-                controller: 'PlaylistsCtrl'
+                templateUrl: 'templates/detay.html',
+                controller: 'AnasayfaCtrl'
             }
         }
     })
 
-    .state('app.playlists', {
-        url: '/playlists',
+    .state('app.anasayfa', {
+        url: '/anasayfa',
         views: {
             'menuContent': {
-                templateUrl: 'templates/playlists.html',
-                controller: 'PlaylistsCtrl'
+                templateUrl: 'templates/anasayfa.html',
+                controller: 'AnasayfaCtrl'
             }
         }
     })
@@ -70,7 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
             'menuContent': {
                 templateUrl: 'templates/hakkimizda.html',
-                controller: 'MainPageCtrl'
+                controller: 'AnasayfaCtrl'
             }
         }
     })
@@ -80,7 +80,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
             'menuContent': {
                 templateUrl: 'templates/referanslar.html',
-                controller: 'MainPageCtrl'
+                controller: 'AnasayfaCtrl'
             }
         }
     })
@@ -90,7 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
             'menuContent': {
                 templateUrl: 'templates/hizmetler.html',
-                controller: 'MainPageCtrl'
+                controller: 'AnasayfaCtrl'
             }
         }
     })
@@ -100,7 +100,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
             'menuContent': {
                 templateUrl: 'templates/takim.html',
-                controller: 'MainPageCtrl'
+                controller: 'AnasayfaCtrl'
             }
         }
     })
@@ -110,11 +110,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
             'menuContent': {
                 templateUrl: 'templates/sozluk.html',
-                controller: 'MainPageCtrl'
+                controller: 'AnasayfaCtrl'
             }
         }
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/anasayfa');
 });
