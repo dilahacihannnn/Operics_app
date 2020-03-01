@@ -85,7 +85,16 @@ $scope.createUser = function() {
 })
 
 
-.controller('AnasayfaCtrl', function($scope,$stateParams,$rootScope) {
+.controller('AnasayfaCtrl', function($scope,$stateParams,$rootScope, $http) {
+ 
+   var ServiceRequest = {
+            service_type: "egitimler"
+        }
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+            $scope.egitimler2= data
+        })
+
   $rootScope.egitimler = [
     { title: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',img:'img/egitim/1.jpg',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 0 },
     { title: 'Boya Teknikleri Uzmanlık Eğitimi',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 1 },
@@ -93,8 +102,10 @@ $scope.createUser = function() {
     { title: 'Indie',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 3 },
     { title: 'Rap',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 4 },
     { title: 'Cowbell',img:'img/egitim/2.png',sure:'20 saat',lokasyon:'Marmara Form AVM İstanbul',tarih:'12.02.2020-19.02.2020', id: 5 }
- 
    ];
+
+
+    
  $rootScope.hizmet = [
     { title: 'İŞ GÜVENLİĞİ UZMANLIĞI HİZMETLERİ', id: 0 },
     { title: 'İŞYERİ HEKİMLİĞİ HİZMETİ', id: 1 },
