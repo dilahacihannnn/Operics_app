@@ -38,9 +38,9 @@
 
     <h3 class="fnt">Referanslar</h3>
 
-    <div class="">
+    <div class="" ng-repeat="n in referanslar2">
     <a class="item item-thumbnail- h" href="#">
-    <img class="rfr"src="img/rsm/ar.jpg">
+    <img class="rfr"src="{{n.REF_PHOTO}}">
    </a>
   </div>
 
@@ -58,6 +58,8 @@ bölümü mezunudur.</p>
 </div>
 </div>
 
-
+{{referanslar2}}
   </ion-content>
+}
+}
 </ion-view>
