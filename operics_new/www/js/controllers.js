@@ -64,7 +64,7 @@ if($stateParams.detayId) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('dictionaryCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };
