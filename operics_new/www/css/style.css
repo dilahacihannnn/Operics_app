@@ -123,9 +123,25 @@ min-block-size: -webkit-fill-available;
   margin-top: -28px;
 
 }
+.hkd {
+  z-index: 3;
+  width: 79%;
+  height: 516px;
+  border-radius: 8px;
+  border: solid 0,5px #979797
+  background: #ffffff;
+  margin-left: 38px;
+  margin-top: -56px;
+
+}
 .i{
   width: 40%;
-  margin-left: 57px;
+  margin-left: 58px;
+  margin-top: -14px;
+}
+.id{
+  width: 40%;
+  margin-left: 95px;
   margin-top: -14px;
 }
 .bar{
