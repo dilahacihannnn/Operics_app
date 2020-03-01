@@ -1,8 +1,27 @@
 angular.module('starter.controllers', [])
 
-.controller('MainCtrl', function($scope, $stateParams) {
+.controller('MainCtrl', function($scope, $rootScope, $stateParams, $http) {
+      
+    $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php" 
 
-    $scope.operics = [{
+        var ServiceRequest = {
+            service_type: "referanslar"
+        }
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+            $scope.referanslar= data[0]
+        })
+
+       var ServiceRequest = {
+            service_type: "sozluk"
+        }
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+            $scope.sozluk= data[0]
+        })
+
+    /*
+    $scope.Operics = [{
 
         TR: [{
 
@@ -211,7 +230,7 @@ angular.module('starter.controllers', [])
 
     if ($stateParams.detayId) {
         $scope.bilgi = $scope.diziler[$stateParams.detayId];
-    }
+    } */
 
 })
 
