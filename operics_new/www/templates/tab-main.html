@@ -37,12 +37,14 @@
    </div>
 
 
-    <h3 class="fnt">Referanslar</h3>
+  <h3 class="fnt">Referanslar</h3>
 
-    <div class="" ng-repeat="n in referanslar2">
-    <a class="item item-thumbnail- h" href="#">
-    <img class="rfr"src="{{n.REF_PHOTO}}">
-   </a>
+  <div class="row">
+    <div class="col" ng-repeat="referans in referanslar">
+      <a class="item item-thumbnail- h" href="#">
+      <img class="rfr"src="{{referans.REF_PHOTO}}">
+      </a>
+    </div>
   </div>
 
 
@@ -59,8 +61,7 @@ bölümü mezunudur.</p>
 </div>
 </div>
 
-<div ng-repeat="veri in referanslar">
-<img src="{{veri.REF_PHOTO}}"></img> </div>
+
 
 
   </ion-content>
