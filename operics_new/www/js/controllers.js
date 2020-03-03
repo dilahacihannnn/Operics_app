@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
         }
         // Yeni user isteği post edilir ve veritabanına eklenir.
        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-            $scope.referanslar= data[0]
+            $scope.referanslar= data
         })
 
        var ServiceRequest = {
