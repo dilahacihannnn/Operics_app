@@ -21,6 +21,8 @@ angular.module('starter.controllers', [])
         })
         */
 
+    $scope.x = 0;
+
     $scope.tikla=function() {
         console.log($scope.x);
     }
@@ -40,7 +42,8 @@ angular.module('starter.controllers', [])
             id: 0},
             {
 
-            Ekibimiz: [{
+            Ekibimiz: [
+                {
                     adi: 'Şule Deniz',
                     unvani: 'Genel Müdür',
                     aciklama: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
