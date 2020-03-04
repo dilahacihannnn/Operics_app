@@ -55,25 +55,13 @@
   <!-- Ekibimiz Tab -->
 
 
-<div ng-if="x==2" style="margin-top: -30px;"class="card rectangle groupi">
-<div class="item item-text-wrap">
-    <img class="im"src="img/rsm/k.jpg">
-    <h2><i class="ei">Şule Deniz</i></h2>
-    <h2><i class="es">Genel Müdür</i></h2>
-    <p class="ea">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği 
-bölümü mezunudur.</p>
-</div>
-</div>
-<br><br><br>
-
-<div ng-if="x==2" style="margin-top: -30px;"class="card rectangle groupi">
-<div class="item item-text-wrap">
-    <img class="im"src="img/rsm/ia.png">
-    <h2><i class="ei">Ahmet Erkoç</i></h2>
-    <h2><i class="es">Eğitim Dİrektörü</i></h2>
-    <p class="ea">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği 
-bölümü mezunudur.</p>
-</div>
+<div ng-if="x==2" ng-repeat="ekip in team" style="margin-top: -30px;"class="card rectangle groupi">
+  <div class="item item-text-wrap">
+    <img class="im"src="{{ekip.img}}">
+    <h2><i class="ei">{{ekip.name}}</i></h2>
+    <h2><i class="es">{{ekip.pos}}</i></h2>
+    <p class="ea">{{ekip.des}}</p>
+  </div>
 </div>
 
 
