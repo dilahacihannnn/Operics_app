@@ -89,12 +89,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-      .state('tab.courses-detail', {
+ .state('tab.courses-detail', {
       url: '/coursesdetail',
       views: {
         'tab-courses': {
           templateUrl: 'templates/courses-detail.html',
-          controller: 'templates/courses-detail.html'
+          controller: 'MainCtrl'
         }
       }
     })

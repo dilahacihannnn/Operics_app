@@ -119,7 +119,10 @@
   font-size: 22px;
   margin-left: 12px;
 }
-
+.ed
+{
+      width: 101%;
+}
 .im{
   position: absolute;
   top: 19px;
@@ -132,15 +135,10 @@
   }
 
 .y {
-  z-index: 4;
-  width: 204.79px;
-  color: #929292;
-  font-family: "Avenir-Medium";
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: -0.5078125px;
-  margin-left: 49px;
+  margin-left: 16px;
+  width: 98%;
+  font-family: Microsoft Sans serif;
+  font-size: large;
 }
 
 .imi{
@@ -312,4 +310,13 @@ color: white;
   background: #ffffff;
   margin-left: 226px;
   margin-top: -123px;
+}
+.obton{
+
+ 
+  width: 264px;
+  height: 46.5px;
+  border-radius: 23.25px;
+  background: #e03121;
+margin-left: 51px;
 }
