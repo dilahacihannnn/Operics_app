@@ -41,21 +41,21 @@ angular.module('starter.controllers', [])
             name: 'Şule Deniz',
             pos: 'Genel Müdür',
             des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'https://iaatv.tmgrup.com.tr/997e74/435/287/0/0/1280/845?u=https://iatv.tmgrup.com.tr/2019/12/23/eskiya-dunyaya-hukumdar-olmaz-1577085009013.jpg',
+            img: 'img/rsm/k.jpg',
             id: 0
         },
         {
             name: 'Ahmet Erkoç',
             pos: 'Eğitim Direktörü',
             des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'https://iaatv.tmgrup.com.tr/238c4a/959/566/0/0/1280/755?u=https://iatv.tmgrup.com.tr/2019/12/16/eskiya-dunyaya-hukumdar-olmaz-1576480765035.jpg',
+            img: 'img/rsm/ia.png',
             id: 1
         },
         {
             name: 'Damla Erol',
             pos: 'İK Uzmanı',
             des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'https://iaatv.tmgrup.com.tr/238c4a/959/566/0/0/1280/755?u=https://iatv.tmgrup.com.tr/2019/12/16/eskiya-dunyaya-hukumdar-olmaz-1576480765035.jpg',
+            img: 'img/rsm/dm.jpg',
             id: 2
         }
     ];
