@@ -53,11 +53,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
- .state('tab.aboutus', {
+
+  .state('tab.aboutus', {
     url: '/aboutus',
     views: {
       'tab-aboutus': {
         templateUrl: 'templates/tab-aboutus.html',
+        controller: 'MainCtrl'
+      }
+    }
+  })
+
+ .state('tab.dictionary', {
+    url: '/dictionary',
+    views: {
+      'tab-dictionary': {
+        templateUrl: 'templates/tab-dictionary.html',
         controller: 'MainCtrl'
       }
     }
