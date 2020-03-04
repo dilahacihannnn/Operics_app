@@ -64,7 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
- .state('tab.dictionary', {
+  .state('tab.dictionary', {
     url: '/dictionary',
     views: {
       'tab-dictionary': {
@@ -74,47 +74,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-   .state('tab.courses', {
-      url: '/courses',
-      views: {
-        'tab-courses': {
-          templateUrl: 'templates/tab-courses.html'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
- .state('tab.aboutus-detail', {
-      url: '/aboutusdetail',
-      views: {
-        'tab-aboutus': {
-          templateUrl: 'templates/aboutus-detail.html'
-        }
-      }
-    })
-
-  .state('tab.dictionary', {
-    url: '/dictionary',
+  
+  .state('tab.courses', {
+    url: '/courses',
     views: {
-      'tab-dictionary': {
-        templateUrl: 'templates/tab-dictionary.html',
+      'tab-courses': {
+        templateUrl: 'templates/tab-courses.html',
         controller: 'MainCtrl'
+      }
+    }
+  })
+
+  .state('tab.aboutus-detail', {
+    url: '/aboutusdetail',
+    views: {
+      'tab-aboutus': {
+        templateUrl: 'templates/aboutus-detail.html'
       }
     }
   });
