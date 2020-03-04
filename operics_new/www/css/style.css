@@ -121,6 +121,7 @@ min-block-size: -webkit-fill-available;
   font-size: 22px;
   margin-left: 12px;
 }
+
 .im{
     position: absolute;
     top: 19px;
@@ -130,10 +131,32 @@ min-block-size: -webkit-fill-available;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-
-
-
 }
+
+.ie{
+  -webkit-user-drag: none;
+    width: 113%;
+    margin-top: -28px;
+    margin-left: -17px;
+}
+.ie2{
+
+  color: #FFFFFF;
+  margin-top: 76px;  margin-right: 190px;
+  background-color: red;
+  border-radius: 0px !important;
+}
+.ie3{
+
+  color: #FFFFFF;
+  margin-top: 103px;
+  margin-right: 85px;
+  background-color: black;
+  border-radius: 0px !important;
+  height: 25px;
+  line-height: 18px;
+}
+
 .y {
   z-index: 4;
   width: 204.79px;
