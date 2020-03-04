@@ -86,13 +86,31 @@ angular.module('starter.controllers', [])
            
     $scope.courses = [
         {
-            name: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',
+            name: 'Teknik İşler İş Sağlığı Eğitiminiz',
             des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
-            img: 'https://eysosgb.com/wp-content/uploads/2019/05/i%C5%9F-g%C3%BCvenli%C4%9Fi-mevzat%C4%B1-isg-mevzuat%C4%B1-6331-say%C4%B1l%C4%B1-isg-kanunu-istanbul-osgb.jpg',
+            img: 'img/isgrsm/i1.jpg',
             len: '20 saat',
             loc: 'Maltepe Mah Yıldız İş Hanı Kat:17 Esentepe / Ankara',
-            date: '12.03.2020 - 12.06.2020',
+            date: '19 Mart 2020',
             id: 0
+        },
+        {
+            name: 'ISO 3100 Eğitimi',
+            des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
+            img: 'img/isgrsm/i2.png',
+            len: '10 saat',
+            loc: 'Maltepe Mah Yıldız İş Hanı Kat:17 Esentepe / Ankara',
+            date: '29 Mart 2020',
+            id: 1
+        },
+        {
+            name: 'ISG Eğitimi',
+            des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
+            img: 'img/isgrsm/i3.png',
+            len: '25 saat',
+            loc: 'Maltepe Mah Yıldız İş Hanı Kat:17 Esentepe / Ankara',
+            date: '10 Nisan 2020',
+            id: 2
         }
     ];
 
