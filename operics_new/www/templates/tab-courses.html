@@ -6,12 +6,12 @@
 
 
 
-<div class="card rectangle groupi" ng-repeat="z in operics.tr.references" href="#/tab/coursesdetail">
-  <h1>{{z.id}}</h1>
+<div class="card rectangle groupi" ng-click="z in Operics.TR.Courses" href="#/tab/coursesdetail">
 <div class="item item-text-wrap">
-   <img class="ie"src="{{course.img}}">
-    <span class="badge badge-orange ie2" >{{course.date}}</span>
-     <span class="badge badge-orange ie3">{{course.id}}</span>
+   <img class="ie"src="{{z.img}}">
+    <span class="badge badge-orange ie2" >{{z.date}}</span>
+     <span class="badge badge-orange ie3"></span>
+     {{z.id}}
 </div>
 
 </div>

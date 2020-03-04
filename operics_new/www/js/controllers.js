@@ -27,7 +27,9 @@ angular.module('starter.controllers', [])
         console.log($scope.x);
     }
    
-    $scope.operics = [{
+    $scope.operics = [
+
+    {
 
         tr: [{
 
@@ -39,9 +41,7 @@ angular.module('starter.controllers', [])
                 { img: 'https://www.aboomi.com/wp-content/uploads/enerjisa.png', id: 4 },
                 { img: 'https://www.pendiklitv.com/wp-content/uploads/2018/08/%C4%B0SK%C4%B0-logo.jpg', id: 5 }
             ],
-            id: 0},
-            {
-
+           
             team: [
                 {
                     name: 'Şule Deniz',
@@ -65,8 +65,6 @@ angular.module('starter.controllers', [])
                     id: 2
                 }
             ],
-            id: 1},
-            {
 
             services: [{
                     name: 'Analizler',
@@ -90,21 +88,17 @@ angular.module('starter.controllers', [])
                     id: 2
                 }
             ],
-            id: 2},
-            {
-            
+           
             courses : [{
                     name: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',
                     des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
                     img: 'https://eysosgb.com/wp-content/uploads/2019/05/i%C5%9F-g%C3%BCvenli%C4%9Fi-mevzat%C4%B1-isg-mevzuat%C4%B1-6331-say%C4%B1l%C4%B1-isg-kanunu-istanbul-osgb.jpg',
                     len: '20 saat',
                     loc: 'Maltepe Mah Yıldız İş Hanı Kat:17 Esentepe / Ankara',
-                    date: '12 Mart 2020',
+                    date: '12.03.2020 - 12.06.2020',
                     id: 0
                 }
             ],
-            id: 3},
-            {
 
             headlines: [
                 { name: 'Müşteri Hikayeleri', id: 0 },
@@ -112,8 +106,6 @@ angular.module('starter.controllers', [])
                 { name: 'Referanslar', id: 2 },
                 { name: 'Ekibimiz', id: 3 }
             ],
-            id: 4},
-            {
 
             tabs: [
                 { name: 'Ana Sayfa', id: 0 },
@@ -122,11 +114,11 @@ angular.module('starter.controllers', [])
                 { name: 'Sözlük', id: 3 },
                 { name: 'İletişim', id: 3 },
                 { name: 'Hesabım', id: 3 }
-            ],
-            id: 4
-        }],
-        id: 0},
-        {
+            ]
+   
+    }], id: 0},
+    {
+        
         en: [{
 
             references: [
@@ -137,8 +129,6 @@ angular.module('starter.controllers', [])
                 { img: 'https://www.aboomi.com/wp-content/uploads/enerjisa.png', id: 4 },
                 { img: 'https://www.pendiklitv.com/wp-content/uploads/2018/08/%C4%B0SK%C4%B0-logo.jpg', id: 5 }
             ],
-            id: 0},
-            {
 
             team: [
                 {
@@ -163,8 +153,6 @@ angular.module('starter.controllers', [])
                     id: 2
                 }
             ],
-            id: 1},
-            {
 
             services: [{
                     name: 'Analizler',
@@ -188,9 +176,7 @@ angular.module('starter.controllers', [])
                     id: 2
                 }
             ],
-            id: 2},
-            {
-            
+         
             courses : [{
                     name: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',
                     des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
@@ -201,17 +187,13 @@ angular.module('starter.controllers', [])
                     id: 0
                 }
             ],
-            id: 3},
-            {
-
+ 
             headlines: [
                 { name: 'Müşteri Hikayeleri', id: 0 },
                 { name: 'Hizmetlerimiz', id: 1 },
                 { name: 'Referanslar', id: 2 },
                 { name: 'Ekibimiz', id: 3 }
             ],
-            id: 4},
-            {
 
             tabs: [
                 { name: 'Ana Sayfa', id: 0 },
@@ -220,11 +202,10 @@ angular.module('starter.controllers', [])
                 { name: 'Sözlük', id: 3 },
                 { name: 'İletişim', id: 3 },
                 { name: 'Hesabım', id: 3 }
-            ],
-            id: 4
-        }],
-        id: 1},
-        {
+            ]
+    }], id: 1},
+    {
+     
         de: [{
 
             references: [
@@ -235,9 +216,7 @@ angular.module('starter.controllers', [])
                 { img: 'https://www.aboomi.com/wp-content/uploads/enerjisa.png', id: 4 },
                 { img: 'https://www.pendiklitv.com/wp-content/uploads/2018/08/%C4%B0SK%C4%B0-logo.jpg', id: 5 }
             ],
-            id: 0},
-            {
-
+        
             team: [
                 {
                     name: 'Şule Deniz',
@@ -261,8 +240,6 @@ angular.module('starter.controllers', [])
                     id: 2
                 }
             ],
-            id: 1},
-            {
 
             services: [{
                     name: 'Analizler',
@@ -286,9 +263,7 @@ angular.module('starter.controllers', [])
                     id: 2
                 }
             ],
-            id: 2},
-            {
-            
+        
             courses : [{
                     name: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',
                     des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
@@ -299,18 +274,14 @@ angular.module('starter.controllers', [])
                     id: 0
                 }
             ],
-            id: 3},
-            {
-
+        
             headlines: [
                 { name: 'Müşteri Hikayeleri', id: 0 },
                 { name: 'Hizmetlerimiz', id: 1 },
                 { name: 'Referanslar', id: 2 },
                 { name: 'Ekibimiz', id: 3 }
             ],
-            id: 4},
-            {
-
+        
             tabs: [
                 { name: 'Ana Sayfa', id: 0 },
                 { name: 'Hakkımızda', id: 1 },
@@ -318,11 +289,10 @@ angular.module('starter.controllers', [])
                 { name: 'Sözlük', id: 3 },
                 { name: 'İletişim', id: 3 },
                 { name: 'Hesabım', id: 3 }
-            ],
-            id: 4
-        }],
-        id: 2}
-    ];
+            ]
+           
+    }], id: 2
+    }]
 
 
     if ($stateParams.detayId) {
