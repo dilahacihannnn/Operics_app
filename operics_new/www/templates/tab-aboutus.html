@@ -26,13 +26,12 @@
 <!-- Hizmetlerimiz Tab -->
  <br><br><br><br><br><br><br>
 
-<a ng-if="x==0" class="item item-body hk" href="#/tab/aboutusdetail" >
-  <img class="full-image i" src="img/rsm/a.png" >
+<a ng-if="x==0" class="item item-body hk" ng-repeat="servis in services" href="#/tab/aboutusdetail" >
+  <img class="full-image i" src="{{servis.ico}}" >
 
-  <div class=""> <h2 align="center" >Analizler<hr width="100%" size="4" ></h2></div>
+  <div class=""> <h2 align="center" >{{servis.name}}<hr width="100%" size="4" ></h2></div>
     <p style="font-size: 12px;"align="center">
-      Sektöre yönelik analizlerimiz 
-      ile işinizi hızlı ve kolay bir şekilde geliştrimenizi sağlıyoruz.
+      {{servis.des}}
     </p>
   </div>
 </a> 
@@ -45,11 +44,10 @@
 
 
 <div ng-if="x==1" class="col">
-    <div class="col.col-50" ng-repeat="referans in Operics.TR ">
+    <div class="col.col-50" ng-repeat="referans in references ">
       <a class="item item-thumbnail- h" href="#">
-        <img class="rfr"src="{{referans.Referanslar.img}">
+        <img class="rfr"src="{{referans.img}">
       </a>
-      {{referans.id}}
     </div>
 </div>
 
