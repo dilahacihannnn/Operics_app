@@ -5,15 +5,15 @@
 
       <div class="tabs">
 
-      <a class="tab-item active" href="#/tab/aboutus">
+      <a class="tab-item {{x!=0 ? '' :'active'}}" ng-click="tikla(x=0)" href="#/tab/aboutus">
       Hizmetlerimiz
 
       </a>
-     <a class="tab-item" href="#/tab/aboutus">
+     <a class="tab-item {{x!=1 ? '' :'active'}}" ng-click="tikla(x=1)" href="#/tab/aboutus">
         
      Referanslar
       </a>
-      <a class="tab-item" href="#/tab/aboutus">
+      <a class="tab-item {{x!=2 ? '' :'active'}}" ng-click="tikla(x=2)" href="#/tab/aboutus">
       Ekibimiz
       </a>
      </div>
@@ -26,88 +26,38 @@
 <!-- Hizmetlerimiz Tab -->
  <br><br><br><br><br><br><br>
 
-  <a class="item item-body hk" href="#/tab/aboutusdetail" >
+<a ng-if="x==0" class="item item-body hk" href="#/tab/aboutusdetail" >
   <img class="full-image i" src="img/rsm/a.png" >
 
   <div class=""> <h2 align="center" >Analizler<hr width="100%" size="4" ></h2></div>
-  <p style="font-size: 12px;"align="center">Sektöre yönelik analizlerimiz 
-ile işinizi hızlı ve kolay bir şekilde geliştrimenizi sağlıyoruz.</p>
-
+    <p style="font-size: 12px;"align="center">
+      Sektöre yönelik analizlerimiz 
+      ile işinizi hızlı ve kolay bir şekilde geliştrimenizi sağlıyoruz.
+    </p>
   </div>
 </a> 
 
-<br><br><br>
 
 
-  <div class="item item-body hk">
-  <img class="full-image i" src="img/rsm/d.png">
-  <div class=""> <h2 align="center" >İSG Danışmanlık<hr width="100%" size="4" ></h2>
-  </div>
-<p style="font-size: 12px;"align="center">10 yıldan fazla sektör tecrübesine 
-sahiptir. Bilgisiyar mühendisliği 
-bölümü mezunudur.</p>
-  </div>
-</div>
-
-<br><br><br>
-
-<div class="item item-body hk">
-  <img class="full-image i" src="img/rsm/b.png">
-  <div class=""> <h2 align="center" >Yazılım<hr width="100%" size="4" ></h2>
-  </div>
-</div>
 
 
 <!-- Referanslar Tab -->
 
-  <h4 align="center">Referanslar</h4>
-<br><br><br><br><br>
 
-<div class="card r1">
-    <div class="item item-text-wrap">
-    <img class="hizz"src="img/rsm/ar.png">
-  </div>
+<div ng-if="x==1" class="col">
+    <div class="col.col-50" ng-repeat="referans in Operics.TR ">
+      <a class="item item-thumbnail- h" href="#">
+        <img class="rfr"src="{{referans.Referanslar.img}">
+      </a>
+      {{referans.id}}
+    </div>
 </div>
 
-<div class="card r2">
-    <div class="item item-text-wrap">
-    <img class="hizz"src="img/rsm/h.png">
-  </div>
-</div>
-
-<div class="card r3">
-    <div class="item item-text-wrap">
-    <img class="hizz"src="img/rsm/t.png">
-  </div>
-</div>
-
-
-<div class="card r4">
-    <div class="item item-text-wrap">
-    <img class="hizz"src="img/rsm/mi.png">
-  </div>
-</div>
-
-<div class="card r3">
-    <div class="item item-text-wrap">
-    <img class="hizz"src="img/rsm/ar.png">
-  </div>
-</div>
-
-<div class="card r4">
-    <div class="item item-text-wrap">
-    <img class="hizz"src="img/rsm/h.png">
-  </div>
-</div>
 
   <!-- Ekibimiz Tab -->
 
-<br><br><br>
 
-  <h4 align="center">Ekibimiz</h4>
-<br>
-
-<div class="card rectangle groupi">
+<div ng-if="x==2" class="card rectangle groupi">
 <div class="item item-text-wrap">
     <img class="im"src="img/rsm/k.jpg">
     <h2><i class="ei">Şule Deniz</i></h2>
@@ -118,7 +68,7 @@ bölümü mezunudur.</p>
 </div>
 
 
-<div class="card rectangle groupi">
+<div ng-if="x==2" class="card rectangle groupi">
 <div class="item item-text-wrap">
     <img class="im"src="img/rsm/ia.png">
     <h2><i class="ei">Ahmet Erkoç</i></h2>

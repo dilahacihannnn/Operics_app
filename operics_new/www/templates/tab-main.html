@@ -1,5 +1,6 @@
 <ion-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
 
+
   <ion-content class="padding">
 
 
@@ -36,12 +37,14 @@
    </div>
 
 
-    <h3 class="fnt">Referanslar</h3>
+  <h3 class="fnt">Referanslar</h3>
 
-    <div class="">
-    <a class="item item-thumbnail- h" href="#">
-    <img class="rfr"src="img/rsm/ar.jpg">
-   </a>
+  <div class="row">
+    <div class="col" ng-repeat="referans in referanslar">
+      <a class="item item-thumbnail- h" href="#">
+      <img class="rfr"src="{{referans.REF_PHOTO}}">
+      </a>
+    </div>
   </div>
 
 
@@ -50,7 +53,7 @@
    <div class="list card group">
    <div class="item item-avatarim" >
    <img class="im" src="img/rsm/k.jpg">
-   <font style="text-align: center;"><h2>Şule Deniz</h2>
+   <font style="text-align: center;"><h2>Dila Hacıhan</h2>
     <p>Genel Müdür</p></font>
     <p style="margin-left: 55px;">10 yıldan fazla sektör tecrübesine 
 sahiptir. Bilgisiyar mühendisliği 
@@ -59,5 +62,9 @@ bölümü mezunudur.</p>
 </div>
 
 
+
+
   </ion-content>
+}
+}
 </ion-view>
