@@ -53,7 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
- .state('tab.aboutus', {
+  .state('tab.aboutus', {
     url: '/aboutus',
     views: {
       'tab-aboutus': {
@@ -72,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-   .state('tab.courses', {
+  .state('tab.courses', {
       url: '/courses',
       views: {
         'tab-courses': {
@@ -80,25 +80,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-      .state('tab.courses-detail', {
+  
+  .state('tab.courses-detail', {
       url: '/coursesdetail',
       views: {
         'tab-courses': {
           templateUrl: 'templates/courses-detail.html',
-          controller: 'templates/courses-detail.html'
+          controller: 'MainCtrl'
         }
       }
     })
- .state('tab.aboutus-detail', {
+    .state('tab.aboutus-detail', {
       url: '/aboutusdetail',
       views: {
         'tab-aboutus': {
@@ -107,15 +99,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+    .state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'AccountCtrl'
+        }
       }
-    }
-  });
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/main');

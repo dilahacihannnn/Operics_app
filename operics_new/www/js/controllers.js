@@ -93,20 +93,20 @@ angular.module('starter.controllers', [])
             id: 2},
             {
             
-            Courses : [{
+            courses : [{
                     name: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',
                     des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
                     img: 'https://eysosgb.com/wp-content/uploads/2019/05/i%C5%9F-g%C3%BCvenli%C4%9Fi-mevzat%C4%B1-isg-mevzuat%C4%B1-6331-say%C4%B1l%C4%B1-isg-kanunu-istanbul-osgb.jpg',
                     len: '20 saat',
                     loc: 'Maltepe Mah Yıldız İş Hanı Kat:17 Esentepe / Ankara',
-                    date: '12.03.2020 - 12.06.2020',
+                    date: '12 Mart 2020',
                     id: 0
                 }
             ],
             id: 3},
             {
 
-            Headlines: [
+            headlines: [
                 { name: 'Müşteri Hikayeleri', id: 0 },
                 { name: 'Hizmetlerimiz', id: 1 },
                 { name: 'Referanslar', id: 2 },
@@ -115,7 +115,7 @@ angular.module('starter.controllers', [])
             id: 4},
             {
 
-            Tabs: [
+            tabs: [
                 { name: 'Ana Sayfa', id: 0 },
                 { name: 'Hakkımızda', id: 1 },
                 { name: 'Eğitimlermiz', id: 2 },
@@ -191,7 +191,7 @@ angular.module('starter.controllers', [])
             id: 2},
             {
             
-            Courses : [{
+            courses : [{
                     name: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',
                     des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
                     img: 'https://eysosgb.com/wp-content/uploads/2019/05/i%C5%9F-g%C3%BCvenli%C4%9Fi-mevzat%C4%B1-isg-mevzuat%C4%B1-6331-say%C4%B1l%C4%B1-isg-kanunu-istanbul-osgb.jpg',
@@ -204,7 +204,7 @@ angular.module('starter.controllers', [])
             id: 3},
             {
 
-            Headlines: [
+            headlines: [
                 { name: 'Müşteri Hikayeleri', id: 0 },
                 { name: 'Hizmetlerimiz', id: 1 },
                 { name: 'Referanslar', id: 2 },
@@ -213,7 +213,7 @@ angular.module('starter.controllers', [])
             id: 4},
             {
 
-            Tabs: [
+            tabs: [
                 { name: 'Ana Sayfa', id: 0 },
                 { name: 'Hakkımızda', id: 1 },
                 { name: 'Eğitimlermiz', id: 2 },
@@ -289,7 +289,7 @@ angular.module('starter.controllers', [])
             id: 2},
             {
             
-            Courses : [{
+            courses : [{
                     name: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',
                     des: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
                     img: 'https://eysosgb.com/wp-content/uploads/2019/05/i%C5%9F-g%C3%BCvenli%C4%9Fi-mevzat%C4%B1-isg-mevzuat%C4%B1-6331-say%C4%B1l%C4%B1-isg-kanunu-istanbul-osgb.jpg',
@@ -302,7 +302,7 @@ angular.module('starter.controllers', [])
             id: 3},
             {
 
-            Headlines: [
+            headlines: [
                 { name: 'Müşteri Hikayeleri', id: 0 },
                 { name: 'Hizmetlerimiz', id: 1 },
                 { name: 'Referanslar', id: 2 },
@@ -311,7 +311,7 @@ angular.module('starter.controllers', [])
             id: 4},
             {
 
-            Tabs: [
+            tabs: [
                 { name: 'Ana Sayfa', id: 0 },
                 { name: 'Hakkımızda', id: 1 },
                 { name: 'Eğitimlermiz', id: 2 },
