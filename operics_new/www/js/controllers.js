@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
       
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php" 
 
-        var ServiceRequest = {
+        /* var ServiceRequest = {
             service_type: "referanslar"
         }
         // Yeni user isteği post edilir ve veritabanına eklenir.
@@ -19,8 +19,8 @@ angular.module('starter.controllers', [])
        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
             $scope.sozluk= data[0]
         })
-
-    /*
+        */
+   
     $scope.Operics = [{
 
         TR: [{
@@ -230,7 +230,7 @@ angular.module('starter.controllers', [])
 
     if ($stateParams.detayId) {
         $scope.bilgi = $scope.diziler[$stateParams.detayId];
-    } */
+    } 
 
 })
 
