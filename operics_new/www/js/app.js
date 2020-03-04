@@ -83,6 +83,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+   .state('tab.courses', {
+      url: '/courses',
+      views: {
+        'tab-courses': {
+          templateUrl: 'templates/tab-courses.html'
+        }
+      }
+    })
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
@@ -91,10 +99,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ChatDetailCtrl'
         }
       }
-    });
+    })
+ .state('tab.aboutus-detail', {
+      url: '/aboutusdetail',
+      views: {
+        'tab-aboutus': {
+          templateUrl: 'templates/aboutus-detail.html'
+        }
+      }
+    })
 
- 
-
+  .state('tab.dictionary', {
+    url: '/dictionary',
+    views: {
+      'tab-dictionary': {
+        templateUrl: 'templates/tab-dictionary.html',
+        controller: 'MainCtrl'
+      }
+    }
+  });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/main');

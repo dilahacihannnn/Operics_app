@@ -1,19 +1,19 @@
-<ion-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
+rsm<ion-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
 
   <!-- Hakkımızda Tab -->
  <div class="tabs-striped tabs-top tabs-background-light tabs-color-dark">
 
       <div class="tabs">
 
-      <a class="tab-item active" href="#/tab/aboutus">
+      <a class="tab-item {{x!=0 ? '' :'active'}}" ng-click="tikla(x=0)" href="#/tab/aboutus">
       Hizmetlerimiz
 
       </a>
-     <a class="tab-item" href="#/tab/aboutus">
+     <a class="tab-item {{x!=1 ? '' :'active'}}" ng-click="tikla(x=1)" href="#/tab/aboutus">
         
      Referanslar
       </a>
-      <a class="tab-item" href="#/tab/aboutus">
+      <a class="tab-item {{x!=2 ? '' :'active'}}" ng-click="tikla(x=2)" href="#/tab/aboutus">
       Ekibimiz
       </a>
      </div>
@@ -22,35 +22,64 @@
 
   <ion-content>
 
+
+<!-- Hizmetlerimiz Tab -->
  <br><br><br><br><br><br><br>
 
-  <div class="item item-body hk">
-  <img class="full-image i" src="img/rsm/a.png">
+<a ng-if="x==0" class="item item-body hk" href="#/tab/aboutusdetail" >
+  <img class="full-image i" src="img/rsm/a.png" >
 
   <div class=""> <h2 align="center" >Analizler<hr width="100%" size="4" ></h2></div>
-  <p style="font-size: 12px;"align="center">Sektöre yönelik analizlerimiz 
-ile işinizi hızlı ve kolay bir şekilde geliştrimenizi sağlıyoruz.</p>
-
+    <p style="font-size: 12px;"align="center">
+      Sektöre yönelik analizlerimiz 
+      ile işinizi hızlı ve kolay bir şekilde geliştrimenizi sağlıyoruz.
+    </p>
   </div>
-</div> 
+</a> 
 
-<br><br><br>
 
-  <div class="item item-body hk">
-  <img class="full-image i" src="img/rsm/d.png">
-  <div class=""> <h2 align="center" >İSG Danışmanlık<hr width="100%" size="4" ></h2>
-  </div>
 
-<p style="font-size: 12px;"align="center">10 yıldan fazla sektör tecrübesine 
-sahiptir. Bilgisiyar mühendisliği 
-bölümü mezunudur.</p>
-  </div>
+
+
+<!-- Referanslar Tab -->
+
+
+<div ng-if="x==1" class="col">
+    <div class="col.col-50" ng-repeat="referans in Operics.TR ">
+      <a class="item item-thumbnail- h" href="#">
+        <img class="rfr"src="{{referans.Referanslar.img}">
+      </a>
+      {{referans.id}}
+    </div>
 </div>
 
-<br><br><br>
+
+  <!-- Ekibimiz Tab -->
 
 
+<div ng-if="x==2" class="card rectangle groupi">
+<div class="item item-text-wrap">
+    <img class="im"src="img/rsm/k.jpg">
+    <h2><i class="ei">Şule Deniz</i></h2>
+    <h2><i class="es">Genel Müdür</i></h2>
+    <p class="ea">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği 
+bölümü mezunudur.</p>
+</div>
+</div>
 
 
+<div ng-if="x==2" class="card rectangle groupi">
+<div class="item item-text-wrap">
+    <img class="im"src="img/rsm/ia.png">
+    <h2><i class="ei">Ahmet Erkoç</i></h2>
+    <h2><i class="es">Eğitim Dİrektörü</i></h2>
+    <p class="ea">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği 
+bölümü mezunudur.</p>
+</div>
+</div>
+
+
+  
+<br><br><br><br><br><br>
   </ion-content>
 </ion-view>
