@@ -20,6 +20,10 @@ angular.module('starter.controllers', [])
             $scope.sozluk= data[0]
         })
         */
+
+    $scope.tikla=function() {
+        console.log($scope.x);
+    }
    
     $scope.Operics = [{
 
@@ -33,6 +37,9 @@ angular.module('starter.controllers', [])
                 { img: 'https://www.aboomi.com/wp-content/uploads/enerjisa.png', id: 4 },
                 { img: 'https://www.pendiklitv.com/wp-content/uploads/2018/08/%C4%B0SK%C4%B0-logo.jpg', id: 5 }
             ],
+            id: 0},
+            {
+
             Ekibimiz: [{
                     adi: 'Şule Deniz',
                     unvani: 'Genel Müdür',
@@ -55,6 +62,9 @@ angular.module('starter.controllers', [])
                     id: 2
                 }
             ],
+            id: 1},
+            {
+
             Hizmetlerimiz: [{
                     adi: 'Analizler',
                     aciklama: 'Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin.',
@@ -77,6 +87,9 @@ angular.module('starter.controllers', [])
                     id: 2
                 }
             ],
+            id: 2},
+            {
+
             Eğitimlerimiz: [{
                     adi: 'Endüstriyel Teknolojiler ve Teknikleri Genel Değerlendirme Eğitimi',
                     aciklama: 'İsg profesyonellerine endüstride karşılanabilecek toksik maruziyetleri etkin bir şekilde değerlendirebilme ve süreci yönetebilme ve süreci yönetebilme bilgi ve becerisi kazandırılması',
@@ -85,11 +98,12 @@ angular.module('starter.controllers', [])
                     konum: 'Maltepe Mah Yıldız İş Hanı Kat:17 Esentepe / Ankara',
                     tarih: '12.03.2020 - 12.06.2020',
                     id: 0
-                },
-
-            ]
+                }
+            ],
+            id: 3
         }],
-
+        id: 0},
+        {
         EN: [{
 
             Referanslar: [
@@ -156,7 +170,8 @@ angular.module('starter.controllers', [])
 
             ]
         }],
-
+        id: 1},
+        {
         DE: [{
 
             Referanslar: [
@@ -223,13 +238,12 @@ angular.module('starter.controllers', [])
 
             ]
         }],
-
-
+        id: 2
     }];
 
 
     if ($stateParams.detayId) {
-        $scope.bilgi = $scope.diziler[$stateParams.detayId];
+        $scope.bilgi = $scope.Operics[$stateParams.detayId];
     } 
 
 })

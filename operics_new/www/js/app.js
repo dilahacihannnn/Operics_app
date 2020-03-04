@@ -76,8 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/courses',
       views: {
         'tab-courses': {
-          templateUrl: 'templates/tab-courses.html',
-          controller: 'CoursesCtrl'
+          templateUrl: 'templates/tab-courses.html'
         }
       }
     })
