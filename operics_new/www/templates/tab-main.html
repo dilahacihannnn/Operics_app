@@ -29,18 +29,18 @@
 
     <h3 class="fnt">Hizmetlerimiz</h3>
 
-    <div class="">
-    <a class="item item-thumbnail- h" href="#">
-    <img class="hiz"src="img/rsm/a.png">
-    <p align="center">Analizler</p>
-    </a>
+    <div class="row">
+      <a class="col.col25 item item-thumbnail- h" ng-repeat="servis in services" href="#">
+        <img class="hiz"src="{{servis.ico}}">
+        <p align="center">{{servis.name}}</p>
+      </a>
    </div>
 
 
   <h3 class="fnt">Referanslar</h3>
 
   <div class="row">
-    <div class="col" ng-repeat="referans in operics.tr.references">
+    <div class="col" ng-repeat="referans in references">
       <a class="item item-thumbnail- h" href="#">
       <img class="rfr"src="{{referans.img}}">
       {{referans.references.id}}

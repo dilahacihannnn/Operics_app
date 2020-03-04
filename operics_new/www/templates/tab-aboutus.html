@@ -22,19 +22,21 @@
 
   <ion-content>
 
-
-<!-- Hizmetlerimiz Tab -->
  <br><br><br><br><br><br><br>
+<!-- Hizmetlerimiz Tab -->
 
-<a ng-if="x==0" class="item item-body hk" href="#/tab/aboutusdetail" >
-  <img class="full-image i" src="img/rsm/a.png" >
 
-  <div class=""> <h2 align="center" >Analizler<hr width="100%" size="4" ></h2></div>
+<a ng-if="x==0"  ng-repeat="servis in services" href="#/tab/aboutusdetail" >
+  <div class="item item-body hk"> 
+    <img class="full-image i" src="{{servis.ico}}" >
+    <h2 align="center" >{{servis.name}}<hr width="100%" size="4" ></h2>
     <p style="font-size: 12px;"align="center">
-      Sektöre yönelik analizlerimiz 
-      ile işinizi hızlı ve kolay bir şekilde geliştrimenizi sağlıyoruz.
+      {{servis.des}}
     </p>
   </div>
+<br> 
+<br> 
+<br> 
 </a> 
 
 
@@ -45,11 +47,10 @@
 
 
 <div ng-if="x==1" class="col">
-    <div class="col.col-50" ng-repeat="referans in Operics.TR ">
+    <div class="col.col-50" ng-repeat="referans in references ">
       <a class="item item-thumbnail- h" href="#">
-        <img class="rfr"src="{{referans.Referanslar.img}">
+        <img class="rfr"src="{{referans.img}}">
       </a>
-      {{referans.id}}
     </div>
 </div>
 
@@ -57,26 +58,17 @@
   <!-- Ekibimiz Tab -->
 
 
-<div ng-if="x==2" style="margin-top: -30px;"class="card rectangle groupi">
-<div class="item item-text-wrap">
-    <img class="im"src="img/rsm/k.jpg">
-    <h2><i class="ei">Şule Deniz</i></h2>
-    <h2><i class="es">Genel Müdür</i></h2>
-    <p class="ea">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği 
-bölümü mezunudur.</p>
-</div>
-</div>
-<br><br><br>
+<a ng-if="x==2" ng-repeat="ekip in team">
+  <div style="margin-top: -30px;"class="card rectangle groupi item item-text-wrap">
+    <img class="im"src="{{ekip.img}}">
+    <h2><i class="ei">{{ekip.name}}</i></h2>
+    <h2><i class="es">{{ekip.pos}}</i></h2>
+    <p class="ea">{{ekip.des}}</p>
+  </div>
+<br> 
+<br> 
+</a>
 
-<div ng-if="x==2" style="margin-top: -30px;"class="card rectangle groupi">
-<div class="item item-text-wrap">
-    <img class="im"src="img/rsm/ia.png">
-    <h2><i class="ei">Ahmet Erkoç</i></h2>
-    <h2><i class="es">Eğitim Dİrektörü</i></h2>
-    <p class="ea">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği 
-bölümü mezunudur.</p>
-</div>
-</div>
 
 
   
