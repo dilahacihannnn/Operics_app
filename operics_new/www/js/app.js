@@ -53,8 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-
-  .state('tab.aboutus', {
+ .state('tab.aboutus', {
     url: '/aboutus',
     views: {
       'tab-aboutus': {
@@ -64,32 +63,56 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.dictionary', {
-    url: '/dictionary',
-    views: {
-      'tab-dictionary': {
-        templateUrl: 'templates/tab-dictionary.html',
-        controller: 'MainCtrl'
+  .state('tab.chats', {
+      url: '/chats',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/tab-chats.html',
+          controller: 'ChatsCtrl'
+        }
       }
-    }
-  })
-
-  
-  .state('tab.courses', {
-    url: '/courses',
-    views: {
-      'tab-courses': {
-        templateUrl: 'templates/tab-courses.html',
-        controller: 'MainCtrl'
+    })
+   .state('tab.courses', {
+      url: '/courses',
+      views: {
+        'tab-courses': {
+          templateUrl: 'templates/tab-courses.html'
+        }
       }
-    }
-  })
+    })
+    .state('tab.chat-detail', {
+      url: '/chats/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+      .state('tab.courses-detail', {
+      url: '/coursesdetail',
+      views: {
+        'tab-courses': {
+          templateUrl: 'templates/courses-detail.html',
+          controller: 'templates/courses-detail.html'
+        }
+      }
+    })
+ .state('tab.aboutus-detail', {
+      url: '/aboutusdetail',
+      views: {
+        'tab-aboutus': {
+          templateUrl: 'templates/aboutus-detail.html'
+        }
+      }
+    })
 
-  .state('tab.aboutus-detail', {
-    url: '/aboutusdetail',
+  .state('tab.account', {
+    url: '/account',
     views: {
-      'tab-aboutus': {
-        templateUrl: 'templates/aboutus-detail.html'
+      'tab-account': {
+        templateUrl: 'templates/tab-account.html',
+        controller: 'AccountCtrl'
       }
     }
   });
