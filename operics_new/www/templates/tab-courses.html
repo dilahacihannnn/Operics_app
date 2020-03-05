@@ -5,33 +5,18 @@
 <h4 align="center">Eğitimlerimiz</h4>
 
 
-<a href="#/tab/coursesdetail">
+<a  ng-repeat="egitim in courses" href="#/tab/coursesdetail">
 <div class="card rectangle groupi">
 <div class="item item-text-wrap">
-   <img class="ie"src="img/isgrsm/i1.jpg">
-   <span class="badge badge-orange ie2" >19 Mart 2020</span>
-   <span class="badge badge-orange ie3">Teknik İşler İş Sağlığı Eğitimiz</span>
+   <img class="ie"src="{{egitim.img}}">
+   <span class="badge badge-orange ie2" >{{egitim.date}}</span>
+   <span class="badge badge-orange ie3">{{egitim.name}}</span>
 </div>
 </div>
 </a>
 
-<div class="card rectangle groupi ">
-<div class="item item-text-wrap">
-   <img class="ie"src="img/isgrsm/i2.png">
-    <span class="badge badge-orange ie2" >29 Mart 2020</span>
-    <span class="badge badge-orange ie3" >ISO 3100 Eğitimi</span>
-</div>
-</div>
 
-<div class="card rectangle groupi ">
-<div class="item item-text-wrap">
-   <img class="ie"src="img/isgrsm/i3.png">
-    <span class="badge badge-orange ie2" >10 Nisan 2020</span>
-    <span class="badge badge-orange ie3" >ISG Eğitimi</span> 
-</div>
-</div>
-  
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-  </ion-content>
+
+</ion-content>
 </ion-view>
+
