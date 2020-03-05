@@ -8,21 +8,14 @@
 
 
     <h3 class="fnt">Müşteri Hikayeleri</h3>
-    <div class="" >
+    <div class="row" >
 
-    <a style="border-color: red;border-width: 2px;"class="item item-thumbnail- r" href="#">
-      <img class="m"src="img/rsm/y.png">
+    <a style="border-color: red;border-width: 2px;"class=" col.col25 item item-thumbnail- r" ng-repeat="story in stories" href="#/tab/storyextended">
+      <img class="m"src="{{story.img}}">
     </a>  
 
 
-    <a style="border-color:red;border-width: 2px;"class="item item-thumbnail- ri" href="#">
-      <img class="m"src="img/rsm/h.png">
-    </a>
-
-
-    <a style="border-color: red;border-width: 2px;"class="item item-thumbnail- rü" href="#">
-      <img class="m"src="img/rsm/m.jpg">
-    </a>
+  
   </div>
 
 

@@ -26,6 +26,27 @@ angular.module('starter.controllers', [])
     $scope.tikla=function() {
         console.log($scope.x);
     }
+
+    $scope.stories = [
+        {
+            head: 'Microsoft İş Güvenliği Danışmanlığı',
+            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
+            img: 'img/rsm/m.jpg',
+            id: 0
+        },
+        {
+            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
+            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
+            img: 'img/rsm/y.png',
+            id: 1
+        },
+        {
+            head: 'Honda C Sınıfı İSG Uzmanları Arıyor',
+            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
+            img: 'img/rsm/h.png',
+            id: 2
+        }
+    ];
    
     $scope.references = [
         { img: 'https://i4.hurimg.com/i/hurriyet/75/0x0/5cd01f8ec03c0e2e30c221b5.jpg', id: 0 },
