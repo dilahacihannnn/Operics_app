@@ -39,31 +39,6 @@
   margin-left: 8px;
 }
 
-
-.ri
-{
-  z-index: 3;
-  width: 63.46px;
-  height: 63.5px;
-  border-radius: 89px !important;
-  border: solid 0,9px #979797
-  background: #ffffff;
-  margin-left: 154px;
-  margin-top: -63px;
-}
-
-.rü
-{
-  z-index: 3;
-  width: 63.46px;
-  height: 63.5px;
-  border-radius: 89px !important;
-  border: solid 0,9px #979797
-  background: #ffffff;
-  margin-left: 82px;
-  margin-top: -63px;
-}
-
 .group {
   height: 86px;
   width: 238px;
