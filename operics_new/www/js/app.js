@@ -82,7 +82,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
  .state('tab.courses-detail', {
-      url: '/coursesdetail',
+      url: '/coursedetail',
       views: {
         'tab-courses': {
           templateUrl: 'templates/courses-detail.html',

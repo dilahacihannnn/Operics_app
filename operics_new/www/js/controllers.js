@@ -4,14 +4,24 @@ angular.module('starter.controllers', [])
       
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php" 
 
-        /* var ServiceRequest = {
-            service_type: "referanslar"
-        }
+    var ServiceRequest = {
+        service_type: "referanslar"
+    }
         // Yeni user isteği post edilir ve veritabanına eklenir.
-       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-            $scope.referanslar= data
-        })
+     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+        $scope.referanslar= data
+    })
 
+    var ServiceRequest = {
+        service_type: "egitimler"
+    }
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+        $scope.egitimler= data
+    })
+       
+       
+       /*
        var ServiceRequest = {
             service_type: "sozluk"
         }
@@ -26,7 +36,7 @@ angular.module('starter.controllers', [])
     $scope.tikla=function() {
         console.log($scope.x);
     }
-
+    /*
     $scope.stories = [
         {
             head: 'Microsoft İş Güvenliği Danışmanlığı',
@@ -150,12 +160,13 @@ angular.module('starter.controllers', [])
         { name: 'İletişim', id: 3 },
         { name: 'Hesabım', id: 3 }
     ];
-
+    
     if ($stateParams.detayId) {
         $scope.bilgi = $scope.Operics[$stateParams.detayId];
     } 
-
+    */
 });
+
 
 
 
