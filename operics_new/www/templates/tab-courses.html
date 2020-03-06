@@ -5,12 +5,12 @@
 <h4 align="center">Eğitimlerimiz</h4>
 
 
-<a  ng-repeat="egitim in courses" href="#/tab/coursesdetail">
+<a  ng-repeat="egitim in egitimler" href="#/tab/coursesdetail">
 <div class="card rectangle groupi">
 <div class="item item-text-wrap">
    <img class="ie"src="{{egitim.img}}">
-   <span class="badge badge-orange ie2" >{{egitim.date}}</span>
-   <span class="badge badge-orange ie3">{{egitim.name}}</span>
+   <span class="badge badge-orange ie2" >{{egitim[0].CRS_ADRESS}}</span>
+   <span class="badge badge-orange ie3">{{egitim[0].CRS_NAME}}</span>
 </div>
 </div>
 </a>
