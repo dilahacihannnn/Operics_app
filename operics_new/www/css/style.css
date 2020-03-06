@@ -84,7 +84,7 @@
   max-inline-size: -webkit-fill-available;
   min-block-size: -webkit-fill-available;
   width: 137%;
-  margin-left: -12px;
+  margin-left: -3px;
   margin-top: -9px;
 }
 
@@ -359,3 +359,16 @@ border-radius:30px !important;
 }
 
 
+.profile{
+      border-radius: 130px !important;
+    width: 44%;
+    height: 117px;
+    margin-left: 28%;
+
+}
+.pi
+{
+    width: 420%;
+    margin-left: -316%;
+    margin-top: 10%;
+}
