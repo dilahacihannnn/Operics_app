@@ -59,7 +59,7 @@ localStorage.setItem('language', "tr");
         {
             head: 'Microsoft İş Güvenliği Danışmanlığı',
             des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/1.png',
+            img: 'img/stories/3.png',
             id: 0
         },
         {
