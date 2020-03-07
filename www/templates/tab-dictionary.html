@@ -12,7 +12,7 @@
 		<div class="list list-inset">
 			<label class="item item-input" style="border-radius: 58px;">
 				<i style="font-size: 33px;"class="ion-ios-search placeholder-icon"></i>
-				<input style=""type="text" placeholder="Ne Aramıştınız?">
+				<input style=""type="text" ng-model="sozlukara" placeholder="Ne Aramıştınız?">
 			</label>
 		</div>
 
@@ -22,7 +22,7 @@
 
 		<br>
 
-		<div class="button button-full button-clear" ng-repeat="kelime in sozluk" ng-click="modalgosterici('dictionary', {{$index}})">
+		<div class="button button-full button-clear" ng-repeat="kelime in sozluk | filter:sozlukara" ng-click="modalgosterici('dictionary', {{$index}})">
 			<p class="a8"> {{kelime.NAME}}</p>
 		</div>
 

@@ -163,6 +163,13 @@ localStorage.setItem('language', "tr");
         confirmPopup.then(function(res) {
             if (res) {
                 $scope.aktifmi = true;
+                var ServiceRequest = {
+                  service_type: "kursa_katil",
+                  user_id:"3",
+                  course_id:"3"
+                }
+
+                $http.post($rootScope.webServiceUrl, ServiceRequest)
             }
         });
     };
@@ -177,6 +184,13 @@ localStorage.setItem('language', "tr");
         confirmPopup.then(function(res) {
             if (res) {
                 $scope.aktifmi = false;
+                var ServiceRequest = {
+                  service_type: "kursu_iptal_et",
+                  user_id:"3",
+                  course_id:"3"
+                }
+
+                $http.post($rootScope.webServiceUrl, ServiceRequest)
             }
         });
     };
