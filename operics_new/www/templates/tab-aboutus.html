@@ -1,41 +1,44 @@
 <ion-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
 
   <!-- Hakkımızda Tab -->
- <div class="tabs-striped tabs-top tabs-background-light tabs-color-dark">
+  <div class="tabs-striped tabs-top tabs-background-light tabs-color-dark">
 
-      <div class="tabs">
+    <div class="tabs">
 
-      <a class="tab-item {{x!=0 ? '' :'active'}}" ng-click="tikla(x=0)" href="#/tab/aboutus">
-      Hizmetlerimiz
+      <a class="tab-item {{abouttab!=0 ? '' :'active'}}" ng-click="tiklaab(abouttab=0)" href="#/tab/aboutus">
+        Hizmetlerimiz
 
       </a>
-     <a class="tab-item {{x!=1 ? '' :'active'}}" ng-click="tikla(x=1)" href="#/tab/aboutus">
-        
-     Referanslar
-      </a>
-      <a class="tab-item {{x!=2 ? '' :'active'}}" ng-click="tikla(x=2)" href="#/tab/aboutus">
+      <a class="tab-item {{abouttab!=1 ? '' :'active'}}" ng-click="tiklaab(abouttab=1)" href="#/tab/aboutus">
+
+       Referanslar
+     </a>
+     <a class="tab-item {{abouttab!=2 ? '' :'active'}}" ng-click="tiklaab(abouttab=2)" href="#/tab/aboutus">
       Ekibimiz
-      </a>
-     </div>
-     </div>
-     </div>
-
-  <ion-content>
-
-
-<!-- Hizmetlerimiz Tab -->
- <br><br><br><br><br><br>
-
-<a ng-if="x==0" class="item item-body hk" href="#/tab/aboutusdetail" >
-  <img class="full-image i" src="img/hizmt/h1.png" >
-
-  <div class=""> <h2 align="center" >Analizler<hr width="100%" size="4" ></h2></div>
-    <p style="font-size: 12px;"align="center">
-      Sektöre yönelik analizlerimiz 
-      ile işinizi hızlı ve kolay bir şekilde geliştrimenizi sağlıyoruz.
-    </p>
+    </a>
   </div>
-</a> 
+</div>
+</div>
+
+<ion-content>
+ <br> <br>  <br>
+
+  <!-- Hizmetlerimiz Tab -->
+ 
+
+  <div ng-if="abouttab==0"  ng-repeat="hizmet in services" style="margin-top: 30px;"  ng-click="modal.show()" >
+
+    <div class="item item-body hk" >
+      <img class="full-image i" src="{{hizmet.ico}}" >
+
+      <div class=""> <h2 align="center" >{{hizmet.name}}<hr width="100%" size="4" ></h2></div>
+      <p style="font-size: 12px;"align="center">
+        {{hizmet.des}}
+      </p>
+    </div>
+  </div>
+  
+</div> 
 
 
 
@@ -43,42 +46,45 @@
 
 <!-- Referanslar Tab -->
 
+<div ng-if="abouttab==1" class="row ">
 
-<div ng-if="x==1" class="col">
-    <div class="col.col-50" ng-repeat="referans in references ">
-      <a class="item item-thumbnail- h" href="#">
-        <img class="rfr"src="{{referans.img}}">
-      </a>
+  <div class="col " style="margin-left: 45px;">
+    <br>
+    <div class="col.col-50 " ng-repeat="referans in referanslar ">
+      <div class="item item-thumbnail- h " style="border-radius:
+       17px !important;"href="#" ng-if="referans.ID%2!=0">
+        <img class="rfr " src="{{referans.REF_PHOTO}}">
+      </div>
+      <br>
     </div>
+  </div>
+  <div class="col ">
+    <div class="col.col-50 " ng-repeat="referans in referanslar ">
+      <div class="item item-thumbnail- h " style="border-radius:
+       17px !important;"href="#" ng-if="referans.ID%2==0">
+        <img class="rfr " src="{{referans.REF_PHOTO}}">
+      </div>
+      <br>
+    </div>
+  </div>
 </div>
 
 
-  <!-- Ekibimiz Tab -->
+<!-- Ekibimiz Tab -->
 
-
-<div ng-if="x==2" style="margin-top: -30px;"class="card rectangle groupi">
-<div class="item item-text-wrap">
-    <img class="im"src="img/ekb/ek1.jpg">
-    <h2><i class="ei">Şule Deniz</i></h2>
-    <h2><i class="es">Genel Müdür</i></h2>
-    <p class="ea">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği 
-bölümü mezunudur.</p>
-</div>
-</div>
-<br><br><br>
-
-<div ng-if="x==2" style="margin-top: -30px;"class="card rectangle groupi">
-<div class="item item-text-wrap">
-    <img class="im"src="img/ekb/ek2.png">
-    <h2><i class="ei">Ahmet Erkoç</i></h2>
-    <h2><i class="es">Eğitim Dİrektörü</i></h2>
-    <p class="ea">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği 
-bölümü mezunudur.</p>
-</div>
+<div ng-if="abouttab==2" ng-repeat="ekip in team" ng-click="modal.show()" style="margin-top: 30px;"class="card rectangle groupi">
+  <div class="item item-text-wrap ">
+    <img class="im"src="{{ekip.img}}">
+    <h2><i class="ei">{{ekip.name}}</i></h2>
+    <h2><i class="es">{{ekip.pos}}</i></h2>
+    <p class="ea">{{ekip.des}}</p>
+  </div>
 </div>
 
 
-  
+
+
+
 <br><br><br><br><br><br>
-  </ion-content>
+</ion-content>
 </ion-view>

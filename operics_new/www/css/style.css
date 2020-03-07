@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 .title-image {
-    margin-top: 4px;
-    height: 38px;
+  margin-top: 4px;
+  height: 38px;
 }
 
 .bg
@@ -18,17 +18,16 @@
 
 .h
 {
-  
   z-index: 3;
-  width: 91.46px;
-  height: 83.5px;
-  border-radius: 8px;
-  border: solid 0,5px #979797
-  background: #ffffff;
-  margin-left: 8px;
+  width: 102.46px;
+  height: 97.5px;
+  border-radius: 1px !important;
+  border: solid 0,5px #979797 background: #ffffff;
+  margin-left: -1px;
+  margin-top: 2%;
 }
 
-.r
+.storycircle
 {
   z-index: 3;
   width: 63.46px;
@@ -81,12 +80,15 @@
 
 .rfr
 {
-  max-inline-size: -webkit-fill-available;
-  min-block-size: -webkit-fill-available;
-  width: 137%;
-  margin-left: -3px;
-  margin-top: -9px;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ position: relative;
+ width: 100%;
+ margin-left: -1px;
+ margin-top: 7px;
 }
+
 
 .fnt
 {
@@ -96,7 +98,7 @@
 }
 .ed
 {
-      width: 101%;
+  width: 101%;
 }
 .im{
   position: absolute;
@@ -107,7 +109,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  }
+}
 
 .y {
   margin-left: 9px;
@@ -117,28 +119,28 @@
 }
 
 .imi{
-   z-index: 4;
-  width: 58.86px;
-  height: 58.62px;
-  border-radius: 31px;
+ z-index: 4;
+ width: 58.86px;
+ height: 58.62px;
+ border-radius: 31px;
 }
 
 .hk {
   z-index: 3;
   width: 60%;
   height: 226px;
-  border-radius: 8px;
+  border-radius: 15px;
   border: solid 0,5px #979797
   background: #ffffff;
   margin-left: 71px;
-  margin-top: -28px;
+  margin-top: 30px;
 
 }
 .hkd {
   z-index: 3;
   width: 79%;
   height: 516px;
-  border-radius: 8px;
+  border-radius: 26px;
   border: solid 0,5px #979797
   background: #ffffff;
   margin-left: 38px;
@@ -168,14 +170,15 @@
 }
 .ie{
   -webkit-user-drag: none;
-    width: 113%;
-    margin-top: -28px;
-    margin-left: -17px;
+  width: 113%;
+  margin-top: -28px;
+  margin-left: -17px;
 }
 .ie2{
 
   color: #FFFFFF;
-  margin-top: 76px;  margin-right: 190px;
+  margin-top: 76px;  
+  margin-right: 202px;
   background-color: red;
   border-radius: 0px !important;
 }
@@ -190,16 +193,16 @@
   line-height: 18px;
 }
 .item .badge + .badge {
-    margin-right: 76px;
-    width: 67%;
-    line-height: 18px;
+  margin-right: 76px;
+  width: 67%;
+  line-height: 18px;
 
 
-    
+
 }
 .icon
 {
-color: white;
+  color: white;
 }
 
 .groupi {
@@ -240,67 +243,22 @@ color: white;
   font-size: 22px;
   margin-left: 70px;
 }
-.r1{
 
-  z-index: 3;
-  width: 114px;
-  height: 103px;
-  border-radius: 8px;
-  border: solid 0,5px #979797
-  background: #ffffff;
-  margin-left: 34px;
 
-}
-
-.r2{
-
-  z-index: 3;
-  width: 114px;
-  height: 103px;
-  border-radius: 8px;
-  border: solid 0,5px #979797
-  background: #ffffff;
-  margin-left: 226px;
-  margin-top: -123px;
-}
-
-.r3{
-
-  z-index: 3;
-  width: 114px;
-  height: 103px;
-  border-radius: 8px;
-  border: solid 0,5px #979797
-  background: #ffffff;
-  margin-left: 34px;
-  margin-top: 70px;
-}
-
-.r4{
-
-  z-index: 3;
-  width: 114px;
-  height: 103px;
-  border-radius: 8px;
-  border: solid 0,5px #979797
-  background: #ffffff;
-  margin-left: 226px;
-  margin-top: -123px;
-}
 .obton{
 
- 
+
   width: 264px;
   height: 46.5px;
   border-radius: 23.25px;
   background: #e03121;
-margin-left: 51px;
+  margin-left: 51px;
 }
 
 
 .title-image1 {
-    margin-top: 4px;
-    height: 38px;
+  margin-top: 4px;
+  height: 38px;
 }
 
 
@@ -310,9 +268,9 @@ margin-left: 51px;
 
 
 
-font-size:25px;
-text-align:center;
-margin-top:15px;
+  font-size:25px;
+  text-align:center;
+  margin-top:15px;
 
 
 }
@@ -323,10 +281,10 @@ margin-top:15px;
 .rr{
 
 
-width:10%;
-margin-left:309px;
-margin-top:-72px;
-margin-block-end:9px;
+  width:10%;
+  margin-left:309px;
+  margin-top:-72px;
+  margin-block-end:9px;
 
 
 }
@@ -344,31 +302,26 @@ margin-block-end:9px;
 .a8{
 
 
-color:black;
-text-align:left;
-margin-left:20px;
+  color:black;
+  text-align:left;
+  margin-left:20px;
 
 
 }
 
-.item{
-
-border-radius:30px !important;
-
-
-}
 
 
 .profile{
-      border-radius: 130px !important;
-    width: 44%;
-    height: 117px;
-    margin-left: 28%;
+  border-radius: 130px !important;
+  width: 44%;
+  height: 117px;
+  margin-left: 28%;
 
 }
 .pi
 {
-    width: 420%;
-    margin-left: -316%;
-    margin-top: 10%;
+  width: 478%;
+  margin-left: -344%;
+  margin-top: -33%;
 }
+
