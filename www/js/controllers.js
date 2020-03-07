@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('MainCtrl', function($scope, $rootScope, $stateParams, $ionicModal, $http) {
+.controller('MainCtrl', function($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
 localStorage.setItem('language', "tr");
 
@@ -40,13 +40,13 @@ localStorage.setItem('language', "tr");
 
     $scope.stories = [
         {
-            head: 'Microsoft İş Güvenliği Danışmanlığı',
+            head: 'Arçelik İş Güvenliği Danışmanlığı',
             des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/3.png',
+            img: 'img/stories/1.png',
             id: 0
         },
         {
-            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
+            head: 'Microsoft İSG Eğitimleri',
             des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
             img: 'img/stories/2.png',
             id: 1
@@ -60,7 +60,7 @@ localStorage.setItem('language', "tr");
         },
 
         {
-            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
+            head: 'Turkcell İSG Eğitimleri',
             des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
             img: 'img/stories/4.png',
             id: 3
@@ -93,7 +93,7 @@ localStorage.setItem('language', "tr");
     }
     // Yeni user isteği post edilir ve veritabanına eklenir.
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-            $scope.sozluk= data[0]
+            $scope.sozluk= data
     })
     
         
@@ -238,21 +238,6 @@ localStorage.setItem('language', "tr");
         }
     ];
         
-    $scope.headlines = [
-        { name: 'Müşteri Hikayeleri', id: 0 },
-        { name: 'Hizmetlerimiz', id: 1 },
-        { name: 'Referanslar', id: 2 },
-        { name: 'Ekibimiz', id: 3 }
-    ];
-
-    $scope.tabs = [
-        { name: 'Ana Sayfa', id: 0 },
-        { name: 'Hakkımızda', id: 1 },
-        { name: 'Eğitimlermiz', id: 2 },
-        { name: 'Sözlük', id: 3 },
-        { name: 'İletişim', id: 4 },
-        { name: 'Profilim', id: 5 }
-    ];
     
    
     

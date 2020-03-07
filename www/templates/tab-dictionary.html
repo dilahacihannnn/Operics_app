@@ -1,6 +1,7 @@
 <ion-view view-title='<img class="title-image1" src="img/logo.PNG"/ >'>
 
 
+
 	<ion-content>
 
 		<div class="all">Sözlük </div>
@@ -21,37 +22,9 @@
 
 		<br>
 
-		<a class="button button-full button-clear" href="#/tab/dictionarydetail">
-			<p class="a8"> Abnormal Situantion</p>
-		</a>
-
-		<button class="button button-full button-clear">
-			<p class="a8"> Abort</p>
-		</button>
-
-		<button class="button button-full button-clear">
-			<p class="a8"> Absolute Application(of CPRQA)</p>
-		</button>
-
-		<button class="button button-full button-clear">
-			<p class="a8"> Absorption</p>
-		</button>
-
-		<button class="button button-full button-clear">
-			<p class="a8"> Acceleration Rate Calorimetry(ARC)</p>
-		</button>
-
-		<button class="button button-full button-clear">
-			<p class="a8"> Acceleration Test</p>
-		</button>
-
-		<button class="button button-full button-clear">
-			<p class="a8"> Acceptable Risk</p>
-		</button>
-
-		<button class="button button-full button-clear">
-			<p class="a8"> Acceptance</p>
-		</button>
+		<div class="button button-full button-clear" ng-repeat="kelime in sozluk" ng-click="modalgosterici('dictionary', {{$index}})">
+			<p class="a8"> {{kelime.NAME}}</p>
+		</div>
 
 
 

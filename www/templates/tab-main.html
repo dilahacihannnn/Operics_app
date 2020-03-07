@@ -11,7 +11,7 @@
 
     <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x">
       <div class="row" >
-        <a style="border-color: red;border-width: 2px;margin-right: 4px;"class=" col.col-25 item item-avatarim storycircle" ng-repeat="story in stories" ng-click="modalgosterici('story','2')">
+        <a style="border-color: red;border-width: 2px;margin-right: 4px;"class=" col.col-25 item item-avatarim storycircle" ng-repeat="story in stories" ng-click="modalgosterici('story', {{$index}})">
          <img class="m"src="{{story.img}}">
        </a>  
      </div>
@@ -27,7 +27,7 @@
    <ion-scroll scrollbar-x="false" style="overflow-x: hidden;"  direction="x">
     <div class="row" >
       <div class="col.col-25 item item-thumbnail- h" ng-repeat="servis in services" style="border-radius: 17px !important;
-      margin-right: 14px; "ng-click="modalgosterici('service','2')">
+      margin-right: 14px;" ng-click="modalgosterici('service',{{$index}})">
       <img class="hiz"src="{{servis.ico}}">
       <p align="center">{{servis.name}}</p>
     </div>
@@ -52,7 +52,7 @@
 
 <ion-scroll scrollbar-x="false" style="overflow-x: hidden; " direction="x">
   <div class="row">
-    <div ng-repeat="ekip in team" ng-click="modalgosterici('team','2')" class="card group col-75" style="margin-right: 22px;">
+    <div ng-repeat="ekip in team" ng-click="modalgosterici('team',{{$index}})" class="card group col-75" style="margin-right: 22px;">
       <div class="item item-avatarim" >
         <img class="im" src="{{ekip.img}}">
         <font style="text-align: center;"><h2>{{ekip.name}}</h2>

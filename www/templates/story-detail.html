@@ -6,22 +6,17 @@
     </ion-header-bar>
 
   <ion-content>
-  
     <h4 align="center">Müşteri Hikayeleri</h4>
     <a class="item item-body" >
      <i class="list card">
        <div style="border-color: red;border-width: 2px;"class="item item-avatar profile ">
-         <img class="pi"src="img/references/4.png">
+         <img class="pi"src="{{stories[itemId].img}}">
        </i>
      </div>
 
-     <h2 align="center" style="font-size: 22px;">Microsoft İş Güvenliği <br>Danışmanlığı</h2>
+     <h2 align="center" style="font-size: 22px;">{{stories[itemId].head}}</h2>
      <br>
-     <p style="font-size: 15px;"align="center">10 yıldan fazla sektör tecrübesine sahiptir. Bilgisiyar mühendisliği bölümü mezunudur.<br><br>
-
-      Marmara Üniversitesi İktisat Bölümünde Yüksek Lisans yapmıştır. <br><br>
-
-    5 yıl Amerika Birleşik Devletlerinde yaşamıştır.</p>
+     <p style="font-size: 15px;"align="center">{{stories[itemId].des}}</p>
 
   </div>
   
