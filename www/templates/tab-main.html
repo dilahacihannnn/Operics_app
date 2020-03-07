@@ -1,6 +1,5 @@
 <ion-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
 
-
   <ion-content class="padding">
 
 
@@ -11,6 +10,7 @@
 
     <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x">
       <div class="row" >
+
         <a style="border-color: red;border-width: 2px;margin-right: 4px;"class=" col.col-25 item item-avatarim storycircle" ng-repeat="story in hikayeler" ng-click="modalgosterici('story', {{$index}})">
          <img class="m"src="{{story.STR_IMAGE}}">
        </a>  
@@ -26,7 +26,7 @@
       <div class="col.col-25 item item-thumbnail- h" ng-repeat="servis in hizmetler" style="border-radius: 17px !important;
       margin-right: 14px;" ng-click="modalgosterici('service',{{$index}})">
       <img class="hiz"src="{{servis.SERVICE_IMAGE}}">
-      <p align="center">{{servis.NAME}}</p>
+      <p align="center">{{servis.SERVICE_NAME}}</p>
     </div>
   </div>
 </ion-scroll>
@@ -55,11 +55,12 @@
         <font style="text-align: center;"><h2>{{takim.NAME}}</h2>
           <p>{{takim.POSITION}}</p></font>
           <p style="margin-left: 55px;">{{takim.ABOUT}}.</p>  
+
         </div>
       </div>
     </div>
   </ion-scroll>
-  
+
 
 
 
