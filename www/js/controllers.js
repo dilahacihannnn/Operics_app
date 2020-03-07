@@ -53,7 +53,16 @@ localStorage.setItem('language', "tr");
     }
     // Yeni user isteği post edilir ve veritabanına eklenir.
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-      $scope.hizmetler= data
+      $scope.hizmetler = data
+    })
+
+    var ServiceRequest = {
+        service_type: "ekip",
+        language: localStorage.getItem('language')
+    }
+    // Yeni user isteği post edilir ve veritabanına eklenir.
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+            $scope.ekip = data
     })
 
     var ServiceRequest = {
@@ -171,57 +180,6 @@ localStorage.setItem('language', "tr");
             }
         });
     };
-
-        
-    $scope.team = [
-        {
-            name: 'Şule Deniz',
-            pos: 'Genel Müdür',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/team/1.png',
-            id: 0
-        },
-        {
-            name: 'Ahmet Erkoç',
-            pos: 'Eğitim Direktörü',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/team/2.png',
-            id: 1
-        },
-        {
-            name: 'Damla Erol',
-            pos: 'İK Uzmanı',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/team/3.png',
-            id: 2
-        }
-    ];
-
-
-    $scope.services = [
-        {
-            name: 'Analizler',
-            des: 'Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin.',
-            detdes: 'Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin. Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin.',
-            ico: 'img/services/1.png',
-            id: 0
-        },
-        {
-            name: 'İSG Danışmanlık',
-            des: 'Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin.',
-            detdes: 'Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin. Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin.',
-            ico: 'img/services/2.png',
-            id: 1
-        },
-        {
-            name: 'Destek',
-            des: 'Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin.',
-            detdes: 'Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin. Sektöre yönelik analizlerimiz ile işinizi hızlı ve kolay şekilde gelişin.',
-            ico: 'img/services/3.png',
-            id: 2
-        }
-    ];
-        
     
    
     
