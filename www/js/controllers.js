@@ -42,6 +42,54 @@ localStorage.setItem('language', "tr");
         console.log($scope.abouttab);
     };
 
+    $scope.modalgosterici = function(tur, id){
+      $scope.itemId = id;
+        
+      switch(tur){
+
+        case 'service':
+          $ionicModal.fromTemplateUrl('templates/service-detail/.html', {scope: $scope}).then(function(modal) {
+            $scope.modal = modal;
+          });
+        break;
+
+        case 'course':
+          $ionicModal.fromTemplateUrl('templates/course-detail.html', {scope: $scope}).then(function(modal) {
+            $scope.modal = modal;
+          })
+        break;
+
+        case 'story':
+          $ionicModal.fromTemplateUrl('templates/story-detail.html', {scope: $scope}).then(function(modal) {
+            $scope.modal = modal;
+          });
+        break;
+
+        case 'profile':
+          $ionicModal.fromTemplateUrl('templates/profile-detail.html', {scope: $scope}).then(function(modal) {
+            $scope.modal = modal;
+          });
+        break;
+
+        case 'team':
+          $ionicModal.fromTemplateUrl('templates/team-detail.html', {scope: $scope}).then(function(modal) {
+            $scope.modal = modal;
+          });
+        break;
+
+        case 'dictionary':
+          $ionicModal.fromTemplateUrl('templates/dictionary-detail.html', {scope: $scope}).then(function(modal) {
+            $scope.modal = modal;
+          });
+        break;
+      }
+
+    };
+
+    $scope.extendstory = function() {        
+        $scope.modal.hide();
+    };
+
     // Onay kutusu
     $scope.ConfirmApplication = function() {
         var confirmPopup = $ionicPopup.alert({
@@ -69,6 +117,7 @@ localStorage.setItem('language', "tr");
             }
         });
     };
+
    
 
     $scope.stories = [
@@ -102,24 +151,7 @@ localStorage.setItem('language', "tr");
 
     ];
 
-   
-  
-
-    $scope.modalgosterici = function(tur, id){
-       
-        $ionicModal.fromTemplateUrl('templates/detail.html', {scope: $scope}).then(function(modal) {
-        $scope.modal = modal;
-
-        });
-
-
-
-
-    };
-
-    $scope.extendstory = function() {        
-        $scope.modal.hide();
-    };
+    
 
     
            
