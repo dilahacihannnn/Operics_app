@@ -29,9 +29,14 @@
     <br>
     <h4 style="font-size: 23px;"class="ion-calendar y"><font style="margin-left: 10px;font-size: 19px;">12.03.2020 - 12.06.2020 </font></h4>
     <br><br>
-    <button class="button button-assertive obton">
-      Ön Başvuru Yap
-    </button>
+    
+    <div ng-if="aktifmi">
+      <button ng-click="CancelApplication()" class="button button-assertive obton">Ön Başvuruyu İptal Et</button>
+    </div>
+
+    <div ng-if="!aktifmi">
+      <button ng-click="ConfirmApplication()" class="button button-assertive obton">Ön Başvuru Yap</button>
+    </div>F
 
 
   </ion-content>

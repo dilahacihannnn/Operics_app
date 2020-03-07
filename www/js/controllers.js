@@ -25,10 +25,6 @@ localStorage.setItem('language', "tr");
         $scope.egitimler = data
     })
     
-    $scope.coursedetail = $stateParams.courseId;
-    
-    
-
     var ServiceRequest = {
         service_type: "sozluk",
         language: localStorage.getItem('language')
@@ -37,22 +33,42 @@ localStorage.setItem('language', "tr");
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
             $scope.sozluk= data[0]
     })
-
-    $scope.sozlukdetail = $stateParams.sozlukId;
     
         
 
     $scope.abouttab = 0;
-    $scope.bottomtab = 0;
 
     $scope.tiklaab=function() {
         console.log($scope.abouttab);
     };
 
-    $scope.tiklabot=function() {
-        console.log($scope.bottomtab);
+    // Onay kutusu
+    $scope.ConfirmApplication = function() {
+        var confirmPopup = $ionicPopup.alert({
+            title: "Başarılı",
+            template: "Sn. Ahmet Yılmaz “Endüstriyel Tasarımlar ve Teknikler Eğitimi için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
+        });
+
+        confirmPopup.then(function(res) {
+            if (res) {
+                $scope.aktifmi = true;
+            }
+        });
     };
-    
+
+    // A confirm dialog
+    $scope.CancelApplication = function() {
+        var confirmPopup = $ionicPopup.alert({
+            title: "İptal Edildi",
+            template: "İptal onaylanmıştır."
+        });
+
+        confirmPopup.then(function(res) {
+            if (res) {
+                $scope.aktifmi = false;
+            }
+        });
+    };
    
 
     $scope.stories = [
