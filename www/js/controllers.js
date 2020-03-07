@@ -166,7 +166,7 @@ localStorage.setItem('language', "tr");
                 var ServiceRequest = {
                   service_type: "kursa_katil",
                   user_id:"3",
-                  course_id:"3"
+                  course_id:"2"
                 }
 
                 $http.post($rootScope.webServiceUrl, ServiceRequest)
@@ -187,7 +187,7 @@ localStorage.setItem('language', "tr");
                 var ServiceRequest = {
                   service_type: "kursu_iptal_et",
                   user_id:"3",
-                  course_id:"3"
+                  course_id:"2"
                 }
 
                 $http.post($rootScope.webServiceUrl, ServiceRequest)
