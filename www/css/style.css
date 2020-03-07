@@ -10,7 +10,6 @@
 }
 
 .m{
-  min-block-size: -webkit-fill-available;
   width: 273%;
   margin-left: -24px;
   margin-top: -24px;
@@ -22,7 +21,8 @@
   width: 102.46px;
   height: 97.5px;
   border-radius: 1px !important;
-  border: solid 0,5px #979797 background: #ffffff;
+  border: solid 0.5px #979797;
+  background: #ffffff;
   margin-left: -1px;
   margin-top: 2%;
 }
@@ -33,7 +33,7 @@
   width: 63.46px;
   height: 63.5px;
   border-radius: 89px !important;
-  border: solid 0,9px #979797
+  border: solid 0.9px #979797;
   background: #ffffff;
   margin-left: 8px;
 }
@@ -166,7 +166,7 @@
 .tabs
 {
   background-color: black;
-  height: 8%;  
+  height: 8%;
 }
 .ie{
   -webkit-user-drag: none;
@@ -177,7 +177,7 @@
 .ie2{
 
   color: #FFFFFF;
-  margin-top: 76px;  
+  margin-top: 76px;
   margin-right: 202px;
   background-color: red;
   border-radius: 0px !important;
@@ -222,7 +222,7 @@
  background: #ffffff;
  box-shadow: 0px 10px10px rgba(0,0,0,0.1);
  border-bottom: inset;
- 
+
 }
 
 .ea {
