@@ -6,12 +6,74 @@ localStorage.setItem('language', "tr");
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php" 
 
+    $scope.doLogin = function() {
+    // post edilecek ServiceRequest isimli değişken tanımlanır,
+        var ServiceRequest = {
+            service_type: "giris",
+            email:$scope.loginData.email,
+            sifre: $scope.loginData.password
+        }
+    // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
+        $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
+            $scope.giris= data
+        })   
+    };
+
+    $scope.registerUser = function() {
+
+        var ServiceRequest = {
+            service_type: "",
+            name: "Deneme isim ve soyisim",
+            sifre: "123456",
+            email: "E posta adresi",
+            phone: "05551234567",
+            photo: "img/deneme.jpg",
+            user_type: "genel",
+            department: "Satış Departmanı",
+            job: "Satış Sorumlusu"
+        }
+        // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
+        $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
+            $scope.kullanici= data
+        })
+    };
+
+    $scope.stories = [
+        {
+            head: 'Microsoft İş Güvenliği Danışmanlığı',
+            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
+            img: 'img/stories/3.png',
+            id: 0
+        },
+        {
+            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
+            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
+            img: 'img/stories/2.png',
+            id: 1
+        },
+
+        {
+            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
+            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
+            img: 'img/stories/3.png',
+            id: 2
+        },
+
+        {
+            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
+            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
+            img: 'img/stories/4.png',
+            id: 3
+        }
+
+    ];
+
     var ServiceRequest = {
         service_type: "referanslar",
         language: localStorage.getItem('language')
     }
         // Yeni user isteği post edilir ve veritabanına eklenir.
-     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
         $scope.referanslar= data
         $scope.parameter= data.ID
     })
@@ -21,7 +83,7 @@ localStorage.setItem('language', "tr");
         language: localStorage.getItem('language')
     }
         // Yeni user isteği post edilir ve veritabanına eklenir.
-        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
         $scope.egitimler = data
     })
     
@@ -49,37 +111,43 @@ localStorage.setItem('language', "tr");
         case 'service':
           $ionicModal.fromTemplateUrl('templates/service-detail/.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
+            $scope.modal.show();     
           });
         break;
 
         case 'course':
           $ionicModal.fromTemplateUrl('templates/course-detail.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
+            $scope.modal.show();
           })
         break;
 
         case 'story':
           $ionicModal.fromTemplateUrl('templates/story-detail.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
+            $scope.modal.show();
           });
         break;
 
         case 'profile':
           $ionicModal.fromTemplateUrl('templates/profile-detail.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
+            $scope.modal.show();
           });
         break;
 
         case 'team':
           $ionicModal.fromTemplateUrl('templates/team-detail.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
+            $scope.modal.show();
           });
         break;
 
         case 'dictionary':
           $ionicModal.fromTemplateUrl('templates/dictionary-detail.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
-          });
+            $scope.modal.show();         
+        });
         break;
       }
 
@@ -118,39 +186,6 @@ localStorage.setItem('language', "tr");
     };
 
    
-
-    $scope.stories = [
-        {
-            head: 'Microsoft İş Güvenliği Danışmanlığı',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/3.png',
-            id: 0
-        },
-        {
-            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/2.png',
-            id: 1
-        },
-
-        {
-            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/3.png',
-            id: 2
-        },
-
-        {
-            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/4.png',
-            id: 3
-        }
-        
-
-    ];
-
-    
 
     
            
