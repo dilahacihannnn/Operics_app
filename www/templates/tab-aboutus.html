@@ -26,7 +26,7 @@
   <!-- Hizmetlerimiz Tab -->
  
 
-  <div ng-if="abouttab==0"  ng-repeat="hizmet in services" style="margin-top: 30px;"  ng-click="modal.show()" >
+  <div ng-if="abouttab==0"  ng-repeat="hizmet in services" style="margin-top: 30px;"  ng-click="modalgosterici('service','2')" >
 
     <div class="item item-body hk" >
       <img class="full-image i" src="{{hizmet.ico}}" >
@@ -72,7 +72,7 @@
 
 <!-- Ekibimiz Tab -->
 
-<div ng-if="abouttab==2" ng-repeat="ekip in team" ng-click="modal.show()" style="margin-top: 30px;"class="card rectangle groupi">
+<div ng-if="abouttab==2" ng-repeat="ekip in team" ng-click="modalgosterici('team','2')" style="margin-top: 30px;"class="card rectangle groupi">
   <div class="item item-text-wrap ">
     <img class="im"src="{{ekip.img}}">
     <h2><i class="ei">{{ekip.name}}</i></h2>
