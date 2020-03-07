@@ -35,7 +35,6 @@ localStorage.setItem('language', "tr");
     })
     
         
-
     $scope.abouttab = 0;
 
     $scope.tiklaab=function() {
