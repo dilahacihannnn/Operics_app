@@ -38,7 +38,7 @@ localStorage.setItem('language', "tr");
         })
     };
 
-    $scope.stories = [
+    /*$scope.stories = [
         {
             head: 'Arçelik İş Güvenliği Danışmanlığı',
             des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
@@ -66,7 +66,16 @@ localStorage.setItem('language', "tr");
             id: 3
         }
 
-    ];
+    ];*/
+
+    var ServiceRequest = {
+        service_type: "hikayeler",
+        language: localStorage.getItem('language')
+    }
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+        $scope.hikayeler= data
+    })
 
     var ServiceRequest = {
         service_type: "referanslar",

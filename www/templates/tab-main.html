@@ -11,8 +11,8 @@
 
     <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x">
       <div class="row" >
-        <a style="border-color: red;border-width: 2px;margin-right: 4px;"class=" col.col-25 item item-avatarim storycircle" ng-repeat="story in stories" ng-click="modalgosterici('story', {{$index}})">
-         <img class="m"src="{{story.img}}">
+        <a style="border-color: red;border-width: 2px;margin-right: 4px;"class=" col.col-25 item item-avatarim storycircle" ng-repeat="story in hikayeler" ng-click="modalgosterici('story', {{$index}})">
+         <img class="m"src="{{story.STR_IMAGE}}">
        </a>  
      </div>
    </ion-scroll>
