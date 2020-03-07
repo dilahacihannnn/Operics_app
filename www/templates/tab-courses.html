@@ -6,11 +6,13 @@
 
 
 <div  ng-repeat="egitim in egitimler" ng-click="modal.show()">
-<div class="card rectangle groupi">
-<div class="item item-text-wrap">
-   <img class="ie"src="{{egitim.CRS_PHOTO}}">
-   <span class="badge badge-orange ie2" >{{egitim.CRS_BEGINDATE}}</span>
-   <span class="badge badge-orange ie3">{{egitim.CRS_NAME}}</span>
+<div class="card ie">
+<div style="background: url('{{egitim.CRS_PHOTO}}'); height: 250px" class="item item-text-wrap">
+  <div style="margin-top: 150px;">
+	  <span style="background-color: red; color: white; max">{{egitim.CRS_BEGINDATE}}</span>
+	  <br>
+	  <span style="background-color: black; color: white;">{{egitim.CRS_NAME}}</span>
+	</div>
 </div>
 </div>
 </div>
