@@ -109,7 +109,7 @@ localStorage.setItem('language', "tr");
       switch(tur){
 
         case 'service':
-          $ionicModal.fromTemplateUrl('templates/service-detail/.html', {scope: $scope}).then(function(modal) {
+          $ionicModal.fromTemplateUrl('templates/service-detail.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
             $scope.modal.show();     
           });
