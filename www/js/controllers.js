@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 
 localStorage.setItem('language', "tr");
 
-    $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php" 
+    $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
 
     $scope.doLogin = function() {
     // post edilecek ServiceRequest isimli değişken tanımlanır,
@@ -16,7 +16,7 @@ localStorage.setItem('language', "tr");
     // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
         $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
             $scope.giris= data
-        })   
+        })
     };
 
     $scope.registerUser = function() {
@@ -86,7 +86,7 @@ localStorage.setItem('language', "tr");
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
         $scope.egitimler = data
     })
-    
+
     var ServiceRequest = {
         service_type: "sozluk",
         language: localStorage.getItem('language')
@@ -95,8 +95,8 @@ localStorage.setItem('language', "tr");
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
             $scope.sozluk= data
     })
-    
-        
+
+
     $scope.abouttab = 0;
 
     $scope.tiklaab=function() {
@@ -105,13 +105,13 @@ localStorage.setItem('language', "tr");
 
     $scope.modalgosterici = function(tur, id){
       $scope.itemId = id;
-        
+
       switch(tur){
 
         case 'service':
           $ionicModal.fromTemplateUrl('templates/service-detail.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
-            $scope.modal.show();     
+            $scope.modal.show();
           });
         break;
 
@@ -146,14 +146,14 @@ localStorage.setItem('language', "tr");
         case 'dictionary':
           $ionicModal.fromTemplateUrl('templates/dictionary-detail.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
-            $scope.modal.show();         
+            $scope.modal.show();
         });
         break;
       }
 
     };
 
-    $scope.extendstory = function() {        
+    $scope.extendstory = function() {
         $scope.modal.hide();
     };
 
@@ -185,10 +185,10 @@ localStorage.setItem('language', "tr");
         });
     };
 
-   
 
-    
-           
+
+
+
     $scope.team = [
         {
             name: 'Şule Deniz',
@@ -237,10 +237,10 @@ localStorage.setItem('language', "tr");
             id: 2
         }
     ];
-        
-    
-   
-    
+
+
+
+
 });
 
 
