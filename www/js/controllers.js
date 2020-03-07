@@ -34,39 +34,9 @@ localStorage.setItem('language', "tr");
         }
         // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
         $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
-            $scope.kullanici= data
+            $scope.kullanici = data
         })
     };
-
-    /*$scope.stories = [
-        {
-            head: 'Arçelik İş Güvenliği Danışmanlığı',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/1.png',
-            id: 0
-        },
-        {
-            head: 'Microsoft İSG Eğitimleri',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/2.png',
-            id: 1
-        },
-
-        {
-            head: 'Yıldız Teknik Üniversitesi İSG Eğitimleri',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/3.png',
-            id: 2
-        },
-
-        {
-            head: 'Turkcell İSG Eğitimleri',
-            des: '10 Yıldan fazla sektör tecrübesine sahiptir. Bilgisayar mühendisliği bölümü mezunudur.',
-            img: 'img/stories/4.png',
-            id: 3
-        }
-
-    ];*/
 
     var ServiceRequest = {
         service_type: "hikayeler",
@@ -74,7 +44,16 @@ localStorage.setItem('language', "tr");
     }
         // Yeni user isteği post edilir ve veritabanına eklenir.
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-        $scope.hikayeler= data
+        $scope.hikayeler = data
+    })
+
+    var ServiceRequest = {
+      service_type: "hizmetler",
+      language: localStorage.getItem('language')
+    }
+    // Yeni user isteği post edilir ve veritabanına eklenir.
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+      $scope.hizmetler= data
     })
 
     var ServiceRequest = {
@@ -83,8 +62,7 @@ localStorage.setItem('language', "tr");
     }
         // Yeni user isteği post edilir ve veritabanına eklenir.
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-        $scope.referanslar= data
-        $scope.parameter= data.ID
+        $scope.referanslar = data
     })
 
     var ServiceRequest = {
@@ -194,10 +172,7 @@ localStorage.setItem('language', "tr");
         });
     };
 
-   
-
-    
-           
+        
     $scope.team = [
         {
             name: 'Şule Deniz',

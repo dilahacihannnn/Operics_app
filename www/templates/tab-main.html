@@ -21,15 +21,15 @@
    
 
 
-
+   Gelen Hizmet : {{hizmetler}}
    <h3 class="fnt">Hizmetlerimiz</h3>
 
    <ion-scroll scrollbar-x="false" style="overflow-x: hidden;"  direction="x">
     <div class="row" >
-      <div class="col.col-25 item item-thumbnail- h" ng-repeat="servis in services" style="border-radius: 17px !important;
+      <div class="col.col-25 item item-thumbnail- h" ng-repeat="servis in hizmetler" style="border-radius: 17px !important;
       margin-right: 14px;" ng-click="modalgosterici('service',{{$index}})">
-      <img class="hiz"src="{{servis.ico}}">
-      <p align="center">{{servis.name}}</p>
+      <img class="hiz"src="{{servis.SERVICE_IMAGE}}">
+      <p align="center">{{servis.DESCRIPTION}}</p>
     </div>
   </div>
 </ion-scroll>
