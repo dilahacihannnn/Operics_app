@@ -4,14 +4,11 @@
 
 
     <!-- Anasayfa Tab -->
-
-
-    <h3 class="fnt">Müşteri Hikayeleri</h3>
-
-    <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x">
+<br>
+<h3 class="fnt">Müşteri Hikayeleri</h3>
+ <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x">
       <div class="row" >
-
-        <div class="col" ng-repeat="story in hikayeler" ng-click="modalgosterici('story', {{$index}})">
+      <div class="col" ng-repeat="story in hikayeler" ng-click="modalgosterici('story', {{$index}})">
          <img style="border-color: red;border-width: 1.9px;margin-right: -9px;" class="item item-avatarim storycircle" src="{{story.STR_IMAGE}}">
        </div>  
      </div>
