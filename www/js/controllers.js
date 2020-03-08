@@ -195,7 +195,7 @@ localStorage.setItem('language', "tr");
         });
     };
 
-},
+});
 
 
 
