@@ -21,7 +21,7 @@
   width: 102.46px;
   height: 97.5px;
   border-radius: 1px !important;
-  border: solid 0.5px ##e5e5e5;
+  border: solid 0.5px #e5e5e5;
   background: #ffffff;
   margin-left: -1px;
   margin-top: 2%;
@@ -129,7 +129,7 @@
   width: 60%;
   height: 226px;
   border-radius: 15px;
-  border: solid 0,5px #979797
+  border: solid 0.5px #979797;
   background: #ffffff;
   margin-left: 71px;
   margin-top: 30px;
@@ -140,7 +140,7 @@
   width: 79%;
   height: 516px;
   border-radius: 26px;
-  border: solid 0,5px #979797
+  border: solid 0.5px #979797;
   background: #ffffff;
   margin-left: 38px;
   margin-top: -56px;
@@ -217,9 +217,9 @@
  margin-left: 24px;
  border-radius: 26px;
  border-radius: 12px;
- border: solid 0,5px #e2e2e2
+ border: solid 0.5px #e2e2e2;
  background: #ffffff;
- box-shadow: 0px 10px10px rgba(0,0,0,0.1);
+ box-shadow: 0px 10px rgba(0,0,0,0.1);
  border-bottom: inset;
 
 }
