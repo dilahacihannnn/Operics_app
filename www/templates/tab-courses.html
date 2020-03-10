@@ -5,7 +5,7 @@
 <h4 align="center">Eğitimlerimiz</h4>
 
 
-<div  ng-repeat="egitim in egitimler" ng-click="modal.show()">
+<div  ng-repeat="egitim in egitimler" ng-click="modalgosterici('course',{{$index}})">
 <div class="card" style="border-radius: 13px;">
 <div class=""style="background: url('{{egitim.CRS_PHOTO}}'); height: 75px;" class="item item-text-wrap">
   <div style="margin-top: 150px;">
