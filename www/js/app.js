@@ -92,7 +92,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-   .state('tab.contact', {
+  
+  .state('tab.contact', {
     url: '/contact',
     views: {
       'tab-contact': {
@@ -101,7 +102,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-.state('tab.account', {
+  .state('tab.account', {
     url: '/account',
     views: {
       'tab-account': {
