@@ -23,10 +23,13 @@
 		<br>
 
 		<div class="button button-full button-clear" ng-repeat="kelime in sozluk | filter:sozlukara" ng-click="modalgosterici('dictionary', {{$index}})">
-			<p class="a8"> {{kelime.NAME}}</p>
+			<p class="a8"> {{kelime.TR}} - {{kelime.LOGIN_ID==1 ? "favori" : "değil"}}</p>
 		</div>
 
 
+
+  </ion-content>
+</ion-view>
 
 
 

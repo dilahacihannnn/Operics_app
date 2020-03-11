@@ -85,6 +85,7 @@ localStorage.setItem('language', "tr");
 
     var ServiceRequest = {
         service_type: "sozluk",
+        login_id:"1",
         language: localStorage.getItem('language')
     }
     // Yeni user isteği post edilir ve veritabanına eklenir.
