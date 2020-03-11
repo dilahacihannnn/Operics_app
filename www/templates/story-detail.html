@@ -6,10 +6,30 @@
     </ion-header-bar>
 
   <ion-content>
-    <h4 align="center">Müşteri Hikayeleri</h4>
+
+
+     <h4 align="center">Müşteri Hikayeleri</h4>
+    <br>
+    <br>
+    <br>
+    <div class="item item-body hkd" >
+      <i class="list card ">
+        <div style="border-color: red;border-width: 2px;"class="item item-avatar profile ">
+         <img class="pi"src="{{hikayeler[itemId].STR_IMAGE}}">
+       </i>
+     </div>
+
+     <h2 align="center" style="font-size: 21px;">{{hikayeler[itemId].STR_HEAD}}</h2>
+     <br>
+     <p style="font-size: 15px;"align="center">{{hikayeler[itemId].STR_DESCRIPTION}}
+
+      
+    </div>
+
+   <!-- <h4 align="center">Müşteri Hikayeleri</h4>
     <a class="item item-body " >
      <i class="list card">
-       <div style="border-color: red;border-width: 2px;"class="item item-avatar profile ">
+       <div style="border-color: red;border-width: 2px;"class="item item-avatar profile2 ">
          <img class="pi"src="{{hikayeler[itemId].STR_IMAGE}}">
        </i>
      </div>
@@ -18,7 +38,7 @@
      <br>
      <p style="font-size: 15px;"align="center">{{hikayeler[itemId].STR_DESCRIPTION}}</p>
 
-  </div>
+  </div> -->
   
 </ion-content>
 </ion-modal-view>

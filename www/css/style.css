@@ -319,9 +319,9 @@
 }
 .pi
 {
-  width: 493%;
-  margin-left: -344%;
-  margin-top: -59%;
+  width: 468%;
+    margin-left: -350%;
+    margin-top: -44%;
 }
 
 .ic{
@@ -331,3 +331,10 @@
     font-size: 33px;
 }
 
+.profile2
+{
+  border-radius: 130px !important;
+    width: 39%;
+    height: 133px;
+    margin-left: 28%;
+}
