@@ -335,3 +335,195 @@
   height: 133px;
   margin-left: 28%;
 }
+
+
+
+.ikk{
+
+
+  width: 30%;
+    margin-left: 110px;
+    margin-top: 37px;
+
+  
+}
+
+
+.kart{
+
+
+
+  border-radius:60px;
+  width: 263px;
+    margin-left: 26px;
+    height: 46px;
+  
+}
+
+
+.si{
+
+margin: -16px 88px 10px;
+ font-family: Bahnschrift Light;
+ margin-left: 83px;
+ font-size:18px;
+
+
+
+}
+
+
+.in{
+
+font-size:14px;
+
+
+
+}
+
+
+
+
+
+
+  .b4{
+
+border-radius: 100px !important;
+margin-left:33px !important;
+width:250px !important;
+
+
+
+}
+
+
+.say{
+
+font-size:20px;
+color:black;
+
+
+
+}
+
+
+.kd{
+
+  border-radius: 100px;
+  margin-block-end: inherit;
+  height:64px;
+  
+}
+
+
+
+
+.beton1{
+
+border-radius: 100px;
+margin-left:33px;
+width:250px;
+height:32px !important;
+background-color:white !important;
+border-color:black !important;
+
+
+}
+
+.beton2{
+
+border-radius: 100px;
+margin-left:33px;
+width:250px;
+border-color:black;
+
+
+
+
+}
+
+.l1{
+    width: 70px;
+    height: 42px;
+    margin-left: 56px;
+
+
+
+
+
+}
+
+.l2{
+ width: 70px;
+ height: 42px;
+ margin-left:25px;
+
+}
+
+
+.l3{
+
+
+  width: 70px;
+  height: 42px;
+  margin-left:23px;
+
+}
+
+
+.title-image {
+    margin-top: 4px;
+    height: 38px;
+}
+
+
+.pp{
+
+
+text-align:center;
+margin-left:-14px;
+font-family:Bahnschrift Light;
+font-size:18px;
+margin-top:-8px;
+
+
+
+}
+
+
+
+.dil{
+
+
+color:black;
+margin-top:2px;
+
+
+
+}
+
+.button-bar{
+
+
+background-color:white !important;
+border-color:black !important;
+    box-shadow: inset 15px 15px black !important;
+
+
+
+}
+
+
+.mi{
+
+
+
+ width: 10%;
+}
+.kh{
+
+background-color:lightgray;
+
+
+
+}
