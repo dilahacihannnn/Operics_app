@@ -92,15 +92,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-    .state('tab.log', {
-    url: '/log',
-    views: {
-      'tab-log': {
-        templateUrl: 'templates/tab-log.html',
-        controller: 'MainCtrl'
-      }
-    }
-  })
   .state('tab.contact', {
     url: '/contact',
     views: {
