@@ -8,28 +8,30 @@
   <ion-content>
 
 
-
-    <form ng-submit="dologin()">
-      <br><br><br>
-      <div class="list" style= "padding:10px;" >
-
-
+    <form ng-submit="doLogin()" ng-if="!user_id && !userKayit">
+      <br><br>
+      <div class="list" style= "padding:10px;">
+        <br><br>
         <label class="item item-input item-stacked-label kd">
-          <span class="input-label"><i class="ion-email"style="margin-right: 10%;font-size: 124%;"></i>E-mail</span>
-          <input type="text" ng-model="loginData.email" style="margin-left: 7%;margin-top: -2%;" placeholder="simiz@mailadresi.com">
+          <span class="input-label"><i class="ion-email" style="margin-right: 10%;font-size: 124%;"></i>E-mail</span>
+          <input type="text" ng-model="loginData.email" placeholder="simiz@mailadresi.com">
         </label>
         <br><br>
-
         <label class="item item-input item-stacked-label kd">
           <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre</span>
-          <input type="password" ng-model="loginData.password" style="margin-left: 7%;margin-top: -2%;"placeholder="Şifre">
+          <input type="password" ng-model="loginData.password" placeholder="Şifre">
+          <i ng-if="loginData.password.length>2" class="icon ion-checkmark" style="padding-right: 24px;"></i>
         </label>
-
         <br><br>
+        <label class="item">
+          <button ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit"> Giriş Yap </button>
+        </label>
+      </div>
+    </form>
+
+    <h1>{{userId}}</h1>
+    
       
-        <button style="margin-left: 16%"class="button button-dark beton2" ng-disabled="!loginData.email || !loginData.password" type="submit">
-        Giriş Yap
-        </button>
 
         <br><br>
 
@@ -40,8 +42,10 @@
         <button class="button button-block button-light">
         <p class="y"> Şifremi Unuttum</p>
         </button>
-      </div>
-    </form>
+      
+    
+
+    
  <br>
 
 

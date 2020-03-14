@@ -2,33 +2,39 @@ angular.module('starter.controllers', [])
 
 .controller('MainCtrl', function($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
-localStorage.setItem('language', "TR");
-
+    localStorage.setItem('language', "TR");
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
     
 
     $scope.cikis = function()  {
-        localStorage.setItem('user_id',null);
-        $scope.user_id = localStorage.getItem('user_id'); 
-        localStorage.removeItem('user_ad'); 
-        localStorage.removeItem('user_email'); 
+        $scope.userId = 0;
+        localStorage.removeItem('user_id');
         localStorage.removeItem('language');
+
+        if ($scope.userId == 0) 
+            { 
+            $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
+                $scope.modal = modal;
+                $scope.modal.show();
+            });
+        }
+        
+        if ($scope.userId != 0)
+        {   
+            $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
+                $scope.modal = modal;
+                $scope.modal.hide();
+            });
+        }
+        
     }
 
     $scope.loginData = {}; 
 
     // Create the login modal that we will use later
-    $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
-        $scope.modal = modal;
-    });
 
-    $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
-        if ($scope.user_id == null) {    
-            $scope.modal = modal;
-            $scope.modal.show();
-        }
-    });
+    
 
     $scope.doLogin = function() {
     // post edilecek ServiceRequest isimli değişken tanımlanır,
@@ -48,7 +54,7 @@ localStorage.setItem('language', "TR");
 
             // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
 
-            $scope.user_id = localStorage.getItem('user_id');
+            $scope.userId = localStorage.getItem('user_id');
 
             $ionicPopup.alert ("Sn. " + $scope.profile[$scope.user_id].USER_NAME + ", Operics'e hoşgeldiniz!..");
             
