@@ -95,6 +95,15 @@ angular.module('starter.controllers', [])
     };
 
     var ServiceRequest = {
+        service_type: "diller",
+        language: localStorage.getItem('language')
+    }
+
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+        $scope.dil= data
+    })
+
+    var ServiceRequest = {
         service_type: "hikayeler",
         language: localStorage.getItem('language')
     }
