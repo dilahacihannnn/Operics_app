@@ -2,91 +2,35 @@ angular.module('starter.controllers', [])
 
 .controller('MainCtrl', function($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
-    localStorage.setItem('language', "TR");
-    localStorage.setItem('user_id', "0");
-    $scope.userId = localStorage.getItem('user_id');
-    
+localStorage.setItem('language', "tr");
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
-    
-
-    
-    $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
-        $scope.modal = modal;
-
-        if ($scope.userId == 0) 
-        { 
-            $scope.modal.show();
-        
-        }
-        else
-        { 
-            $scope.modal.hide();
-        }
-    });
-        
-
-    $scope.cikis = function()  {
-        localStorage.setItem('user_id', "0");
-        $scope.userId = localStorage.getItem('user_id');    
-    }
-
-    $scope.loginData = {}; 
-
-    // Create the login modal that we will use later
-
-    
 
     $scope.doLogin = function() {
     // post edilecek ServiceRequest isimli değişken tanımlanır,
         var ServiceRequest = {
             service_type: "giris",
-            email: $scope.loginData.email,
+            email:$scope.loginData.email,
             sifre: $scope.loginData.password
         }
     // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
         $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
-            $scope.giris = data[0]
-
-    //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
-        if ($scope.giris.login_status!= false) {
-
-            localStorage.setItem('user_id', $scope.giris.id);
-
-            // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
-
-            $scope.userId = localStorage.getItem('user_id');
-
-            $ionicPopup.alert ("Sn. " + $scope.profile[$scope.user_id].USER_NAME + ", Operics'e hoşgeldiniz!..");
-            
-            $scope.modal.hide();
-            console.log("buraya girdi");
-
-        } else {
-
-            alert ("Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!..");
-
-        };
-                
-            
+            $scope.giris= data
         })
     };
-
-
-
-    $scope.kayitData = {};
 
     $scope.registerUser = function() {
 
         var ServiceRequest = {
-            service_type: "create_user",
-            photo:    "img/pp.jfif",
-            name:     $scope.kayitData.name,
-            phone:    $scope.kayitData.number,
-            email:    $scope.kayitData.email,
-            sifre:    $scope.kayitData.password,
-            company:  $scope.kayitData.company,
-            position: $scope.kayitData.position
+            service_type: "",
+            name: "Deneme isim ve soyisim",
+            sifre: "123456",
+            email: "E posta adresi",
+            phone: "05551234567",
+            photo: "img/deneme.jpg",
+            user_type: "genel",
+            department: "Satış Departmanı",
+            job: "Satış Sorumlusu"
         }
         // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
         $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
@@ -150,23 +94,13 @@ angular.module('starter.controllers', [])
 
     var ServiceRequest = {
         service_type: "sozluk",
+        login_id:"1",
         language: localStorage.getItem('language')
     }
     // Yeni user isteği post edilir ve veritabanına eklenir.
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
             $scope.sozluk= data
     })
-
-    var ServiceRequest = {
-        service_type: "profil",
-        language: localStorage.getItem('language'),
-        userId: $scope.user_id
-    }
-    // Yeni user isteği post edilir ve veritabanına eklenir.
-    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-            $scope.profil = data
-    })
-
 
 
     $scope.abouttab = 0;
@@ -223,6 +157,10 @@ angular.module('starter.controllers', [])
         break;
       }
 
+    };
+
+    $scope.extendstory = function() {
+        $scope.modal.hide();
     };
 
     // Onay kutusu
