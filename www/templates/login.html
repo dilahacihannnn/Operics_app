@@ -49,71 +49,69 @@
  <br>
 
 
- <img class="full-image l1" src="img/login/bb.png">
 
- <img class="full-image l2" src="img/login/aa.png">
 
- <img class="full-image l3" src="img/login/tt.png">
+  <form ng-submit="registerUser()" ng-if="!user_id && !userKayit">
+
+      <img class="full-image l1" src="img/login/bb.png">
+
+      <img class="full-image l2" src="img/login/aa.png">
+
+      <img class="full-image l3" src="img/login/tt.png">
+      <br><br>
+      <div class="list" style= "padding:10px;">
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-person" style="margin-right: 10%;font-size: 124%;"></i>İsim Soyisim</span>
+          <input type="text" ng-model="kayitData.name" placeholder="Adınızı giriniz">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-telephone" style="margin-right: 10%;font-size: 124%;"></i>Telefon</span>
+          <input type="text" ng-model="kayitData.number" placeholder="Telefon numaranızı giriniz">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-email" style="margin-right: 10%;font-size: 124%;"></i>E-mail</span>
+          <input type="text" ng-model="kayitData.email" placeholder="E-Postanızı giriniz">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre</span>
+          <input type="password" ng-model="kayitData.password" placeholder="Şifre">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre Doğrulama</span>
+          <input type="password" ng-model="kayitData.passwordcorrection" placeholder="Girdiğiniz şifreyi tekrarlayınız">
+          <i ng-if="kayitData.passwordcorrection==kayitData.password" class="icon ion-checkmark" style="padding-right: 24px;"></i>
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şirket</span>
+          <input type="password" ng-model="kayitData.company" placeholder="Şirketinizi giriniz">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Ünvan</span>
+          <input type="password" ng-model="kayitData.position" placeholder="Şirketteki pozisyonunuzu giriniz">
+        </label>
+        <br><br>
+        <label class="item">
+          <button ng-disabled="!KayitData.email || !kayitData.password||(kayitData.passwordcorrection==kayitData.password)" class="button button-dark beton2" type="submit"> Kayıt Ol </button>
+        </label>
+        <label class="item">
+          <button style="margin-left: 60px;"class="button button-dark beton1">
+          <p class="dil"> Giriş Yap</p>
+          </button>
+        </label>
+      </div>
+  </form>
+
+ 
  <br><br>
 
- <div class="list" style= "padding:10px;" >
-
-  <label class="item item-input item-stacked-label kd">
-    <span class="input-label"><i class="ion-person"style="margin-right: 10%;font-size: 124%;margin-top: -2%;"></i> İsim</span>
-    <input type="text" style="margin-left: 9%;margin-top: -2%;"placeholder="İsim">
-  </label>
-
-  <label class="item item-input item-stacked-label kd" >
-    <span class="input-label"><i class="ion-ios-telephone"style="margin-right: 10%;font-size: 124%;"></i>Tel</span>
-    <input type="text" style="margin-left: 7%;margin-top: -2%;"placeholder="Tel">
-  </label>
-
-  <label class="item item-input item-stacked-label kd">
-    <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre</span>
-    <input type="password" style="margin-left: 7%;margin-top: -2%;"placeholder="Şifre">
-  </label>
-
-
-  <label class="item item-input item-stacked-label kd">
-    <span class="input-label"><i class="ion-ios-unlocked" style="margin-right: 10%;font-size: 124%;"></i>Şifre Tekrar</span>
-    <input type="password" style="margin-left: 7%;margin-top: -2%;"placeholder="Şifre Tekrar">
-  </label>
-
-
-
-
-
-  <label class="item item-input item-stacked-label kd">
-    <span class="input-label"><i class="ion-email" style="margin-right: 10%;font-size: 124%;"></i>e-mail</span>
-    <input type="text" style="margin-left: 7%;margin-top: -2%;"placeholder="john@suhr.com">
-  </label>
-
-</div>
-
-
-
-
-<div>
-
-
-
-  <button style="margin-left: 60px;"class="button button-dark beton2">
-   Kayıt Ol 
- </button>
-</div>
-
-
-<br>
-
-<div>
-
-  <button style="margin-left: 60px;"class="button button-dark beton1">
-   <p class="dil"> Giriş Yap</p>
- </button>
-</div>
-
-<br>
-
+ 
 
 
 

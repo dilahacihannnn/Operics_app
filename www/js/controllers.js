@@ -3,30 +3,27 @@ angular.module('starter.controllers', [])
 .controller('MainCtrl', function($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
     localStorage.setItem('language', "TR");
+    $scope.userId = 0;
+
+
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
     
 
-    $scope.cikis = function()  {
-        $scope.userId = 0;
-        localStorage.removeItem('user_id');
-        localStorage.removeItem('language');
-
-        if ($scope.userId == 0) 
+    if ($scope.userId == 0) 
             { 
             $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
                 $scope.modal = modal;
                 $scope.modal.show();
             });
         }
-        
-        if ($scope.userId != 0)
-        {   
-            $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
-                $scope.modal = modal;
-                $scope.modal.hide();
-            });
-        }
+
+    $scope.cikis = function()  {
+        $scope.userId = 0;
+        localStorage.removeItem('user_id');
+        localStorage.removeItem('language');
+
+         
         
     }
 
@@ -58,6 +55,8 @@ angular.module('starter.controllers', [])
 
             $ionicPopup.alert ("Sn. " + $scope.profile[$scope.user_id].USER_NAME + ", Operics'e hoşgeldiniz!..");
             
+            $scope.modal.hide();
+            console.log("buraya girdi");
 
         } else {
 
@@ -77,12 +76,11 @@ angular.module('starter.controllers', [])
 
         var ServiceRequest = {
             service_type: "create_user",
+            photo:    "img/pp.jfif",
             name:     $scope.kayitData.name,
-            sifre:    $scope.kayitData.password,
-            email:    $scope.kayitData.email,
             phone:    $scope.kayitData.number,
-            photo: "img/pp.jfif",
-            user_type: "genel",
+            email:    $scope.kayitData.email,
+            sifre:    $scope.kayitData.password,
             company:  $scope.kayitData.company,
             position: $scope.kayitData.position
         }
