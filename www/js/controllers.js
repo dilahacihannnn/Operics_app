@@ -8,7 +8,7 @@ angular.module('starter.controllers', [])
 
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
-    
+    /*
 
     if ($scope.userId == 0) 
             { 
@@ -17,7 +17,7 @@ angular.module('starter.controllers', [])
                 $scope.modal.show();
             });
         }
-
+*/
     $scope.cikis = function()  {
         $scope.userId = 0;
         localStorage.removeItem('user_id');
