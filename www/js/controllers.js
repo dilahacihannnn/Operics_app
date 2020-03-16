@@ -58,7 +58,7 @@ angular.module('starter.controllers', [])
     });
 
     $scope.cikis = function()  {
-        $scope.userId = 0;
+        $scope.userId = {};
         localStorage.removeItem('user_id');
         localStorage.removeItem('language');
 
