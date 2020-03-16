@@ -2,23 +2,24 @@ angular.module('starter.controllers', [])
 
 .controller('MainCtrl', function($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
+    $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
+    $scope.pictureUrl = "http://placehold.it/200x200";
+
     localStorage.setItem('language', "TR");
     $scope.loginData = {}; 
     $scope.kayitData = {};
     $scope.userId = localStorage.getItem('user_id')
-   
 
-
-    $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
     
+    //Logout işlemi
+
     $scope.cikis = function()  {
         localStorage.removeItem('language');
         localStorage.removeItem('user_id');
         $scope.userId = localStorage.getItem('user_id') 
     }
 
-
-
+    //Login ve Kayıt işlemleri
     
     if (!$scope.userId) { 
             
@@ -54,7 +55,7 @@ angular.module('starter.controllers', [])
 
             } else {
 
-                alert ("Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!..");
+                $ionicPopup.alert ("Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!..");
 
             };
                         
@@ -87,6 +88,21 @@ angular.module('starter.controllers', [])
 
     }
 
+    // Profil resmi için kamera kontrolcüsü
+
+    $scope.takePP = function() {
+        var options = {
+            destinationType: Camera.DestinationType.DATA_URL,
+            encodingType: Camera.EncodingType.JPEG
+        }
+        $cordovaCamera.getPicture({})
+            .then(function(imageData) {
+                console.log('camera data: ' + angular.toJson(imageData));
+                $scope.pictureUrl = 'data:image/jpeg;base64,' + imageData;
+            }, function(error) {
+                console.log('camera error: ' + angular.toJson(imageData))
+            })
+    };
     
     // Çağrılacak servisler:
 
@@ -161,7 +177,7 @@ angular.module('starter.controllers', [])
     }
     // Yeni user isteği post edilir ve veritabanına eklenir.
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-            $scope.profil = data
+            $scope.profil = data[$scope.userId]
     })
 
 
