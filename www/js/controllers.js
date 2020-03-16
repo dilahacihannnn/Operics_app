@@ -3,9 +3,10 @@ angular.module('starter.controllers', [])
 .controller('MainCtrl', function($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
     localStorage.setItem('language', "TR");
-    $scope.userId = {};
     $scope.loginData = {}; 
     $scope.kayitData = {};
+    $scope.userId = localStorage.getItem('user_id')
+   
 
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
@@ -13,14 +14,13 @@ angular.module('starter.controllers', [])
     $scope.cikis = function()  {
         localStorage.removeItem('language');
         localStorage.removeItem('user_id');
-        $scope.userId = 0;
-          
+        $scope.userId = localStorage.getItem('user_id') 
     }
 
 
 
     
-        if ($scope.userId == 0) { 
+        if (!$scope.userId) { 
             
             $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
                 $scope.modal = modal;
