@@ -4,10 +4,20 @@ angular.module('starter.controllers', [])
 
     localStorage.setItem('language', "TR");
     $scope.userId = {};
+    $scope.loginData = {}; 
+    $scope.kayitData = {};
 
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
     
+    $scope.cikis = function()  {
+        localStorage.removeItem('language');
+        localStorage.removeItem('user_id');
+        $scope.userId = null;
+          
+    }
+
+
 
     $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
         $scope.modal = modal;
@@ -15,22 +25,41 @@ angular.module('starter.controllers', [])
         
             $scope.modal.show();
             $scope.doLogin = function() {
-                // post edilecek ServiceRequest isimli değişken tanımlanır,
+            // post edilecek ServiceRequest isimli değişken tanımlanır,
                 var ServiceRequest = {
                     service_type: "giris",
                     email: $scope.loginData.email,
                     sifre: $scope.loginData.password
                     }
-                // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
+            // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
                 $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
                 $scope.giris = data[0]
+            
+            // Create the login modal that we will use later
+            $scope.registerUser = function() {
 
-                //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
+                var ServiceRequest = {
+                    service_type: "create_user",
+                    photo:    "img/pp.jfif",
+                    name:     $scope.kayitData.name,
+                    phone:    $scope.kayitData.number,
+                    email:    $scope.kayitData.email,
+                    sifre:    $scope.kayitData.password,
+                    company:  $scope.kayitData.company,
+                    position: $scope.kayitData.position
+                }
+            // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
+                $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
+                    $scope.kullanici = data
+                })
+            };
+
+            //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
                 if ($scope.giris.login_status!= false) {
 
                     localStorage.setItem('user_id', $scope.giris.id);
 
-                // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
+            // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
 
                     $scope.userId = localStorage.getItem('user_id');
 
@@ -52,49 +81,13 @@ angular.module('starter.controllers', [])
         } else {
 
             $scope.modal.hide();
-            
+
         }
 
     });
 
-    $scope.cikis = function()  {
-        $scope.userId = {};
-        localStorage.removeItem('user_id');
-        localStorage.removeItem('language');
+    // Çağrılacak servisler:
 
-         
-        
-    }
-
-    $scope.loginData = {}; 
-
-    // Create the login modal that we will use later
-
-    
-
-    
-
-
-
-    $scope.kayitData = {};
-
-    $scope.registerUser = function() {
-
-        var ServiceRequest = {
-            service_type: "create_user",
-            photo:    "img/pp.jfif",
-            name:     $scope.kayitData.name,
-            phone:    $scope.kayitData.number,
-            email:    $scope.kayitData.email,
-            sifre:    $scope.kayitData.password,
-            company:  $scope.kayitData.company,
-            position: $scope.kayitData.position
-        }
-        // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
-        $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
-            $scope.kullanici = data
-        })
-    };
 
     var ServiceRequest = {
         service_type: "diller",
