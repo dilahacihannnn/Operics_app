@@ -3,21 +3,60 @@ angular.module('starter.controllers', [])
 .controller('MainCtrl', function($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
     localStorage.setItem('language', "TR");
-    $scope.userId = 0;
-
+    $scope.userId = {};
 
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php"
-    /*
+    
 
-    if ($scope.userId == 0) 
-            { 
-            $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
-                $scope.modal = modal;
-                $scope.modal.show();
-            });
+    $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
+        $scope.modal = modal;
+        if ($scope.userId == null) { 
+        
+            $scope.modal.show();
+            $scope.doLogin = function() {
+                // post edilecek ServiceRequest isimli değişken tanımlanır,
+                var ServiceRequest = {
+                    service_type: "giris",
+                    email: $scope.loginData.email,
+                    sifre: $scope.loginData.password
+                    }
+                // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
+                $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
+                $scope.giris = data[0]
+
+                //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
+                if ($scope.giris.login_status!= false) {
+
+                    localStorage.setItem('user_id', $scope.giris.id);
+
+                // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
+
+                    $scope.userId = localStorage.getItem('user_id');
+
+                    $ionicPopup.alert ("Sn. , Operics'e hoşgeldiniz!..");
+            
+                    $scope.modal.hide();
+                    console.log("buraya girdi");
+
+                } else {
+
+                    alert ("Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!..");
+
+                };
+                        
+            
+                })
+            };
+        
+        } else {
+
+            $scope.modal.hide();
+            
         }
-*/
+
+    });
+
     $scope.cikis = function()  {
         $scope.userId = 0;
         localStorage.removeItem('user_id');
@@ -33,40 +72,7 @@ angular.module('starter.controllers', [])
 
     
 
-    $scope.doLogin = function() {
-    // post edilecek ServiceRequest isimli değişken tanımlanır,
-        var ServiceRequest = {
-            service_type: "giris",
-            email: $scope.loginData.email,
-            sifre: $scope.loginData.password
-        }
-    // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
-        $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
-            $scope.giris = data[0]
-
-    //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
-        if ($scope.giris.login_status!= false) {
-
-            localStorage.setItem('user_id', $scope.giris.id);
-
-            // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
-
-            $scope.userId = localStorage.getItem('user_id');
-
-            $ionicPopup.alert ("Sn. " + $scope.profile[$scope.user_id].USER_NAME + ", Operics'e hoşgeldiniz!..");
-            
-            $scope.modal.hide();
-            console.log("buraya girdi");
-
-        } else {
-
-            alert ("Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!..");
-
-        };
-                
-            
-        })
-    };
+    
 
 
 

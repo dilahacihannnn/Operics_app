@@ -58,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/main',
     views: {
       'tab-main': {
-        templateUrl: 'templates/login.html',
+        templateUrl: 'templates/tab-main.html',
         controller: 'MainCtrl'
       }
     }
