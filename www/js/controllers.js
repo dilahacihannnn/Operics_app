@@ -13,17 +13,20 @@ angular.module('starter.controllers', [])
     $scope.cikis = function()  {
         localStorage.removeItem('language');
         localStorage.removeItem('user_id');
-        $scope.userId = null;
+        $scope.userId = 0;
           
     }
 
 
 
-    $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
-        $scope.modal = modal;
-        if ($scope.userId == null) { 
-        
-            $scope.modal.show();
+    
+        if ($scope.userId == 0) { 
+            
+            $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
+                $scope.modal = modal;
+                $scope.modal.show();
+            });
+
             $scope.doLogin = function() {
             // post edilecek ServiceRequest isimli değişken tanımlanır,
                 var ServiceRequest = {
@@ -80,12 +83,14 @@ angular.module('starter.controllers', [])
         
         } else {
 
-            $scope.modal.hide();
+            $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
+                $scope.modal = modal;
+                $scope.modal.hide();
+            });
 
         }
 
-    });
-
+    
     // Çağrılacak servisler:
 
 
