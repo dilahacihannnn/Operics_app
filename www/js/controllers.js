@@ -38,25 +38,6 @@ angular.module('starter.controllers', [])
                 $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
                 $scope.giris = data[0]
             
-            // Create the login modal that we will use later
-            $scope.registerUser = function() {
-
-                var ServiceRequest = {
-                    service_type: "create_user",
-                    photo:    "img/pp.jfif",
-                    name:     $scope.kayitData.name,
-                    phone:    $scope.kayitData.number,
-                    email:    $scope.kayitData.email,
-                    sifre:    $scope.kayitData.password,
-                    company:  $scope.kayitData.company,
-                    position: $scope.kayitData.position
-                }
-            // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
-                $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
-                    $scope.kullanici = data
-                })
-            };
-
             //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
                 if ($scope.giris.login_status!= false) {
 
@@ -77,7 +58,24 @@ angular.module('starter.controllers', [])
 
                 };
                         
-            
+                })
+            };
+            // Kullanıcı kayıt servisi
+            $scope.registerUser = function() {
+
+                var ServiceRequest = {
+                    service_type: "create_user",
+                    photo:    "img/pp.jfif",
+                    name:     $scope.kayitData.name,
+                    phone:    $scope.kayitData.number,
+                    email:    $scope.kayitData.email,
+                    sifre:    $scope.kayitData.password,
+                    company:  $scope.kayitData.company,
+                    position: $scope.kayitData.position
+                }
+            // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
+                $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
+                    $scope.kullanici = data
                 })
             };
         
