@@ -342,8 +342,8 @@
 
 
   width: 30%;
-    margin-left: 110px;
-    margin-top: 37px;
+  margin-left: 110px;
+  margin-top: 37px;
 
   
 }
@@ -355,18 +355,18 @@
 
   border-radius:60px;
   width: 263px;
-    margin-left: 26px;
-    height: 46px;
+  margin-left: 26px;
+  height: 46px;
   
 }
 
 
 .si{
 
-margin: -16px 88px 10px;
- font-family: Bahnschrift Light;
- margin-left: 83px;
- font-size:18px;
+  margin: -16px 88px 10px;
+  font-family: Bahnschrift Light;
+  margin-left: 83px;
+  font-size:18px;
 
 
 
@@ -375,7 +375,7 @@ margin: -16px 88px 10px;
 
 .in{
 
-font-size:14px;
+  font-size:14px;
 
 
 
@@ -386,11 +386,11 @@ font-size:14px;
 
 
 
-  .b4{
+.b4{
 
-border-radius: 100px !important;
-margin-left:33px !important;
-width:250px !important;
+  border-radius: 100px !important;
+  margin-left:33px !important;
+  width:250px !important;
 
 
 
@@ -399,8 +399,8 @@ width:250px !important;
 
 .say{
 
-font-size:20px;
-color:black;
+  font-size:20px;
+  color:black;
 
 
 
@@ -411,8 +411,12 @@ color:black;
 
   border-radius: 100px;
   margin-block-end: inherit;
-  height:64px;
-  
+  height: 55px;
+  box-shadow: 0px 2px rgb(246,248,249);
+}
+
+
+
 }
 
 
@@ -420,22 +424,22 @@ color:black;
 
 .beton1{
 
-border-radius: 100px;
-margin-left:33px;
-width:250px;
-height:32px !important;
-background-color:white !important;
-border-color:black !important;
+  border-radius: 100px;
+  margin-left:33px;
+  width:250px;
+  height:32px !important;
+  background-color:white !important;
+  border-color:black !important;
 
 
 }
 
 .beton2{
 
-border-radius: 100px;
-margin-left:33px;
-width:250px;
-border-color:black;
+  border-radius: 100px;
+  margin-left:33px;
+  width:250px;
+  border-color:black;
 
 
 
@@ -443,9 +447,9 @@ border-color:black;
 }
 
 .l1{
-    width: 70px;
-    height: 42px;
-    margin-left: 56px;
+  width: 70px;
+  height: 42px;
+  margin-left: 56px;
 
 
 
@@ -454,9 +458,9 @@ border-color:black;
 }
 
 .l2{
-     width: 166px;
-    height: 50px;
-    margin-left: 107px;
+ width: 166px;
+ height: 50px;
+ margin-left: 107px;
 
 }
 
@@ -472,19 +476,19 @@ border-color:black;
 
 
 .title-image {
-    margin-top: 4px;
-    height: 38px;
+  margin-top: 4px;
+  height: 38px;
 }
 
 
 .pp{
 
 
-text-align:center;
-margin-left:-14px;
-font-family:Bahnschrift Light;
-font-size:18px;
-margin-top:-8px;
+  text-align:center;
+  margin-left:-14px;
+  font-family:Bahnschrift Light;
+  font-size:18px;
+  margin-top:-8px;
 
 
 
@@ -495,8 +499,8 @@ margin-top:-8px;
 .dil{
 
 
-color:black;
-margin-top:2px;
+  color:black;
+  margin-top:2px;
 
 
 
@@ -505,9 +509,9 @@ margin-top:2px;
 .button-bar{
 
 
-background-color:white !important;
-border-color:black !important;
-    box-shadow: inset 15px 15px black !important;
+  background-color:white !important;
+  border-color:black !important;
+  box-shadow: inset 15px 15px black !important;
 
 
 
@@ -522,7 +526,7 @@ border-color:black !important;
 
 .kh{
 
-background-color:lightgray;
+  background-color:lightgray;
 
 
 
