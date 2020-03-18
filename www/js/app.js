@@ -58,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/main',
     views: {
       'tab-main': {
-        templateUrl: 'templates/login.html',
+        templateUrl: 'templates/tab-main.html',
         controller: 'MainCtrl'
       }
     }
@@ -98,15 +98,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-contact': {
         templateUrl: 'templates/tab-contact.html',
         controller: 'MainCtrl'
-      }
-    }
-  })
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
       }
     }
   });

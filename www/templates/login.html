@@ -1,56 +1,122 @@
-<ion-view view-title='<img class="title-image1" src="img/logo.PNG"/ >'>
-
-
+<ion-modal-view>  
+  <ion-header-bar>
+    <img class="title-image1" src="img/logo.PNG"/ >
+  </ion-header-bar>
 
 
 
   <ion-content>
 
-    <br><br><br><br>
 
-    <img class="full-image l2" src="img/logo.PNG">
+    <form ng-submit="doLogin()" ng-if="!user_id && !userKayit">
+      <br><br>
+      <div class="list" style= "padding:10px;">
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-email" style="margin-right: 10%;font-size: 124%;"></i>E-mail</span>
+          <input type="text" ng-model="loginData.email" placeholder="simiz@mailadresi.com">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre</span>
+          <input type="password" ng-model="loginData.password" placeholder="Şifre">
+          <i ng-if="loginData.password.length>2" class="icon ion-checkmark" style="padding-right: 24px;"></i>
+        </label>
+        <br><br>
+        <label class="item">
+          <button ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit"> Giriş Yap </button>
+        </label>
+        <label class="item">
+          <button style="margin-left: 16%"class="button button-dark beton1">
+            <p class="dil"> Kayıt Ol</p>
+          </button>
+        </label>
+      </div>
+    </form>
 
-    <br>
-    <br>
+    <h1>{{userId}}</h1>
+    
+      
 
-    <div class="list " style= "padding:10px;" >
+        <br><br>
 
+        <button style="margin-left: 16%"class="button button-dark beton1">
+        <p class="dil"> Kayıt Ol</p>
+        </button>
+      
+        <button class="button button-block button-light">
+        <p class="y"> Şifremi Unuttum</p>
+        </button>
+      
+    
 
-
-     <label class="item item-input  kd ">
-      <i class="ion-email"style="margin-right: 1%;font-size: 124%;"></i>
-      <input type="text" style="margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com">
-    </label>
-
-
-
-
-    <label class="item item-input kd">
-     <i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>
-      <input type="password" style="margin-left: -5%;margin-top: 0%;"placeholder="Şifre">
-    </label>
-  </div>
-
-  <div>
-   <button style="margin-left: 16%"class="button button-dark beton2">
-    Giriş Yap
-  </button>
-</div>
-<br>
-
-<div>
-
-  <button style="margin-left: 16%"class="button button-dark beton1">
-   <p class="dil"> Kayıt Ol</p>
- </button>
-</div>
+    
+ <br>
 
 
 
 
-<button class="button button-block button-light">
- <p class="y"> Şifremi Unuttum</p>
-</button>
+  <form ng-submit="registerUser()" ng-if="!user_id && !userKayit">
+
+      <img class="full-image l1" src="img/login/bb.png">
+
+      <img class="full-image l2" src="img/login/aa.png">
+
+      <img class="full-image l3" src="img/login/tt.png">
+      <br><br>
+      <div class="list" style= "padding:10px;">
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-person" style="margin-right: 10%;font-size: 124%;"></i>İsim Soyisim</span>
+          <input type="text" ng-model="kayitData.name" placeholder="Adınızı giriniz">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-telephone" style="margin-right: 10%;font-size: 124%;"></i>Telefon</span>
+          <input type="text" ng-model="kayitData.number" placeholder="Telefon numaranızı giriniz">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-email" style="margin-right: 10%;font-size: 124%;"></i>E-mail</span>
+          <input type="text" ng-model="kayitData.email" placeholder="E-Postanızı giriniz">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre</span>
+          <input type="password" ng-model="kayitData.password" placeholder="Şifre">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre Doğrulama</span>
+          <input type="password" ng-model="kayitData.passwordcorrection" placeholder="Girdiğiniz şifreyi tekrarlayınız">
+          <i ng-if="kayitData.passwordcorrection==kayitData.password" class="icon ion-checkmark" style="padding-right: 24px;"></i>
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şirket</span>
+          <input type="password" ng-model="kayitData.company" placeholder="Şirketinizi giriniz">
+        </label>
+        <br><br>
+        <label class="item item-input item-stacked-label kd">
+          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Ünvan</span>
+          <input type="password" ng-model="kayitData.position" placeholder="Şirketteki pozisyonunuzu giriniz">
+        </label>
+        <br><br>
+        <label class="item">
+          <button ng-disabled="!KayitData.email || !kayitData.password||(kayitData.passwordcorrection==kayitData.password)" class="button button-dark beton2" type="submit"> Kayıt Ol </button>
+        </label>
+        <label class="item">
+          <button style="margin-left: 60px;"class="button button-dark beton1">
+          <p class="dil"> Giriş Yap</p>
+          </button>
+        </label>
+      </div>
+  </form>
+
+ 
+ <br><br>
+
+ 
 
 
 
@@ -60,26 +126,4 @@
 
 
 </ion-content>
-</ion-view>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</ion-modal-view>

@@ -12,9 +12,11 @@
 		<a class="item item-body hkd" href="#/tab/aboutus" >
 			<i class="list card ">
 				<div style="border-color: red;border-width: 2px;"class="item item-avatar profile ">
-					<img class="pi"src="img/profile.jfif">
+					<img class="pi"src="{{pictureUrl}}">
 				</i>
 			</div>
+			<center><button ng-click="takePP()" class="button button-outline button-assertive ion-android-camera">
+			</button></center>
 
 			<h2 align="center" >Cansu Çelik</h2>
 			<br>
@@ -26,7 +28,7 @@
             <p style="font-size: 20px;"class="ion-ios-color-wand-outline y"><font style="margin-left: 10px;font-size: 15px;">Profil Düzenle</font></p>
 		</div>
 
-<center><button class="button button-outline button-assertive">
+<center><button ng-click="cikis()" class="button button-outline button-assertive">
   Outlined Button
 </button></center>
 	</a> 
