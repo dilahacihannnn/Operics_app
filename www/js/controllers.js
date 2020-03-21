@@ -113,7 +113,7 @@ angular.module('starter.controllers', [])
     }
 
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-        $scope.dil= data
+        $scope.diller = data
     })
 
     var ServiceRequest = {
