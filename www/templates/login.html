@@ -13,25 +13,27 @@
       <br><br>
       <div class="list" style= "padding:10px;">
         <br><br>
-        <label class="item item-input item-stacked-label kd">
-          <span class="input-label"><i class="ion-email" style="margin-right: 10%;font-size: 124%;"></i>E-mail</span>
-          <input type="text" ng-model="loginData.email" placeholder="simiz@mailadresi.com">
-        </label>
+         <label class="item item-input  kd ">
+      <i class="ion-email"style="margin-right: 1%;font-size: 124%;"></i>
+      <input type="text" style="margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com">
+    </label>
         <br><br>
-        <label class="item item-input item-stacked-label kd">
-          <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre</span>
-          <input type="password" ng-model="loginData.password" placeholder="Şifre">
-          <i ng-if="loginData.password.length>2" class="icon ion-checkmark" style="padding-right: 24px;"></i>
-        </label>
+         <label class="item item-input kd">
+     <i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>
+      <input type="password" style="margin-left: -5%;margin-top: 0%;"placeholder="Şifre">
+    </label>
         <br><br>
-        <label class="item">
+       
           <button ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit"> Giriş Yap </button>
-        </label>
-        <label class="item">
+     
+        
           <button style="margin-left: 16%"class="button button-dark beton1">
             <p class="dil"> Kayıt Ol</p>
           </button>
-        </label>
+          <button class="button button-block button-light">
+        <p class="y"> Şifremi Unuttum</p>
+        </button>
+
       </div>
     </form>
 
@@ -39,16 +41,8 @@
 
 
 
-        <br><br>
-
-        <button style="margin-left: 16%"class="button button-dark beton1">
-        <p class="dil"> Kayıt Ol</p>
-        </button>
-
-        <button class="button button-block button-light">
-        <p class="y"> Şifremi Unuttum</p>
-        </button>
-
+        
+      
 
 
 
@@ -103,14 +97,14 @@
           <input type="password" ng-model="kayitData.position" placeholder="Şirketteki pozisyonunuzu giriniz">
         </label>
         <br><br>
-        <label class="item">
+        
           <button ng-disabled="!KayitData.email || !kayitData.password||(kayitData.passwordcorrection==kayitData.password)" class="button button-dark beton2" type="submit"> Kayıt Ol </button>
-        </label>
-        <label class="item">
+        
+  
           <button style="margin-left: 60px;"class="button button-dark beton1">
           <p class="dil"> Giriş Yap</p>
           </button>
-        </label>
+    
       </div>
   </form>
 
