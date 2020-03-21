@@ -1,128 +1,141 @@
 <ion-modal-view>
   <ion-header-bar>
-    
+
     <button ng-click="modal.hide()" class="button button-assertive">X</button>
   </ion-header-bar>
 
 
 
   <ion-content>
-    <center>
-<img style="    width: 42%;
-"src="img/logo.PNG"/ ></center>
+
+    <center><img style="    width: 42%;
+    "src="img/logo.PNG"/ ></center>
 
     <form ng-submit="doLogin()" ng-if="!user_id && !userKayit">
       <br><br>
       <div class="list" style= "padding:1px;">
         <br><br>
-         <label class="item item-input  kd ">
-      <i class="ion-email"style="margin-right: 1%;font-size: 124%;"></i>
-      <input type="text" style="margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com">
-    </label>
+        <label class="item item-input kd">
+          <i class="ion-email"style="margin-right: 1%;font-size: 124%;"></i>
+          <input type="text" style="margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com">
+        </label>
         <br><br>
-         <label class="item item-input kd">
-     <i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>
-      <input type="password" style="margin-left: -5%;margin-top: 0%;"placeholder="Şifre">
-    </label>
-        <br><br>
+        <label class="item item-input kd">
+         <i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>
+         <input type="password" style="margin-left: -5%;margin-top: 0%;"placeholder="Şifre">
+       </label>
+       <br><br>
        
-          <button ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit"> Giriş Yap </button>
-     
-        
-          <button style="margin-left: 16%"class="button button-dark beton1">
-            <p class="dil"> Kayıt Ol</p>
-          </button>
-          <button class="button button-block button-light">
+       <button ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit"> Giriş Yap </button>
+
+
+       <button style="margin-left: 16%"class="button button-dark beton1">
+        <p class="dil"> Kayıt Ol</p>
+      </button>
+      <button class="button button-block button-light">
         <p class="y"> Şifremi Unuttum</p>
-        </button>
+      </button>
 
-      </div>
-    </form>
+    </div>
+  </form>
 
-    <h1>{{userId}}</h1>
-
-
-
-        
-      
+  <h1>{{userId}}</h1>
 
 
 
- <br>
+
+
+
+
+
+  <br>
 
 
 
 
   <form ng-submit="registerUser()" ng-if="!user_id && !userKayit">
-
+    <center>
       <img class="full-image l1 " src="img/login/bb.png">
 
-    <img class="full-image l2" src="img/login/aa.png">
+      <img class="full-image l2" src="img/login/aa.png">
 
-    <img class="full-image l3" src="img/login/tt.png">
-    <br><br>
+      <img class="full-image l3" src="img/login/tt.png"></center>
 
-    <div class="list" style= "padding:10px;" >
+      <br><br>
 
-      <label class="item item-input item-stacked-label kd">
-        <span class="input-label"><i class="ion-person"style="margin-right: 10%;font-size: 124%;margin-top: -2%;"></i> İsim</span>
-        <input type="text" style="margin-left: 9%;margin-top: -2%;"placeholder="İsim">
-      </label>
-
-      <label class="item item-input item-stacked-label kd" >
-        <span class="input-label"><i class="ion-ios-telephone"style="margin-right: 10%;font-size: 124%;"></i>Tel</span>
-        <input type="text" style="margin-left: 7%;margin-top: -2%;"placeholder="Tel">
-      </label>
-
-      <label class="item item-input item-stacked-label kd">
-        <span class="input-label"><i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>Şifre</span>
-        <input type="password" style="margin-left: 7%;margin-top: -2%;"placeholder="Şifre">
-      </label>
-
-
-      <label class="item item-input item-stacked-label kd">
-        <span class="input-label"><i class="ion-ios-unlocked" style="margin-right: 10%;font-size: 124%;"></i>Şifre Tekrar</span>
-        <input type="password" style="margin-left: 7%;margin-top: -2%;"placeholder="Şifre Tekrar">
-      </label>
+      <div class="list" style= "padding:10px;" >
 
 
 
+        <label class="item item-input kd">
+          <i class="ion-person"style="margin-right: 1%;font-size: 124%;"></i>
+          <p style="font-size: 104%;margin-top: -6%;margin-left: 4%; ">İsim</p>
+          <br><br><br>
+          <input type="text" style="margin-top: 4%;
+          margin-left: -10%;"placeholder="İsim">
+        </label>
 
 
-      <label class="item item-input item-stacked-label kd">
-        <span class="input-label"><i class="ion-email" style="margin-right: 10%;font-size: 124%;"></i>e-mail</span>
-        <input type="text" style="margin-left: 7%;margin-top: -2%;"placeholder="john@suhr.com">
-      </label>
+        <label class="item item-input kd" >
+          <i class="ion-ios-telephone"style="margin-right: 1%;font-size: 124%;"></i>
+          <p style="font-size: 104%;margin-top: -6%;margin-left: 4%; ">Tel</p>
+          <br><br><br>
+          <input type="text" style="margin-top: 4%;
+          margin-left: -7%;"placeholder="Tel">
+        </label>
 
-    </div>
+
+        <label class="item item-input  kd">
+         <i class="ion-ios-unlocked"style="margin-right: 1%;font-size: 124%;"></i>
+         <p style="font-size: 104%;margin-top: -6%;margin-left: 4%; ">Şifre</p>
+         <br><br><br>
+         <input type="password" style="margin-top: 4%;
+         margin-left: -11%;"placeholder="Şifre">
+       </label>
 
 
+       <label class="item item-input kd">
+         <i class="ion-ios-unlocked" style="margin-right: 1%;font-size: 124%;"></i>
+         <p style="font-size: 104%;margin-top: -6%;margin-left: 4%; ">Şifre Tekrar</p>
+         <br><br><br>
+         <input type="password" style="margin-top: 4%;
+         margin-left: -27%;"placeholder="Şifre Tekrar">
+       </label>
 
 
-    <div>
+       <label class="item item-input  kd">
+         <i class="ion-email" style="margin-right: 1%;font-size: 124%;"></i>
+         <p style="font-size: 104%;margin-top: -6%;margin-left: 4%; ">e-mail</p>
+         <input type="text" style="margin-top: 4%;
+         margin-left: -15%;"placeholder="john@suhr.com">
+       </label>
+
+     </div>
+     <div>
 
 
 
       <button style="margin-left: 60px;"class="button button-dark beton2">
        Kayıt Ol 
-      </button>
-    </div>
-
-
-    <br>
-
-    <div>
-
-      <button style="margin-left: 60px;"class="button button-dark beton1">
-       <p class="dil"> Giriş Yap</p>
      </button>
+
    </div>
 
+
    <br>
-  </form>
+
+   <div>
+
+    <button style="margin-left: 60px;"class="button button-dark beton1">
+     <p class="dil"> Giriş Yap</p>
+   </button>
+ </div>
+
+ <br>
+</form>
 
 
- <br><br>
+<br><br>
 
 
 
