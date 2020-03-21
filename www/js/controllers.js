@@ -5,24 +5,24 @@ angular.module('starter.controllers', [])
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
     $scope.pictureUrl = "http://placehold.it/200x200";
 
-    localStorage.setItem('language', "TR");
-    $scope.loginData = {}; 
+    localStorage.setItem('language', "EN");
+    $scope.loginData = {};
     $scope.kayitData = {};
     $scope.userId = localStorage.getItem('user_id')
 
-    
+
     //Logout işlemi
 
     $scope.cikis = function()  {
         localStorage.removeItem('language');
         localStorage.removeItem('user_id');
-        $scope.userId = localStorage.getItem('user_id') 
+        $scope.userId = localStorage.getItem('user_id')
     }
 
     //Login ve Kayıt işlemleri
-    
-    if (!$scope.userId) { 
-            
+
+    if (!$scope.userId) {
+
         $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
             $scope.modal.show();
@@ -38,7 +38,7 @@ angular.module('starter.controllers', [])
         // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
             $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
             $scope.giris = data[0]
-            
+
         //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
             if ($scope.giris.login_status!= false) {
 
@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
                 $scope.userId = localStorage.getItem('user_id');
 
                 $ionicPopup.alert ("Sn. , Operics'e hoşgeldiniz!..");
-            
+
                 $scope.modal.hide();
                 console.log("buraya girdi");
 
@@ -58,7 +58,7 @@ angular.module('starter.controllers', [])
                 $ionicPopup.alert ("Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!..");
 
             };
-                        
+
             })
         };
         // Kullanıcı kayıt servisi
@@ -79,7 +79,7 @@ angular.module('starter.controllers', [])
                 $scope.kullanici = data
             })
         };
-        
+
     } else {
         $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
@@ -103,7 +103,7 @@ angular.module('starter.controllers', [])
                 console.log('camera error: ' + angular.toJson(imageData))
             })
     };
-    
+
     // Çağrılacak servisler:
 
 
