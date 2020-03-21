@@ -17,19 +17,19 @@
         <br><br>
         <label class="item item-input kd">
           <i class="ion-email"style="margin-right: 1%;font-size: 124%;"></i>
-          <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com">
+          <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com" ng-model="loginData.email">
         </label>
         <br><br>
         <label class="item item-input kd">
          <i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>
-         <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;"placeholder="Şifre">
+         <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;"placeholder="Şifre" ng-model="loginData.password">
        </label>
 
        <br><br>
        
-       <label class="item">
+       
         <button ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit"> Giriş Yap </button>
-       </label>
+       
 
        <br><br>
 
