@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
     $scope.pictureUrl = "http://placehold.it/200x200";
 
-    localStorage.setItem('language', "EN");
+    localStorage.setItem('language', "TR");
     $scope.loginData = {};
     $scope.kayitData = {};
     $scope.userId = localStorage.getItem('user_id')
