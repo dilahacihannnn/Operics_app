@@ -34,12 +34,17 @@ angular.module('starter.controllers', [])
             $scope.modal.show();
         });
 
+        $scope.tiklabayrak=function() {
+            localStorage.setItem('language', $scope.language);
+            console.log($scope.language);
+        };
+
         $scope.doLogin = function() {
         // post edilecek ServiceRequest isimli değişken tanımlanır,
             var ServiceRequest = {
                 service_type: "giris",
                 email: $scope.loginData.email,
-                sifre: $scope.loginData.password
+                sifre: $scope.loginData.password,
                 }
         // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
             $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
