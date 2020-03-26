@@ -74,7 +74,7 @@
           
           <br><br><br>
           <input type="text" style="font-size:103%;margin-top: -1%;
-          margin-left: 5%;"placeholder="İsim">
+          margin-left: 5%;"placeholder="İsim Soyisim" ng-model="kayitData.name">
         </label>
 
 
@@ -82,38 +82,54 @@
           <i class="ion-ios-telephone"style="margin-right: 1%;font-size: 124%;"></i>
           
           <input type="text" style="font-size:103%;margin-top: -1%;
-          margin-left: 5%;"placeholder="Tel">
+          margin-left: 5%;"placeholder="Telefon Numarası" ng-model="kayitData.number">
         </label>
+
+        <label class="item item-input  kd">
+         <i class="ion-email" style="margin-right: 1%;font-size: 124%;"></i>
+         
+         <input type="text" style="font-size:103%;margin-top: -1%;
+         margin-left: 5%;"placeholder="john@suhr.com" ng-model="kayitData.email">
+       </label>
 
 
         <label class="item item-input  kd">
          <i class="ion-ios-unlocked"style="margin-right: 1%;font-size: 124%;"></i>
 
          <input type="password" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;"placeholder="Şifre">
+         margin-left: 5%;"placeholder="Şifre" ng-model="kayitData.password">
        </label>
 
 
        <label class="item item-input kd">
          <i class="ion-ios-unlocked" style="margin-right: 1%;font-size: 124%;"></i>
          <input type="password" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;"placeholder="Şifre Tekrar">
+         margin-left: 5%;"placeholder="Şifre Tekrar" ng-model="kayitData.passwordChck">
        </label>
-
 
        <label class="item item-input  kd">
          <i class="ion-email" style="margin-right: 1%;font-size: 124%;"></i>
          
          <input type="text" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;"placeholder="john@suhr.com">
+         margin-left: 5%;"placeholder="Çalıştığınız Firma" ng-model="kayitData.company">
        </label>
+
+       <label class="item item-input  kd">
+         <i class="ion-email" style="margin-right: 1%;font-size: 124%;"></i>
+         
+         <input type="text" style="font-size:103%;margin-top: -1%;
+         margin-left: 5%;"placeholder="Pozisyonunuz" ng-model="kayitData.position">
+       </label>
+
+
+       
 
      </div>
      <div>
 
 
 
-      <button style="margin-left: 60px;"class="button button-dark beton2">
+      <button style="margin-left: 60px;"class="button button-dark beton2" ng-disabled="kayitData.password!=kayitData.passwordChck" type="submit">
        Kayıt Ol 
      </button>
 
