@@ -80,33 +80,35 @@ angular.module('starter.controllers', [])
 
             } else {
 
-                $ionicPopup.alert ({template:"Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!.."});
+                $ionicPopup.alert ({template: $scope.giris.error_message});
 
             };
 
             })
         };
+
         $scope.kayitButon = function (kayittab) {
             $scope.kayittab = kayittab;
             console.log ($scope.kayittab);
         }
         // Kullanıcı kayıt servisi
         $scope.registerUser = function() {
-
-            var ServiceRequest = {
-                service_type: "create_user",
-                photo:    "img/pp.jfif",
-                name:     $scope.kayitData.name,
-                phone:    $scope.kayitData.number,
-                email:    $scope.kayitData.email,
-                sifre:    $scope.kayitData.password,
-                company:  $scope.kayitData.company,
-                position: $scope.kayitData.position
-            }
+                if (!$scope.kayittab == 1) {
+                var ServiceRequest = {
+                    service_type: "create_user",
+                    photo:    "img/pp.jfif",
+                    name:     $scope.kayitData.name,
+                    phone:    $scope.kayitData.number,
+                    email:    $scope.kayitData.email,
+                    sifre:    $scope.kayitData.password,
+                    company:  $scope.kayitData.company,
+                    position: $scope.kayitData.position
+                }
         // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
-            $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
-                $scope.kullanici = data
-            })
+                $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
+                    $scope.kullanici = data
+                })
+            };
         };
 
     } else {
