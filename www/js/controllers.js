@@ -6,7 +6,6 @@ angular.module('starter.controllers', [])
     $scope.pictureUrl = "http://placehold.it/200x200";
 
     //Girişte sorgulanacak parametreler
-    
     $scope.loginData                = {};
     $scope.kayitData                = {};
     $scope.userId                   = localStorage.getItem('user_id');
@@ -49,9 +48,9 @@ angular.module('starter.controllers', [])
             $scope.modal.show();
         });
 
-        $scope.tiklabayrak=function() {
-            localStorage.setItem('language', $scope.language);
-            console.log($scope.language);
+        $scope.tiklabayrak=function(language) {
+            localStorage.setItem('language', language);
+            console.log(language);
         };
 
         $scope.doLogin = function() {
@@ -232,11 +231,9 @@ angular.module('starter.controllers', [])
     }
 
 
-
-    $scope.abouttab = 0;
-
-    $scope.tiklaab=function() {
-        console.log($scope.abouttab);
+    $scope.tiklaab=function(abouttab) {
+        console.log(abouttab);
+        $scope.abouttab = abouttab;
     };
 
     $scope.modalgosterici = function(tur, id){

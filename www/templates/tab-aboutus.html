@@ -5,15 +5,15 @@
 
     <div class="tabs">
 
-      <a class="tab-item {{abouttab!=0 ? '' :'active'}}" ng-click="tiklaab(abouttab=0)" href="#/tab/aboutus">
+      <a class="tab-item {{(abouttab==0||!abouttab) ? 'active' :''}}" ng-click="tiklaab(0)" href="#/tab/aboutus">
         {{diller[1].kelime}}
 
       </a>
-      <a class="tab-item {{abouttab!=1 ? '' :'active'}}" ng-click="tiklaab(abouttab=1)" href="#/tab/aboutus">
+      <a class="tab-item {{abouttab==1 ? 'active' :''}}" ng-click="tiklaab(1)" href="#/tab/aboutus">
 
        {{diller[2].kelime}}
      </a>
-     <a class="tab-item {{abouttab!=2 ? '' :'active'}}" ng-click="tiklaab(abouttab=2)" href="#/tab/aboutus">
+     <a class="tab-item {{abouttab==2 ? 'active' :''}}" ng-click="tiklaab(2)" href="#/tab/aboutus">
       {{diller[3].kelime}}
     </a>
   </div>
@@ -26,7 +26,7 @@
   <!-- Hizmetlerimiz Tab -->
  
 
-  <div ng-if="abouttab==0"  ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"  ng-click="modalgosterici('service',{{$index}})" >
+  <div ng-if="(abouttab==0||!abouttab)"  ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"  ng-click="modalgosterici('service',{{$index}})" >
 
     <div class="item item-body hk" >
       <img class="full-image i" src="{{hizmet.SERVICE_IMAGE}}" >
