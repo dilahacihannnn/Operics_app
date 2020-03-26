@@ -19,7 +19,8 @@
 
       <button class="button button-clear button-light" ng-click="tiklabayrak('TR')"><img class="full-image l3" src="img/login/tt.png"></button></center>
 
-    <form ng-submit="doLogin()" ng-if="!user_id && !userKayit">
+
+    <form ng-submit="doLogin()" ng-if="!userId && !userKayit">
       <br><br>
       <div class="list" style= "padding:1px;">
         <br><br>
@@ -67,7 +68,6 @@
 
 
   <form ng-submit="registerUser()" ng-if="!user_id && !userKayit">
-    <h3 align="center">Login Kayıt</h3>
 
       <div class="list" style= "padding:10px;" >
 
