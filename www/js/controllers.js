@@ -135,7 +135,7 @@ angular.module('starter.controllers', [])
 
     // Çağrılacak servisler:
 
-   
+
     if (!$scope.diller) {
 
         var ServiceRequest = {
@@ -145,9 +145,9 @@ angular.module('starter.controllers', [])
 
         $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
             localStorage.setItem('dillerJson', JSON.stringify(data));
-            $scope.diller = JSON.parse(localStorage.getItem('dillerJson')); 
+            $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
         })
-    }   
+    }
 
     if (!$scope.hikayeler) {
         var ServiceRequest = {
@@ -159,7 +159,7 @@ angular.module('starter.controllers', [])
             localStorage.setItem('hikayeJson', JSON.stringify(data));
             $scope.hikayeler = JSON.parse(localStorage.getItem('hikayeJson'));
         })
-    } 
+    }
 
     if (!$scope.hizmetler) {
         var ServiceRequest = {
@@ -171,7 +171,7 @@ angular.module('starter.controllers', [])
             localStorage.setItem('hizmetJson', JSON.stringify(data));
             $scope.hizmetler = JSON.parse(localStorage.getItem('hizmetJson'));
         })
-    } 
+    }
 
     if (!$scope.ekip) {
         var ServiceRequest = {
@@ -212,7 +212,7 @@ angular.module('starter.controllers', [])
     if (!$scope.sozluk) {
         var ServiceRequest = {
             service_type: "sozluk",
-            language: localStorage.getItem('language')
+            user_id: localStorage.getItem('user_id')
         }
         // Yeni user isteği post edilir ve veritabanına eklenir.
         $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
