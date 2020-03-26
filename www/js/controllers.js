@@ -8,8 +8,8 @@ angular.module('starter.controllers', [])
     $scope.language = localStorage.getItem('language');
 
     if (!$scope.language) {
-        $scope.language = TR ;
-        localStorage.setItem('language', $scope.language);
+        localStorage.setItem('language', "TR");
+        $scope.language = 90;
     };
     
     $scope.loginData = {};
