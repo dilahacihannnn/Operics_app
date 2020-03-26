@@ -5,10 +5,16 @@ angular.module('starter.controllers', [])
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
     $scope.pictureUrl = "http://placehold.it/200x200";
 
-    localStorage.setItem('language', "TR");
+    $scope.language = localStorage.getItem('language');
+
+    if (!$scope.language) {
+        $scope.language = TR ;
+        localStorage.setItem('language', $scope.language);
+    };
+    
     $scope.loginData = {};
     $scope.kayitData = {};
-    $scope.userId = localStorage.getItem('user_id')
+    $scope.userId = localStorage.getItem('user_id');
 
 
     //Logout işlemi
