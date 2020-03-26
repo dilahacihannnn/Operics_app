@@ -5,8 +5,6 @@ angular.module('starter.controllers', [])
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
     $scope.pictureUrl = "http://placehold.it/200x200";
 
-    localStorage.setItem('language', "EN");
-
     $scope.language = localStorage.getItem('language');
 
     if (!$scope.language) {
