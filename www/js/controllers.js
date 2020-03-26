@@ -73,19 +73,23 @@ angular.module('starter.controllers', [])
 
                 $scope.userId = localStorage.getItem('user_id');
 
-                $ionicPopup.alert ("Sn. , Operics'e hoşgeldiniz!..");
+                $ionicPopup.alert ({template: "Sn. " + $scope.giris.user_name + ", Operics'e hoşgeldiniz!.."});
 
                 $scope.modal.hide();
                 console.log("buraya girdi");
 
             } else {
 
-                $ionicPopup.alert ("Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!..");
+                $ionicPopup.alert ({template:"Hatalı kullanıcı maili veya şifre kullandınız. Lütfen tekrar deneyiniz!.."});
 
             };
 
             })
         };
+        $scope.kayitButon = function (kayittab) {
+            $scope.kayittab = kayittab;
+            console.log ($scope.kayittab);
+        }
         // Kullanıcı kayıt servisi
         $scope.registerUser = function() {
 

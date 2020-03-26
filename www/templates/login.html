@@ -8,7 +8,7 @@
   <ion-content>
 
 
-   
+
     <center><img style="    width: 42%;
     "src="img/logo.PNG"/ ></center>
     <br>
@@ -20,54 +20,50 @@
       <button class="button button-clear button-light" ng-click="tiklabayrak('TR')"><img class="full-image l3" src="img/login/tt.png"></button></center>
 
 
-    <form ng-submit="doLogin()" ng-if="!userId && !userKayit">
-      <br><br>
-      <div class="list" style= "padding:1px;">
+      <form ng-submit="doLogin()" ng-if="!kayittab || kayittab==0">
         <br><br>
-        <label class="item item-input kd">
-          <i class="ion-email"style="margin-right: 1%;font-size: 124%;"></i>
-          <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com" ng-model="loginData.email">
-        </label>
+        <div class="list" style= "padding:1px;">
+          <br><br>
+          <label class="item item-input kd">
+            <i class="ion-email"style="margin-right: 1%;font-size: 124%;"></i>
+            <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com" ng-model="loginData.email">
+          </label>
+          <br><br>
+          <label class="item item-input kd">
+           <i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>
+           <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;"placeholder="Şifre" ng-model="loginData.password">
+         </label>
+
+         <br><br>
+
+
+         <button style="margin-left: 16%;"ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit"> Giriş Yap </button>
+
+
+         <br><br>
+
+         <button style="margin-left: 16%" class="button button-dark beton1" type="button" ng-click="kayitButon(1)">
+          <p class="dil"> Kayıt Ol</p>
+        </button>
         <br><br>
-        <label class="item item-input kd">
-         <i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>
-         <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;"placeholder="Şifre" ng-model="loginData.password">
-       </label>
+        <button class="button button-block button-light">
+          <p class="y"> Şifremi Unuttum</p>
+        </button>
 
-       <br><br>
-       
-       
-        <button style="margin-left: 16%;"ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit"> Giriş Yap </button>
-       
-
-       <br><br>
-
-       <button style="margin-left: 16%"class="button button-dark beton1">
-        <p class="dil"> Kayıt Ol</p>
-      </button>
-      <br><br>
-      <button class="button button-block button-light">
-        <p class="y"> Şifremi Unuttum</p>
-      </button>
-
-    </div>
-  </form>
-
-  <h1>{{userId}}</h1>
+      </div>
+    </form>
 
 
 
 
 
 
-
-
-  <br>
+    <br>
 
 
 
 
-  <form ng-submit="registerUser()" ng-if="!user_id && !userKayit">
+    <form ng-submit="registerUser()" ng-if="kayittab==1">
 
       <div class="list" style= "padding:10px;" >
 
@@ -128,7 +124,7 @@
 
    <div>
 
-    <button style="margin-left: 60px;"class="button button-dark beton1">
+    <button style="margin-left: 60px;"class="button button-dark beton1" type="button" ng-click="kayitButon(0)">
      <p class="dil"> Giriş Yap</p>
    </button>
  </div>
