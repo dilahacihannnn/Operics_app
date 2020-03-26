@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
 
     if (!$scope.language) {
         localStorage.setItem('language', "TR");
-        $scope.language = 90;
+        $scope.language = localStorage.getItem('language');
     };
     
     $scope.loginData = {};
