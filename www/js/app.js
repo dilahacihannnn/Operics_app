@@ -49,8 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/profile',
     views: {
       'tab-profile': {
-        templateUrl: 'templates/tab-profile.html',
-        controller: 'MainCtrl'
+        templateUrl: 'templates/tab-profile.html'
       }
     }
   })
@@ -59,8 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/main',
     views: {
       'tab-main': {
-        templateUrl: 'templates/tab-main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'templates/tab-main.html'
       }
     }
   })
@@ -69,8 +67,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/aboutus',
     views: {
       'tab-aboutus': {
-        templateUrl: 'templates/tab-aboutus.html',
-        controller: 'MainCtrl'
+        templateUrl: 'templates/tab-aboutus.html'
       }
     }
   })
@@ -79,8 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/dictionary',
     views: {
       'tab-dictionary': {
-        templateUrl: 'templates/tab-dictionary.html',
-        controller: 'MainCtrl'
+        templateUrl: 'templates/tab-dictionary.html'
       }
     }
   })
@@ -88,8 +84,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/courses',
     views: {
       'tab-courses': {
-        templateUrl: 'templates/tab-courses.html',
-        controller: 'MainCtrl'
+        templateUrl: 'templates/tab-courses.html'
       }
     }
   })
@@ -97,8 +92,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/contact',
     views: {
       'tab-contact': {
-        templateUrl: 'templates/tab-contact.html',
-        controller: 'MainCtrl'
+        templateUrl: 'templates/tab-contact.html'
       }
     }
   });
