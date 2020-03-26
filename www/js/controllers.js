@@ -4,8 +4,10 @@ angular.module('starter.controllers', [])
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
     $scope.pictureUrl = "http://placehold.it/200x200";
-    localStorage.setItem('JSON', "references: [{ img: 'https://i4.hurimg.com/i/hurriyet/75/0x0/5cd01f8ec03c0e2e30c221b5.jpg', id: 0 },{ img: 'https://i.pinimg.com/originals/00/82/79/0082797f78fadd08c5bd2926a450667f.png', id: 1 },{ img: 'https://i.pinimg.com/originals/e9/b6/be/e9b6be54cbf873b14681a21dca530f22.png', id: 2 }];");
-    $scope.json = localStorage.getItem('JSON');
+    localStorage.setItem('JSON', JSON.stringify([{ img: 'https://i4.hurimg.com/i/hurriyet/75/0x0/5cd01f8ec03c0e2e30c221b5.jpg', id: 0 },{ img: 'https://i.pinimg.com/originals/00/82/79/0082797f78fadd08c5bd2926a450667f.png', id: 1 },{ img: 'https://i.pinimg.com/originals/e9/b6/be/e9b6be54cbf873b14681a21dca530f22.png', id: 2 }]));
+    $scope.json = JSON.parse(localStorage.getItem('JSON'));
+    
+    
     $scope.language = localStorage.getItem('language');
 
     if (!$scope.language) {
@@ -125,7 +127,8 @@ angular.module('starter.controllers', [])
     }
 
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-        $scope.diller = data
+        localStorage.setItem('dillerJson', JSON.stringify(data));
+        $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
     })
 
     var ServiceRequest = {
