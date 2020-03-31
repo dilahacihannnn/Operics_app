@@ -9,7 +9,7 @@
  <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x">
       <div class="row" >
       <div class="col" ng-repeat="story in hikayeler" ng-click="modalgosterici('story', {{$index}})">
-         <img style="border-color: red;border-width: 1.9px;margin-right: -9px;" class="storycircle" src="{{story.STR_IMAGE}}">
+         <img style="border-color: red;border-width: 1.9px;margin-right: -9px;" class="storycircle" ng-src="{{story.STR_IMAGE}}">
        </div>
      </div>
    </ion-scroll>
@@ -22,7 +22,7 @@
     <div class="row" >
       <div class="col.col-25 item item-thumbnail- h" ng-repeat="servis in hizmetler" style="border-radius: 17px !important;
       margin-right: 14px;" ng-click="modalgosterici('service',{{$index}})">
-      <img class="hiz"src="{{servis.SERVICE_IMAGE}}">
+      <img class="hiz" ng-src="{{servis.SERVICE_IMAGE}}">
       <p align="center">{{servis.SERVICE_NAME}}</p>
     </div>
   </div>
@@ -36,7 +36,7 @@
     <div class="col.col-25" ng-repeat="referans in referanslar" >
       <a class="item item-thumbnail- h"style="border-radius: 17px !important;
       margin-right: 14px; ">
-      <img class="rfr"src="{{referans.REF_PHOTO}}">
+      <img class="rfr" ng-src="{{referans.REF_PHOTO}}">
     </a>
   </div>
 </div>
@@ -48,7 +48,7 @@
   <div class="row">
     <div ng-repeat="takim in ekip" ng-click="modalgosterici('team',{{$index}})" class="card group col-75" style="margin-right: 22px;">
       <div class="item item-avatarim" >
-        <img class="im" src="{{takim.IMAGE}}">
+        <img class="im" ng-src="{{takim.IMAGE}}">
         <font style="text-align: center;"><h2>{{takim.NAME}}</h2>
           <p>{{takim.POSITION}}</p></font>
           <p style="margin-left: 55px;">{{takim.ABOUT}}.</p>

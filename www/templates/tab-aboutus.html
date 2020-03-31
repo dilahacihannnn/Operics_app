@@ -24,12 +24,12 @@
  <br> <br>  <br>
 
   <!-- Hizmetlerimiz Tab -->
- 
+
 
   <div ng-if="(abouttab==0||!abouttab)"  ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"  ng-click="modalgosterici('service',{{$index}})" >
 
     <div class="item item-body hk" >
-      <img class="full-image i" src="{{hizmet.SERVICE_IMAGE}}" >
+      <img class="full-image i" ng-src="{{hizmet.SERVICE_IMAGE}}" >
 
       <div class=""> <h2 align="center" >{{hizmet.SERVICE_NAME}}<hr width="100%" size="4" ></h2></div>
       <p style="font-size: 12px;"align="center">
@@ -37,8 +37,8 @@
       </p>
     </div>
   </div>
-  
-</div> 
+
+</div>
 
 
 
@@ -53,7 +53,7 @@
     <div class="col.col-50 " ng-repeat="referans in referanslar ">
       <div class="item item-thumbnail- h " style="border-radius:
        17px !important;"href="#" ng-if="referans.ID%2!=0">
-        <img class="rfr " src="{{referans.REF_PHOTO}}">
+        <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
       </div>
       <br>
     </div>
@@ -62,7 +62,7 @@
     <div class="col.col-50 " ng-repeat="referans in referanslar ">
       <div class="item item-thumbnail- h " style="border-radius:
        17px !important;"href="#" ng-if="referans.ID%2==0">
-        <img class="rfr " src="{{referans.REF_PHOTO}}">
+        <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
       </div>
       <br>
     </div>
@@ -74,7 +74,7 @@
 
 <div ng-if="abouttab==2" ng-repeat="takim in ekip" ng-click="modalgosterici('team',{{$index}})" style="margin-top: 30px;"class="card rectangle groupi">
   <div class="item item-text-wrap ">
-    <img class="im"src="{{takim.IMAGE}}">
+    <img class="im" ng-src="{{takim.IMAGE}}">
     <h2><i class="ei">{{takim.NAME}}</i></h2>
     <h2><i class="es">{{takim.POSITION}}</i></h2>
     <p class="ea">{{text_truncate(takim.ABOUT,100)}}</p>

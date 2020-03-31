@@ -1,6 +1,6 @@
 <ion-modal-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
   <ion-header-bar class="bar-light">
-      <ion-header-buttons>  
+      <ion-header-buttons>
         <button class="button button-clear ion-close" ng-click="modal.hide()"></button>
       </ion-header-buttons>
     </ion-header-bar>
@@ -15,7 +15,7 @@
     <div class="item item-body hkd" >
       <i class="list card ">
         <div style="border-color: red;border-width: 2px;"class="item item-avatar profile ">
-         <img class="pi"src="{{hikayeler[itemId].STR_IMAGE}}">
+         <img class="pi" ng-src="{{hikayeler[itemId].STR_IMAGE}}">
        </i>
      </div>
 
@@ -23,7 +23,7 @@
      <br>
      <p style="font-size: 15px;"align="center">{{hikayeler[itemId].STR_DESCRIPTION}}
 
-      
+
     </div>
 
    <!-- <h4 align="center">Müşteri Hikayeleri</h4>
@@ -39,6 +39,6 @@
      <p style="font-size: 15px;"align="center">{{hikayeler[itemId].STR_DESCRIPTION}}</p>
 
   </div> -->
-  
+
 </ion-content>
 </ion-modal-view>
