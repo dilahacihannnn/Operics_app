@@ -37,7 +37,7 @@
          <br><br>
 
 
-         <button style="margin-left: 16%;"ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit">{{diller[21].kelime}}</button>
+         <button style="margin-left: 16%;"ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit">{{diller[16].kelime}}</button>
 
 
          <br><br>
@@ -47,7 +47,7 @@
         </button>
         <br><br>
         <button class="button button-block button-light">
-          <p class="y"> Şifremi Unuttum</p>
+          <a class="y"> Şifremi Unuttum</a>
         </button>
 
       </div>
@@ -129,8 +129,8 @@
 
 
 
-      <button style="margin-left: 60px;"class="button button-dark beton2" ng-disabled="kayitData.password!=kayitData.passwordChck" type="submit">
-       Kayıt Ol 
+      <button style="margin-left: 60px;"class="button button-dark beton2" ng-disabled="!kayitData.email || ((kayitData.password.length<8) || (kayitData.password!=kayitData.passwordChck))" type="submit">
+       {{diller[20].kelime}} 
      </button>
 
    </div>
