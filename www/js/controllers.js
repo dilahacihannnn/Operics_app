@@ -8,8 +8,9 @@ angular.module('starter.controllers', [])
     //Girişte sorgulanacak parametreler
     $scope.loginData                = {};
     $scope.kayitData                = {};
-    $scope.userId                   = localStorage.getItem('user_id');
     $scope.language                 = localStorage.getItem('language');
+    $scope.userId                   = localStorage.getItem('user_id')
+    $scope.loginStatus              = localStorage.getItem('loginStatus');
     $scope.languageOld              = localStorage.getItem('languageOld');
     $scope.diller                   = JSON.parse(localStorage.getItem('dillerJson'));
     $scope.hikayeler                = JSON.parse(localStorage.getItem('hikayeJson'));
@@ -29,14 +30,14 @@ angular.module('starter.controllers', [])
         $scope.dillerVersionChck        = data
         $scope.hikayelerVersionChck     = data
         $scope.hizmetlerVersionChck     = data
-        $scope.ekipVersionChck          = data
         $scope.referanslarVersionChck   = data
+        $scope.ekipVersionChck          = data
+        $scope.egitimVersionChck        = data
         $scope.sozlukVersionChck        = data
-        $scope.profilVersionChck        = data
         $scope.profilVersionChck        = data
     })
 
-    if (!$scope.language || $scope.dillerVersionChck == false) {
+    if (!$scope.language || !$scope.diller || $scope.dillerVersionChck == false) {
         localStorage.setItem('language', "TR");
         $scope.language = localStorage.getItem('language');
         var ServiceRequest = {
@@ -49,8 +50,7 @@ angular.module('starter.controllers', [])
             $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
         })
     };
-
-    
+   
     $scope.tiklabayrak=function(language) {
 
             localStorage.setItem('languageOld',  $scope.language);
@@ -84,11 +84,13 @@ angular.module('starter.controllers', [])
         // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
         $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
             $scope.giris = data[0]
-
+            
         //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
-            if ($scope.giris.login_status!= false) {
+            if ($scope.giris.login_status == true) {
 
                 localStorage.setItem('user_id', $scope.giris.id);
+                localStorage.setItem('loginStatus', 1);
+                $scope.loginStatus = localStorage.getItem('loginStatus');
 
         // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
 
@@ -97,11 +99,12 @@ angular.module('starter.controllers', [])
                 $ionicPopup.alert ({template: "Sn. " + $scope.giris.user_name + ", Operics'e hoşgeldiniz!.."});
 
                 $scope.modal.hide();
-                console.log("buraya girdi");
+                console.log("Login Status = " + $scope.loginStatus);
 
             } else {
 
                 $ionicPopup.alert ({template: $scope.giris.error_message});
+                console.log("Login Status = " + $scope.loginStatus);
 
             };
 
@@ -277,6 +280,8 @@ angular.module('starter.controllers', [])
 
     if (!$scope.userId) {
 
+        localStorage.setItem('loginStatus', 0);
+        $scope.loginStatus = localStorage.getItem('loginStatus');
         $ionicModal.fromTemplateUrl('templates/login.html', {scope: $scope}).then(function(modal) {
             $scope.modal = modal;
             $scope.modal.show();
@@ -286,7 +291,7 @@ angular.module('starter.controllers', [])
     // Çağrılacak servisler:
 
 
-    if (!$scope.hikayeler||!$scope.userId) {
+    if ((!$scope.hikayeler || $scope.hikayelerVersionChck == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
             service_type: "hikayeler",
             language: localStorage.getItem('language')
@@ -298,7 +303,7 @@ angular.module('starter.controllers', [])
         })
     }
 
-    if (!$scope.hizmetler||!$scope.userId || $scope.dillerVersionChck == false) {
+    if ((!$scope.hizmetler || $scope.hizmetlerVersionChck == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
           service_type: "hizmetler",
           language: localStorage.getItem('language')
@@ -310,7 +315,7 @@ angular.module('starter.controllers', [])
         })
     }
 
-    if (!$scope.ekip||!$scope.userId) {
+    if ((!$scope.ekip || $scope.ekipVersionChck == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
             service_type: "ekip",
             language: localStorage.getItem('language')
@@ -322,7 +327,7 @@ angular.module('starter.controllers', [])
         })
     }
 
-    if (!$scope.referanslar||!$scope.userId) {
+    if ((!$scope.referanslar || $scope.referanslarVersionChck == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
             service_type: "referanslar",
             language: localStorage.getItem('language')
@@ -334,7 +339,7 @@ angular.module('starter.controllers', [])
         })
     }
 
-    if (!$scope.egitimler||!$scope.userId) {
+    if ((!$scope.egitimler || $scope.egitimVersionChckk == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
             service_type: "egitimler",
             language: localStorage.getItem('language')
@@ -347,7 +352,7 @@ angular.module('starter.controllers', [])
     }
 
 
-    if (!$scope.sozluk||!$scope.userId) {
+    if ((!$scope.sozluk || $scope.sozlukVersionChck == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
             service_type: "sozluk",
             user_id: localStorage.getItem('user_id')
@@ -360,7 +365,7 @@ angular.module('starter.controllers', [])
     }
 
 
-    if (!$scope.profil||!$scope.userId) {
+    if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
             service_type: "profil",
             language: localStorage.getItem('language'),
