@@ -10,6 +10,7 @@ angular.module('starter.controllers', [])
     $scope.kayitData                = {};
     $scope.userId                   = localStorage.getItem('user_id');
     $scope.language                 = localStorage.getItem('language');
+    $scope.languageOld              = localStorage.getItem('languageOld');
     $scope.diller                   = JSON.parse(localStorage.getItem('dillerJson'));
     $scope.hikayeler                = JSON.parse(localStorage.getItem('hikayeJson'));
     $scope.hizmetler                = JSON.parse(localStorage.getItem('hizmetJson'));
@@ -17,21 +18,57 @@ angular.module('starter.controllers', [])
     $scope.referanslar              = JSON.parse(localStorage.getItem('referansJson'));
     $scope.sozluk                   = JSON.parse(localStorage.getItem('sozlukJson'));
     $scope.profil                   = JSON.parse(localStorage.getItem('profilJson'));
-    $scope.dillerVersionChck        = true;
-    $scope.hikayelerVersionChck     = true;
-    $scope.hizmetlerVersionChck     = true;
-    $scope.ekipVersionChck          = true;
-    $scope.referanslarVersionChck   = true;
-    $scope.sozlukVersionChck        = true;
-    $scope.profilVersionChck        = true;
+   
 
-    if (!$scope.language) {
+//Version Kontrolü
+    var ServiceRequest = {
+        service_type: "versionChck"
+    }
+    // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
+    $http.post($rootScope.webServiceUrl,ServiceRequest).success(function(data) {
+        $scope.dillerVersionChck        = data
+        $scope.hikayelerVersionChck     = data
+        $scope.hizmetlerVersionChck     = data
+        $scope.ekipVersionChck          = data
+        $scope.referanslarVersionChck   = data
+        $scope.sozlukVersionChck        = data
+        $scope.profilVersionChck        = data
+        $scope.profilVersionChck        = data
+    })
+
+    if (!$scope.language || $scope.dillerVersionChck == false) {
         localStorage.setItem('language', "TR");
         $scope.language = localStorage.getItem('language');
+        var ServiceRequest = {
+            service_type: "diller",
+            language: localStorage.getItem('language')
+        }
+
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+            localStorage.setItem('dillerJson', JSON.stringify(data));
+            $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
+        })
     };
 
+    
     $scope.tiklabayrak=function(language) {
+
+            localStorage.setItem('languageOld',  $scope.language);
+            $scope.languageOld = localStorage.getItem('languageOld');
             localStorage.setItem('language', language);
+            $scope.language = localStorage.getItem('language')  
+            if ($scope.languageOld != $scope.language) {
+                var ServiceRequest = {
+                    service_type: "diller",
+                    language: localStorage.getItem('language')
+                }
+
+                $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+                    localStorage.setItem('dillerJson', JSON.stringify(data));
+                    $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
+                })
+            }  
+            
             console.log(language);
         };
 
@@ -245,22 +282,9 @@ angular.module('starter.controllers', [])
             $scope.modal.show();
         });
     } 
-    
+
     // Çağrılacak servisler:
 
-
-    if (!$scope.diller||!$scope.userId) {
-
-        var ServiceRequest = {
-            service_type: "diller",
-            language: localStorage.getItem('language')
-        }
-
-        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-            localStorage.setItem('dillerJson', JSON.stringify(data));
-            $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
-        })
-    }
 
     if (!$scope.hikayeler||!$scope.userId) {
         var ServiceRequest = {
@@ -274,7 +298,7 @@ angular.module('starter.controllers', [])
         })
     }
 
-    if (!$scope.hizmetler||!$scope.userId) {
+    if (!$scope.hizmetler||!$scope.userId || $scope.dillerVersionChck == false) {
         var ServiceRequest = {
           service_type: "hizmetler",
           language: localStorage.getItem('language')
@@ -322,6 +346,7 @@ angular.module('starter.controllers', [])
         })
     }
 
+
     if (!$scope.sozluk||!$scope.userId) {
         var ServiceRequest = {
             service_type: "sozluk",
@@ -333,6 +358,7 @@ angular.module('starter.controllers', [])
             $scope.sozluk = JSON.parse(localStorage.getItem('sozlukJson'));
         })
     }
+
 
     if (!$scope.profil||!$scope.userId) {
         var ServiceRequest = {
