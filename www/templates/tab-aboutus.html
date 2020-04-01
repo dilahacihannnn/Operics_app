@@ -11,80 +11,86 @@
       </a>
       <a class="tab-item {{abouttab==1 ? 'active' :''}}" ng-click="tiklaab(1)" href="#/tab/aboutus">
 
-       {{diller[2].kelime}}
-     </a>
-     <a class="tab-item {{abouttab==2 ? 'active' :''}}" ng-click="tiklaab(2)" href="#/tab/aboutus">
-      {{diller[3].kelime}}
-    </a>
-  </div>
-</div>
-</div>
-
-<ion-content>
- <br> <br>  <br>
-
-  <!-- Hizmetlerimiz Tab -->
-
-
-  <div ng-if="(abouttab==0||!abouttab)"  ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"  ng-click="modalgosterici('service',{{$index}})" >
-
-    <div class="item item-body hk" >
-      <img class="full-image i" ng-src="{{hizmet.SERVICE_IMAGE}}" >
-
-      <div class=""> <h2 align="center" >{{hizmet.SERVICE_NAME}}<hr width="100%" size="4" ></h2></div>
-      <p style="font-size: 12px;"align="center">
-        {{hizmet.DESCRIPTION}}
-      </p>
+        {{diller[2].kelime}}
+      </a>
+      <a class="tab-item {{abouttab==2 ? 'active' :''}}" ng-click="tiklaab(2)" href="#/tab/aboutus">
+        {{diller[3].kelime}}
+      </a>
     </div>
   </div>
+  </div>
 
-</div>
+  <ion-content>
+    <br> <br> <br>
+
+    <!-- Hizmetlerimiz Tab -->
 
 
+    <div ng-if="(abouttab==0||!abouttab)" ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"
+      ng-click="modalgosterici('service',{{$index}})">
 
+      <div class="item item-body hk">
+        <img class="full-image i" ng-src="{{hizmet.SERVICE_IMAGE}}">
 
-
-<!-- Referanslar Tab -->
-
-<div ng-if="abouttab==1" class="row ">
-
-  <div class="col " style="margin-left: 45px;">
-    <br>
-    <div class="col.col-50 " ng-repeat="referans in referanslar ">
-      <div class="item item-thumbnail- h " style="border-radius:
-       17px !important;"href="#" ng-if="referans.ID%2!=0">
-        <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
+        <div class="">
+          <h2 align="center">{{hizmet.SERVICE_NAME}}
+            <hr width="100%" size="4">
+          </h2>
+        </div>
+        <p style="font-size: 12px;" align="center">
+          {{hizmet.DESCRIPTION}}
+        </p>
       </div>
-      <br>
     </div>
-  </div>
-  <div class="col ">
-    <div class="col.col-50 " ng-repeat="referans in referanslar ">
-      <div class="item item-thumbnail- h " style="border-radius:
-       17px !important;"href="#" ng-if="referans.ID%2==0">
-        <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
+
+    </div>
+
+
+
+
+
+    <!-- Referanslar Tab -->
+
+    <div ng-if="abouttab==1" class="row ">
+
+      <div class="col " style="margin-left: 45px;">
+        <br>
+        <div class="col.col-50 " ng-repeat="referans in referanslar ">
+          <div class="item item-thumbnail- h " style="border-radius:
+       17px !important;" href="#" ng-if="referans.ID%2!=0">
+            <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
+          </div>
+          <br>
+        </div>
       </div>
-      <br>
+      <div class="col ">
+        <div class="col.col-50 " ng-repeat="referans in referanslar ">
+          <div class="item item-thumbnail- h " style="border-radius:
+       17px !important;" href="#" ng-if="referans.ID%2==0">
+            <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
+          </div>
+          <br>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
 
-<!-- Ekibimiz Tab -->
+    <!-- Ekibimiz Tab -->
 
-<div ng-if="abouttab==2" ng-repeat="takim in ekip" ng-click="modalgosterici('team',{{$index}})" style="margin-top: 30px;"class="card rectangle groupi">
-  <div class="item item-text-wrap ">
-    <img class="im" ng-src="{{takim.IMAGE}}">
-    <h2><i class="ei">{{takim.NAME}}</i></h2>
-    <h2><i class="es">{{takim.POSITION}}</i></h2>
-    <p class="ea">{{text_truncate(takim.ABOUT,100)}}</p>
-  </div>
-</div>
-
-
+    <div ng-if="abouttab==2" ng-repeat="takim in ekip" ng-click="modalgosterici('team',{{$index}})"
+      style="margin-top: 30px;" class="card rectangle groupi">
+      <div class="item item-text-wrap ">
+        <img class="im" ng-src="{{takim.IMAGE}}">
+        <h2><i class="ei">{{takim.NAME}}</i></h2>
+        <h2><i class="es">{{takim.POSITION}}</i></h2>
+        <p class="ea">{{text_truncate(takim.ABOUT,100)}}</p>
+      </div>
+    </div>
 
 
 
-<br><br><br><br><br><br>
-</ion-content>
+
+
+    <br><br><br><br><br><br>
+  </ion-content>
 </ion-view>

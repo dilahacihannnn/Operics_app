@@ -10,39 +10,45 @@
 
 
     <center><img style="    width: 42%;
-    "src="img/logo.PNG"/ ></center>
+    " src="img/logo.PNG" /></center>
     <br>
     <center>
-      <button class="button button-clear button-light" ng-click="tiklabayrak('EN')"><img class=" full-image l1 " src="img/login/bb.png"></button>
+      <button class="button button-clear button-light" ng-click="tiklabayrak('EN')"><img class=" full-image l1 "
+          src="img/login/bb.png"></button>
 
-      <button class="button button-clear button--light" ng-click="tiklabayrak('DE')"><img class="full-image l2" src="img/login/aa.png"></button>
+      <button class="button button-clear button--light" ng-click="tiklabayrak('DE')"><img class="full-image l2"
+          src="img/login/aa.png"></button>
 
-      <button class="button button-clear button-light" ng-click="tiklabayrak('TR')"><img class="full-image l3" src="img/login/tt.png"></button></center>
+      <button class="button button-clear button-light" ng-click="tiklabayrak('TR')"><img class="full-image l3"
+          src="img/login/tt.png"></button></center>
 
 
-      <form ng-submit="doLogin()" ng-if="!kayittab || kayittab==0">
+    <form ng-submit="doLogin()" ng-if="!kayittab || kayittab==0">
+      <br><br>
+      <div class="list" style="padding:1px;">
         <br><br>
-        <div class="list" style= "padding:1px;">
-          <br><br>
-          <label class="item item-input kd">
-            <i class="ion-email"style="margin-right: 1%;font-size: 124%;"></i>
-            <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;"placeholder="simiz@mailadresi.com" ng-model="loginData.email">
-          </label>
-          <br><br>
-          <label class="item item-input kd">
-           <i class="ion-ios-unlocked"style="margin-right: 10%;font-size: 124%;"></i>
-           <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;"placeholder="Şifre" ng-model="loginData.password">
-         </label>
+        <label class="item item-input kd">
+          <i class="ion-email" style="margin-right: 1%;font-size: 124%;"></i>
+          <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;" placeholder="simiz@mailadresi.com"
+            ng-model="loginData.email">
+        </label>
+        <br><br>
+        <label class="item item-input kd">
+          <i class="ion-ios-unlocked" style="margin-right: 10%;font-size: 124%;"></i>
+          <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;" placeholder="Şifre"
+            ng-model="loginData.password">
+        </label>
 
-         <br><br>
-
-
-         <button style="margin-left: 16%;"ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2" type="submit">{{diller[16].kelime}}</button>
+        <br><br>
 
 
-         <br><br>
+        <button style="margin-left: 16%;" ng-disabled="!loginData.email || !loginData.password"
+          class="button button-dark beton2" type="submit">{{diller[16].kelime}}</button>
 
-         <button style="margin-left: 16%" class="button button-dark beton1" type="button" ng-click="kayitButon(1)">
+
+        <br><br>
+
+        <button style="margin-left: 16%" class="button button-dark beton1" type="button" ng-click="kayitButon(1)">
           <p class="dil"> {{diller[20].kelime}}</p>
         </button>
         <br><br>
@@ -57,98 +63,100 @@
 
     <form ng-submit="registerUser()" ng-if="kayittab==1">
 
-      <div class="list" style= "padding:10px;" >
+      <div class="list" style="padding:10px;">
 
         <label class="item item-input kd">
-          <i class="ion-person"style="margin-right: 1%;font-size: 124%;"></i>
-          
+          <i class="ion-person" style="margin-right: 1%;font-size: 124%;"></i>
+
           <br><br><br>
           <input type="text" style="font-size:103%;margin-top: -1%;
-          margin-left: 5%;"placeholder="İsim Soyisim" ng-model="kayitData.name">
+          margin-left: 5%;" placeholder="İsim Soyisim" ng-model="kayitData.name">
         </label>
 
 
-        <label class="item item-input kd" >
-          <i class="ion-ios-telephone"style="margin-right: 1%;font-size: 124%;"></i>
-          
+        <label class="item item-input kd">
+          <i class="ion-ios-telephone" style="margin-right: 1%;font-size: 124%;"></i>
+
           <input type="text" style="font-size:103%;margin-top: -1%;
-          margin-left: 5%;"placeholder="Telefon Numarası" ng-model="kayitData.number">
+          margin-left: 5%;" placeholder="Telefon Numarası" ng-model="kayitData.number">
         </label>
 
         <label class="item item-input  kd">
-         <i class="ion-email" style="margin-right: 1%;font-size: 124%;"></i>
-         
-         <input type="text" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;"placeholder="john@suhr.com" ng-model="kayitData.email">
-       </label>
+          <i class="ion-email" style="margin-right: 1%;font-size: 124%;"></i>
+
+          <input type="text" style="font-size:103%;margin-top: -1%;
+         margin-left: 5%;" placeholder="john@suhr.com" ng-model="kayitData.email">
+        </label>
 
 
         <label class="item item-input  kd">
-         <i class="ion-ios-unlocked"style="margin-right: 1%;font-size: 124%;"></i>
+          <i class="ion-ios-unlocked" style="margin-right: 1%;font-size: 124%;"></i>
 
-         <input type="password" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;"placeholder="Şifre" ng-model="kayitData.password">
-       </label>
-
-
-       <label class="item item-input kd">
-         <i class="ion-ios-unlocked" style="margin-right: 1%;font-size: 124%;"></i>
-         <input type="password" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;"placeholder="Şifre Tekrar" ng-model="kayitData.passwordChck">
-       </label>
-
-       <label class="item item-input  kd">
-         <i class="ion-briefcase" style="margin-right: 1%;font-size: 124%;"></i>
-         
-         <input type="text" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;"placeholder="Çalıştığınız Firma" ng-model="kayitData.company">
-       </label>
-
-       <label class="item item-input  kd">
-         <i class="ion-ios-color-wand" style="margin-right: 1%;font-size: 124%;"></i>
-
-         <input type="text" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;"placeholder="Pozisyonunuz" ng-model="kayitData.position">
-       </label>
+          <input type="password" style="font-size:103%;margin-top: -1%;
+         margin-left: 5%;" placeholder="Şifre" ng-model="kayitData.password">
+        </label>
 
 
-       
+        <label class="item item-input kd">
+          <i class="ion-ios-unlocked" style="margin-right: 1%;font-size: 124%;"></i>
+          <input type="password" style="font-size:103%;margin-top: -1%;
+         margin-left: 5%;" placeholder="Şifre Tekrar" ng-model="kayitData.passwordChck">
+        </label>
 
-     </div>
-     <div>
+        <label class="item item-input  kd">
+          <i class="ion-briefcase" style="margin-right: 1%;font-size: 124%;"></i>
 
+          <input type="text" style="font-size:103%;margin-top: -1%;
+         margin-left: 5%;" placeholder="Çalıştığınız Firma" ng-model="kayitData.company">
+        </label>
 
+        <label class="item item-input  kd">
+          <i class="ion-ios-color-wand" style="margin-right: 1%;font-size: 124%;"></i>
 
-      <button style="margin-left: 60px;"class="button button-dark beton2" ng-disabled="!kayitData.name || !kayitData.number || !kayitData.email || kayitData.password.length<8 || (kayitData.password!=kayitData.passwordChck)" type="submit">
-       {{diller[20].kelime}} 
-     </button>
-
-   </div>
-
-
-   <br>
-
-   <div>
-
-    <button style="margin-left: 60px;"class="button button-dark beton1" type="button" ng-click="kayitButon(0)">
-     <p class="dil">{{diller[16].kelime}}</p>
-   </button>
- </div>
-
- <br>
-</form>
-
-
-<br><br>
+          <input type="text" style="font-size:103%;margin-top: -1%;
+         margin-left: 5%;" placeholder="Pozisyonunuz" ng-model="kayitData.position">
+        </label>
 
 
 
 
+      </div>
+      <div>
+
+
+
+        <button style="margin-left: 60px;" class="button button-dark beton2"
+          ng-disabled="!kayitData.name || !kayitData.number || !kayitData.email || kayitData.password.length<8 || (kayitData.password!=kayitData.passwordChck)"
+          type="submit">
+          {{diller[20].kelime}}
+        </button>
+
+      </div>
+
+
+      <br>
+
+      <div>
+
+        <button style="margin-left: 60px;" class="button button-dark beton1" type="button" ng-click="kayitButon(0)">
+          <p class="dil">{{diller[16].kelime}}</p>
+        </button>
+      </div>
+
+      <br>
+    </form>
+
+
+    <br><br>
 
 
 
 
 
 
-</ion-content>
+
+
+
+
+  </ion-content>
 </ion-modal-view>
