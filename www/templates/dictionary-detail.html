@@ -1,25 +1,24 @@
 <ion-modal-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
   <ion-header-bar class="bar-light">
-      <ion-header-buttons>  
-        <button class="button button-clear ion-close" ng-click="modal.hide()"></button>
-      </ion-header-buttons>
-    </ion-header-bar>
+    <ion-header-buttons>
+      <button class="button button-clear ion-close" ng-click="modal.hide()"></button>
+    </ion-header-buttons>
+  </ion-header-bar>
 
   <ion-content>
     <br>
 
-    <div class="all">{{sozluk[itemId].NAME}}</div>
+    <div class="all">{{sozluk[itemId].WORD}}</div>
 
-
-    <img class="full-image rr" src="img/icons/r5.png">
+    <img ng-click="FavKontrol(sozluk[itemId], localStorage.getItem('user_id'))" class="full-image rr" src="img/icons/r5.png">
 
     <div class="list list-inset">
     </div>
-    <br><br>
-    <a class="item item-body hkd" href="#/tab/dictionary" >
-      <p style="font-size: 22px;font-family: Avenir-Book;">{{sozluk[itemId].DESCRIPTION}}
-      </p>
-    </a> 
-  </div>
-</ion-content>
+    <br>
+    <br>
+    <a class="item item-body hkd" href="#/tab/dictionary">
+      <p style="font-size: 22px;font-family: Avenir-Book;">{{sozluk[itemId].DESCRIPTION}}</p>
+    </a>
+    </div>
+  </ion-content>
 </ion-modal-view>

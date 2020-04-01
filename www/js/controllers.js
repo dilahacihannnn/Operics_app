@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
     $scope.loginData                = {};
     $scope.kayitData                = {};
     $scope.language                 = localStorage.getItem('language');
-    $scope.userId                   = localStorage.getItem('user_id')
+    $scope.userId                   = localStorage.getItem('user_id');
     $scope.loginStatus              = localStorage.getItem('loginStatus');
     $scope.languageOld              = localStorage.getItem('languageOld');
     $scope.diller                   = JSON.parse(localStorage.getItem('dillerJson'));
@@ -171,6 +171,11 @@ angular.module('starter.controllers', [])
         $scope.abouttab = abouttab;
     };
 
+    //Favoriye ekleme
+    $scope.FavKontrol = function (kelime_id, kullanici_id) {
+      console.log(kelime_id, kullanici_id);
+    };
+
     $scope.modalgosterici = function(tur, id){
       $scope.itemId = id;
 
@@ -187,6 +192,7 @@ angular.module('starter.controllers', [])
             return str;
         }
     }
+    
 
     // Onay kutusu
     $scope.ConfirmApplication = function() {
