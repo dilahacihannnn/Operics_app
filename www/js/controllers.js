@@ -17,6 +17,7 @@ angular.module('starter.controllers', [])
     $scope.hizmetler                = JSON.parse(localStorage.getItem('hizmetJson'));
     $scope.ekip                     = JSON.parse(localStorage.getItem('ekipJson'));
     $scope.referanslar              = JSON.parse(localStorage.getItem('referansJson'));
+    $scope.egitimler                = JSON.parse(localStorage.getItem('egitimJson'));
     $scope.sozluk                   = JSON.parse(localStorage.getItem('sozlukJson'));
     $scope.profil                   = JSON.parse(localStorage.getItem('profilJson'));
    
@@ -365,6 +366,7 @@ angular.module('starter.controllers', [])
     }
 
 
+    /*
     if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
             service_type: "profil",
@@ -377,5 +379,5 @@ angular.module('starter.controllers', [])
             $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
         })
     }    
-
+    */
 });

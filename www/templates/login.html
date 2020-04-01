@@ -129,7 +129,7 @@
 
 
 
-      <button style="margin-left: 60px;"class="button button-dark beton2" ng-disabled="!kayitData.email || ((kayitData.password.length<8) || (kayitData.password!=kayitData.passwordChck))" type="submit">
+      <button style="margin-left: 60px;"class="button button-dark beton2" ng-disabled="!kayitData.name || !kayitData.number || !kayitData.email || kayitData.password.length<8 || (kayitData.password!=kayitData.passwordChck)" type="submit">
        {{diller[20].kelime}} 
      </button>
 
