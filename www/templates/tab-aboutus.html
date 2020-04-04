@@ -21,14 +21,14 @@
 </div>
 
 <ion-content>
-
   <br> <br> <br>
-  <div class="ortala">
+
+  <!-- Hizmetlerimiz Tab -->
+
+  <div class="ortala" ng-click="aboutus_ekle(abouttab)">
     <button class="button button-assertive ekle_b ">
-      <h3 style=" color: white;">+ Ekle</h3>
+      + Ekle
     </button></div>
-    <!-- Hizmetlerimiz Tab -->
-    
 
 
     <div ng-if="(abouttab==0||!abouttab)" ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"
@@ -62,8 +62,6 @@
     <br>
     <div class="col.col-50 " ng-repeat="referans in referanslar ">
       <div class="item item-thumbnail- h "  href="#" ng-if="referans.ID%2!=0">
-         <br><br>
-      <div  class="ion-compose edit_i detail_edit edit_r"></div>
         <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
       </div>
       <br>
@@ -72,8 +70,6 @@
   <div class="col ">
     <div class="col.col-50 " ng-repeat="referans in referanslar ">
       <div class="item item-thumbnail- h " href="#" ng-if="referans.ID%2==0">
-         <br><br>
-      <div  class="ion-compose edit_i detail_edit edit_r"></div>
         <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
       </div>
       <br>
