@@ -95,9 +95,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             templateUrl: 'templates/tab-contact.html'
           }
         }
+      })
+      .state('tab.login', {
+        url: '/login',
+        views: {
+          'tab-contact': {
+            templateUrl: 'templates/login.html'
+          }
+        }
       });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/main');
+    $urlRouterProvider.otherwise('/tab/login');
 
   });

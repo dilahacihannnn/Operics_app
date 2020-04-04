@@ -141,10 +141,6 @@ angular.module('starter.controllers', [])
       localStorage.removeItem('language');
       localStorage.removeItem('user_id');
       $scope.userId = localStorage.getItem('user_id');
-      $ionicModal.fromTemplateUrl('templates/login.html', { scope: $scope }).then(function (modal) {
-        $scope.modal = modal;
-        $scope.modal.show();
-      });
     }
 
     // Profil resmi için kamera kontrolcüsü
@@ -284,10 +280,7 @@ angular.module('starter.controllers', [])
 
       localStorage.setItem('loginStatus', 0);
       $scope.loginStatus = localStorage.getItem('loginStatus');
-      $ionicModal.fromTemplateUrl('templates/login.html', { scope: $scope }).then(function (modal) {
-        $scope.modal = modal;
-        $scope.modal.show();
-      });
+      
     }
 
     // Çağrılacak servisler:
