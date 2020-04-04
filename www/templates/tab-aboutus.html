@@ -24,7 +24,7 @@
   <br> <br> <br>
 
   <!-- Hizmetlerimiz Tab -->
-   <div class="ortala" ng-click="deneme()">
+  <div class="ortala" ng-click="deneme()">
     <button class="button button-assertive ekle_b ">
       Deneme
     </button>
@@ -32,27 +32,26 @@
 
   <div class="ortala" ng-click="aboutus_ekle(abouttab)">
     <button class="button button-assertive ekle_b ">
-      + Ekle
+      <h3 style=" color: white;font-family: monospace;">  + Ekle</h3>
     </button>
   </div>
 
+  <div ng-if="(abouttab==0||!abouttab)" ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"
+  ng-click="modalgosterici('service',{{$index}})">
 
-    <div ng-if="(abouttab==0||!abouttab)" ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"
-    ng-click="modalgosterici('service',{{$index}})">
+  <div class="item item-body hk">
+    <img class="full-image i" ng-src="{{hizmet.SERVICE_IMAGE}}">
 
-    <div class="item item-body hk">
-      <img class="full-image i" ng-src="{{hizmet.SERVICE_IMAGE}}">
-
-      <div class="">
-        <h2 align="center">{{hizmet.SERVICE_NAME}}
-          <hr width="100%" size="4">
-        </h2>
-      </div>
-      <p style="font-size: 12px;" align="center">
-        {{hizmet.DESCRIPTION}}
-      </p>
+    <div class="">
+      <h2 align="center">{{hizmet.SERVICE_NAME}}
+        <hr width="100%" size="4">
+      </h2>
     </div>
+    <p style="font-size: 12px;" align="center">
+      {{hizmet.DESCRIPTION}}
+    </p>
   </div>
+</div>
 
 </div>
 
