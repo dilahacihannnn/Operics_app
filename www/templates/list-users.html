@@ -19,21 +19,40 @@
 	  <div class="col col-20"><b>İşlem Yap</b></div>
 	</div>
 
-	<ion-list>
-	<div ng-repeat="veri in veriler">
-	<div class="list-item row row-center">
-	  <div class="col col-20">{{veri.isim}}</div>
-	  <div class="col col-20">{{veri.telefon}}</div>
-	  <div class="col col-20">{{veri.mail}}</div>
-	  <div class="col col-20">{{veri.sirket}}</div>
-	  <div class="col col-20">{{}}</div>
-	  
-	 
+ 	<ion-list>
+	    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+	        <img ng-src="{{chat.face}}">
+	        <h2>{{chat.name}}</h2>
+	        <p>{{chat.lastText}}</p>
+	        <i class="icon ion-chevron-right icon-accessory"></i>
+
+	        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+	          Delete
+	        </ion-option-button>
+	    </ion-item>
+	</ion-list>
 	 
 
 	</div>
 	</div>
 	</ion-list>
+
+	<ion-view view-title="Chats">
+	  <ion-content>
+	    <ion-list>
+	      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+	        <img ng-src="{{chat.face}}">
+	        <h2>{{chat.name}}</h2>
+	        <p>{{chat.lastText}}</p>
+	        <i class="icon ion-chevron-right icon-accessory"></i>
+
+	        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+	          Delete
+	        </ion-option-button>
+	      </ion-item>
+	    </ion-list>
+	  </ion-content>
+	</ion-view>
 
   </ion-content>
 </ion-modal-view>

@@ -24,11 +24,17 @@
   <br> <br> <br>
 
   <!-- Hizmetlerimiz Tab -->
+   <div class="ortala" ng-click="aboutus_ekle(abouttab)">
+    <button class="button button-assertive ekle_b ">
+      Deneme
+    </button>
+  </div>
 
   <div class="ortala" ng-click="aboutus_ekle(abouttab)">
     <button class="button button-assertive ekle_b ">
       + Ekle
-    </button></div>
+    </button>
+  </div>
 
 
     <div ng-if="(abouttab==0||!abouttab)" ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"
