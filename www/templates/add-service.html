@@ -1,17 +1,25 @@
 <ion-modal-view view-title="Servis Ekle">
   <ion-header-bar class="bar-light">
     <ion-header-buttons>
-      <button class="button button-clear ion-close" ng-click="modal.hide()"></button>
+      <button class="button button-clear button-assertive ion-close" ng-click="modal.hide()"></button>
     </ion-header-buttons>
   </ion-header-bar>
 
 
   <ion-content>
-    <input class="ekle_input" type="file">
-    <input class="ekle_input" type="text">
-    <input class="ekle_input" type="text">
-    <button class="button button-assertive ekle_b"> Güncelle</button>
-    <button class="button button-assertive ekle_b"> Sil </button>
+      
+      <div style="margin-top: 20px" class="ortala list list-inset">
+        <h3>Hizmet Ekle</h3>
+        <input class="ekle_input item-input" type="file">
+        <label class="ekle_input item-input">
+          <input type="text" placeholder="Başlık">
+        </label>
+        <label class="ekle_input item item-input">
+          <input type="text" placeholder="Açıklama">
+        </label>
+      <button class="button button-assertive ekle_b"> Güncelle</button>
+      <button class="button button-assertive ekle_b"> Sil </button>
+    </div>
 
   </ion-content>
 </ion-modal-view>

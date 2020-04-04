@@ -5,6 +5,14 @@ angular.module('starter.controllers', [])
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
     $scope.pictureUrl = "http://placehold.it/200x200";
 
+
+    $scope.addservice = function() {
+      $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
+        $scope.modal = modal;
+        $scope.modal.show();
+      });
+    }
+
     //Girişte sorgulanacak parametreler
     $scope.loginData                    = {};
     $scope.kayitData                    = {};
