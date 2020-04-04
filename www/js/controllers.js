@@ -6,6 +6,13 @@ angular.module('starter.controllers', [])
     $scope.pictureUrl = "http://placehold.it/200x200";
 
 
+
+    $scope.deneme = function(){
+      $ionicModal.fromTemplateUrl('templates/list-users.html', { scope: $scope }).then(function (modal) {
+        $scope.modal = modal;
+        $scope.modal.show();
+      });   
+    }
     $scope.aboutus_ekle = function(tab_no) {
 
       switch (tab_no) {
