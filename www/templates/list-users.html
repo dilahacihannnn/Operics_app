@@ -1,0 +1,39 @@
+
+
+<ion-modal-view view-title="Servis Ekle">
+  <ion-header-bar class="bar-light">
+    <ion-header-buttons>
+      <button class="button button-clear button-assertive ion-close" ng-click="modal.hide()"></button>
+    </ion-header-buttons>
+  </ion-header-bar>
+  
+
+  <ion-content>
+      
+
+	<div class="row row-center">
+	  <div class="col col-20"><b>İsim</b></div>
+	  <div class="col col-20"><b>Telefon</b></div>
+	  <div class="col col-20"><b>Mail</b></div>
+	  <div class="col col-20"><b>Şirket</b></div>
+	  <div class="col col-20"><b>İşlem Yap</b></div>
+	</div>
+
+	<ion-list>
+	<div ng-repeat="veri in veriler">
+	<div class="list-item row row-center">
+	  <div class="col col-20">{{veri.isim}}</div>
+	  <div class="col col-20">{{veri.telefon}}</div>
+	  <div class="col col-20">{{veri.mail}}</div>
+	  <div class="col col-20">{{veri.sirket}}</div>
+	  <div class="col col-20">{{}}</div>
+	  
+	 
+	 
+
+	</div>
+	</div>
+	</ion-list>
+
+  </ion-content>
+</ion-modal-view>
