@@ -3,14 +3,17 @@
 
 		<br>
 		<h4 align="center">{{diller[6].kelime}}</h4>
+		<div class="ortala">
+			<button class="button button-assertive ekle_b ">
+				+ Ekle
+			</button></div>
 
-
-		<div ng-repeat="egitim in egitimler" ng-click="modalgosterici('course',{{$index}})">
-			<div class="card" style="border-radius: 10px;height: 188px;">
-				<div style="background: url('{{egitim.CRS_PHOTO}}'); height: 200px;margin-top: -2%;background-size: 105%;margin-left: -3%;"
+			<div ng-repeat="egitim in egitimler" ng-click="modalgosterici('course',{{$index}})">
+				<div class="card" style="border-radius: 10px;height: 188px;">
+					<div style="background: url('{{egitim.CRS_PHOTO}}'); height: 200px;margin-top: -2%;background-size: 105%;margin-left: -3%;"
 					class="item item-text-wrap ">
 					<div style="margin-top: 113px;"><span
-							style="background-color: red; color: white;margin-left: -1%;">{{egitim.CRS_BEGINDATE | date : "dd/MMMM/y"}}</span>
+						style="background-color: red; color: white;margin-left: -1%;">{{egitim.CRS_BEGINDATE | date : "dd/MMMM/y"}}</span>
 						<br>
 						<span style="background-color: black; color: white;margin-left: -1%;">{{egitim.CRS_NAME}}</span>
 					</div>
