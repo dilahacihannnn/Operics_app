@@ -104,6 +104,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           }
         }
       })
+      .state('tab.userprofile', {
+        url: '/userprofile/:userID',
+        views: {
+          'tab-contact': {
+            templateUrl: 'templates/userprofile.html'
+          }
+        }
+      })
        .state('tab.userlist', {
         url: '/userlist',
         views: {

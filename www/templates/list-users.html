@@ -1,13 +1,12 @@
 
-	<ion-view>
+	<ion-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
 	  <ion-content>
-	  	<img src="img/logo.PNG"/>
 	  	<div class="row row-center">
 		  <div class="col"><b>Mevcut Kullanıcılar</b></div>
 		 
 		</div>
 	    <ion-list>
-	      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="veri in userlist" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+	      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="veri in userlist" type="item-text-wrap" href="#/tab/userprofile/{{veri.id}}">
 	        <img ng-src="{{veri.imgURL}}">
 	        <h2>{{veri.isim}}</h2> <h2>{{veri.telefon}}</h2>
 	        <p>{{veri.mail}}</p>
