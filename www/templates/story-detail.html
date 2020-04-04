@@ -9,22 +9,27 @@
 
 
     <h4 align="center">Müşteri Hikayeleri</h4>
-    <br>
-    <br>
-    <br>
-    <div class="item item-body hkd">
-      <i class="list card ">
-        <div style="border-color: red;border-width: 2px;" class="item item-avatar profile ">
-          <img class="pi" ng-src="{{hikayeler[itemId].STR_IMAGE}}">
-      </i>
-    </div>
+    <div class="ortala">
+      <button class="button button-assertive ekle_b ">
+        + Ekle
+      </button></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="item item-body hkd">
+        <i class="list card ">
+          <div style="border-color: red;border-width: 2px;" class="item item-avatar profile ">
+            <img class="pi" ng-src="{{hikayeler[itemId].STR_IMAGE}}">
+          </i>
+        </div>
 
-    <h2 align="center" style="font-size: 21px;">{{hikayeler[itemId].STR_HEAD}}</h2>
-    <br>
-    <p style="font-size: 15px;" align="center">{{hikayeler[itemId].STR_DESCRIPTION}}
+        <h2 align="center" style="font-size: 21px;">{{hikayeler[itemId].STR_HEAD}}</h2>
+        <br>
+        <p style="font-size: 15px;" align="center">{{hikayeler[itemId].STR_DESCRIPTION}}
 
 
-      </div>
+        </div>
 
       <!-- <h4 align="center">Müşteri Hikayeleri</h4>
     <a class="item item-body " >
@@ -38,7 +43,7 @@
      <br>
      <p style="font-size: 15px;"align="center">{{hikayeler[itemId].STR_DESCRIPTION}}</p>
 
-  </div> -->
+   </div> -->
 
-  </ion-content>
+ </ion-content>
 </ion-modal-view>

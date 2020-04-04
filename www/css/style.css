@@ -1,11 +1,22 @@
+
+.ekle_b{
+  min-width: 50%;
+  max-width: 250px;
+  height: 60px;
+  border-radius: 8px;
+  background: #e41a28;
+  margin-top: 17px;
+}
+.ortala{
+text-align: center;
+}
+
 /* Empty. Add your own CSS if you like */
 .title-image {
 
   margin-top: 4px;
   height: 38px;
 }
-
-
 
 .bg
 {
@@ -20,15 +31,14 @@
 
 .h
 {
-    z-index: 3;
-    width: 116.46px;
-    height: 108.5px;
-    border-radius: 8px !important;
-    border: solid 0.5px #e5e5e5;
-    background: #ffffff;
-    margin-left: 17px;
-    margin-right: 60px;
-    margin-top: 4%;
+  z-index: 3;
+  width: 102.46px;
+  height: 97.5px;
+  border-radius: 4px !important;
+  border: solid 0.5px #e5e5e5;
+  background: #ffffff;
+  margin-left: -1px;
+  margin-top: 2%;
 }
 
 .storycircle
@@ -127,7 +137,7 @@
   z-index: 3;
   width: 60%;
   height: 226px;
-  border-radius: 9px;
+  border-radius: 15px;
   border: solid 0.5px #e5e5e5;
   background: #ffffff;
   margin-left: 71px;
