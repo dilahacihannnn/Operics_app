@@ -1,8 +1,11 @@
 /* Empty. Add your own CSS if you like */
 .title-image {
+
   margin-top: 4px;
   height: 38px;
 }
+
+
 
 .bg
 {
@@ -17,14 +20,15 @@
 
 .h
 {
-  z-index: 3;
-  width: 102.46px;
-  height: 97.5px;
-  border-radius: 1px !important;
-  border: solid 0.5px #e5e5e5;
-  background: #ffffff;
-  margin-left: -1px;
-  margin-top: 2%;
+    z-index: 3;
+    width: 116.46px;
+    height: 108.5px;
+    border-radius: 8px !important;
+    border: solid 0.5px #e5e5e5;
+    background: #ffffff;
+    margin-left: 17px;
+    margin-right: 60px;
+    margin-top: 4%;
 }
 
 .storycircle
@@ -47,7 +51,6 @@
   
 }
 
-
 .groupi {
   height: 86px;
   width: 292px;
@@ -55,7 +58,6 @@
   border-radius: 12px;
   margin-left: 40px;
 }
-
 
 .hiz{
   max-inline-size: -webkit-fill-available;
@@ -67,7 +69,6 @@
   margin-left: 1px;
 }
 
-
 .hizz{
   max-inline-size: -webkit-fill-available;
   min-block-size: -webkit-fill-available;
@@ -78,7 +79,6 @@
   width: 139%;
   margin-left: 1px;
 }
-
 .rfr
 {
  background-position: center;
@@ -89,7 +89,6 @@
  margin-left: -1px;
  margin-top: 7px;
 }
-
 
 .fnt
 {
@@ -111,26 +110,24 @@
   height: 100%;
   border-radius: 50%;
 }
-
 .y {
   margin-left: 9px;
   width: 93%;
   font-family: Microsoft Sans serif;
   font-size: large;
+  color: black;
 }
-
 .imi{
  z-index: 4;
  width: 58.86px;
  height: 58.62px;
  border-radius: 31px;
 }
-
 .hk {
   z-index: 3;
   width: 60%;
   height: 226px;
-  border-radius: 15px;
+  border-radius: 9px;
   border: solid 0.5px #e5e5e5;
   background: #ffffff;
   margin-left: 71px;
@@ -146,23 +143,19 @@
   margin-left: 38px;
   margin-top: -56px;
 }
-
 .i{
   width: 40%;
   margin-left: 55px;
   margin-top: -14px;
 }
-
 .id{
   width: 40%;
   margin-left: 95px;
   margin-top: -14px;
 }
-
 .bar{
  background-position: inherit;
 }
-
 .tabs
 {
   background-color: black;
@@ -196,16 +189,11 @@
   margin-right: 76px;
   width: 67%;
   line-height: 18px;
-
-
-
 }
 .icon
 {
   color: white;
 }
-
-
 .rectangle {
  z-index: 4;
  width: 326px;
@@ -219,93 +207,55 @@
  border-bottom: inset;
 
 }
-
 .ea {
   margin-left: 63px;
   width: 220px;
   font-size: 15px;
   margin-top: 10px;
-
 }
 .es {
  text-align: center;
  font-size: 15px;
  margin-left: 72px;
-
 }
 .ei{
   text-align: center;
   font-size: 22px;
   margin-left: 70px;
 }
-
-
 .obton{
-
-
   width: 264px;
   height: 46.5px;
   border-radius: 23.25px;
   background: #e03121;
   margin-left: 51px;
 }
-
-
 .title-image1 {
   margin-top: 4px;
   height: 38px;
 }
-
-
-
-
 .all{
-
-
-
   font-size:25px;
   text-align:center;
   margin-top:15px;
-
-
 }
-
-
-
-
 .rr{
-
-
   width:8%;
   margin-left:309px;
   margin-top:-24px;
   margin-block-end:12px;
-
-
 }
 
-
 .icon{
-
-
-
-
-  font-size:30px;
+ font-size:30px;
 
 }
 
 .a8{
-
-
   color:black;
   text-align:left;
   margin-left:20px;
-
-
 }
-
-
-
 .profile{
   border-radius: 130px !important;
   width: 44%;
@@ -334,55 +284,28 @@
   height: 133px;
   margin-left: 28%;
 }
-
-
-
 .ikk{
-
-
   width: 30%;
   margin-left: 110px;
   margin-top: 37px;
-
-  
 }
-
-
 .kart{
-
-
-
   border-radius:60px;
   width: 263px;
   margin-left: 26px;
   height: 46px;
   
 }
-
-
 .si{
 
   margin: -16px 88px 10px;
   font-family: Bahnschrift Light;
   margin-left: 83px;
   font-size:18px;
-
-
-
 }
-
-
 .in{
-
-  font-size:14px;
-
-
-
+ font-size:14px;
 }
-
-
-
-
 
 
 .b4{
@@ -390,96 +313,66 @@
   border-radius: 100px !important;
   margin-left:33px !important;
   width:250px !important;
-
-
-
 }
-
 
 .say{
 
   font-size:20px;
   color:black;
-
-
-
 }
-
 
 .kd{
+    border-radius: 4px;
+    margin-block-end: inherit;
+    height: 55px;
+    width: 87%;
+    margin-left: 6%;
+    box-shadow: 1px 3px rgb(246,248,249)
 
-  border-radius: 100px;
-  margin-block-end: inherit;
-  height: 55px;
-  width: 90%;
-  margin-left: 5%;
-  box-shadow: 0px 2px rgb(246,248,249);
-
-
-  
 }
-
-
-
-
 .beton1{
 
-  border-radius: 100px;
+  border-radius: 4px;
   margin-left:33px;
   width:250px;
   height:32px !important;
   background-color:white !important;
   border-color:black !important;
-
-
 }
 
 .beton2{
 
-  border-radius: 100px;
+  border-radius: 4px;
   margin-left:33px;
   width:250px;
   border-color:black;
-
-
-
-
 }
 
 .l1{
-  width: 83px;
-  height: 43px;
+  width: 45px;
+  height: 23px;
   margin-left: -2px;
-
-
-
-
-
 }
 
 .l2{
- width:83px;
- height: 43px;
+ width:45px;
+ height: 24px;
  margin-left: 17px;
 
 }
 
-
 .l3{
 
 
-  width: 83px;
-  height: 43px;
+  width: 45px;
+  height: 25px;
   margin-left:20px;
-
 }
-
 
 .title-image {
   margin-top: 4px;
   height: 38px;
 }
-
 
 .pp{
 
@@ -489,21 +382,13 @@
   font-family:Bahnschrift Light;
   font-size:18px;
   margin-top:-8px;
-
-
-
 }
-
-
 
 .dil{
 
 
   color:black;
   margin-top:2px;
-
-
-
 }
 
 .button-bar{

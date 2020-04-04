@@ -53,11 +53,10 @@
 
     <div ng-if="abouttab==1" class="row ">
 
-      <div class="col " style="margin-left: 45px;">
+      <div class="col ">
         <br>
         <div class="col.col-50 " ng-repeat="referans in referanslar ">
-          <div class="item item-thumbnail- h " style="border-radius:
-       17px !important;" href="#" ng-if="referans.ID%2!=0">
+          <div class="item item-thumbnail- h "  href="#" ng-if="referans.ID%2!=0">
             <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
           </div>
           <br>
@@ -65,8 +64,7 @@
       </div>
       <div class="col ">
         <div class="col.col-50 " ng-repeat="referans in referanslar ">
-          <div class="item item-thumbnail- h " style="border-radius:
-       17px !important;" href="#" ng-if="referans.ID%2==0">
+          <div class="item item-thumbnail- h "  href="#" ng-if="referans.ID%2==0">
             <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
           </div>
           <br>
