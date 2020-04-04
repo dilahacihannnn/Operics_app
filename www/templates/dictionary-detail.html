@@ -11,15 +11,22 @@
     <div class="all">{{sozluk[itemId].WORD}}</div>
 
     <img ng-click="FavKontrol(sozluk[itemId], localStorage.getItem('user_id'))" class="full-image rr"
-      src="img/icons/r5.png">
+    src="img/icons/r5.png">
 
-    <div class="list list-inset">
+    <div class="list list-inset" >
+     
     </div>
+
     <br>
     <br>
+
     <a class="item item-body hkd" href="#/tab/dictionary">
-      <p style="font-size: 22px;font-family: Avenir-Book;">{{sozluk[itemId].DESCRIPTION}}</p>
+      
+      <p style="font-size: 22px;font-family: Avenir-Book;">{{sozluk[itemId].DESCRIPTION}} <div style="margin-top: -20%;
+      margin-left: 90%;
+      min-width:185%;" class="ion-compose edit_i"></div></p>
+
     </a>
-    </div>
-  </ion-content>
+  </div>
+</ion-content>
 </ion-modal-view>

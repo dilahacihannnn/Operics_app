@@ -6,11 +6,26 @@
   border-radius: 8px;
   background: #e41a28;
   margin-top: 17px;
+
 }
 .ortala{
-text-align: center;
+  text-align: center;
 }
+.edit_i
+{
+  
+  font-size: 33px;
+  margin-top: -48px;"
+}
+.detail_edit{
+  margin-left: -802%;
+  text-align: right;
+}
+.edit_r{
 
+  font-size: 130%;
+
+}
 /* Empty. Add your own CSS if you like */
 .title-image {
 
@@ -91,13 +106,10 @@ text-align: center;
 }
 .rfr
 {
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
- position: relative;
- width: 100%;
- margin-left: -1px;
- margin-top: 7px;
+
+ width: 123%;
+ margin-left: -9px;
+ margin-top: -2px;
 }
 
 .fnt
@@ -332,12 +344,12 @@ text-align: center;
 }
 
 .kd{
-    border-radius: 4px;
-    margin-block-end: inherit;
-    height: 55px;
-    width: 87%;
-    margin-left: 6%;
-    box-shadow: 1px 3px rgb(246,248,249)
+  border-radius: 4px;
+  margin-block-end: inherit;
+  height: 55px;
+  width: 87%;
+  margin-left: 6%;
+  box-shadow: 1px 3px rgb(246,248,249)
 
 }
 .beton1{
