@@ -13,6 +13,11 @@ angular.module('starter.controllers', [])
         $scope.modal.show();
       });   
     }
+
+    $scope.userlist = [
+    {"isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","imgURL":"https://lh3.googleusercontent.com/proxy/75vv19Nso8OD9Gx3M2MlZgxh9nM7lzRp7urRZCiAthHrzINV3Wd7rW6wb-jmq04Q-ucei5Z_1HS06kN2ncQ"},
+    {"isim":"Nur Taşkara","telefon":"0123456789","mail":"anil@mail","sirket":"operics","imgURL":"https://img.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg?size=338&ext=jpg"}
+    ]
     $scope.aboutus_ekle = function(tab_no) {
 
       switch (tab_no) {
