@@ -55,39 +55,13 @@
 
 </div>
 
-<div class="list">
 
-  <a class="item item-icon-left" href="#">
-    <i class="icon ion-email"></i>
-    Check mail
-  </a>
-
-  <a class="item item-icon-left item-icon-right" href="#">
-    <i class="icon ion-chatbubble-working"></i>
-    Call Ma
-    <i class="icon ion-ios-telephone-outline"></i>
-  </a>
-
-  <a class="item item-icon-left" href="#">
-    <i class="icon ion-mic-a"></i>
-    Record album
-    <span class="item-note">
-      Grammy
-    </span>
-  </a>
-
-  <a class="item item-icon-left" href="#">
-    <i class="icon ion-person-stalker"></i>
-    Friends
-    <span class="badge badge-assertive">0</span>
-  </a>
-
-</div>
 
 
 
 <!-- Referanslar Tab -->
-<div style="margin-top: 30px;" class="row ortala" >
+
+<div style="margin-top: 30px;" class="row ortala" ng-if="abouttab==1">
   <div class="col col-50">
     <div style="background-color: white;" class="col" ng-repeat="referans in referanslar" ng-if="referans.ID%2==0">
       <img style="width: auto; height: 70%; max-width: 120px;max-height: 120px;padding: 20px; border: solid 1px darkgrey;border-radius: 10px;" ng-src="{{referans.REF_PHOTO}}">
