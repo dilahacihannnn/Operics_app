@@ -10,7 +10,7 @@
 
     <div class="all">{{sozluk[itemId].WORD}}</div>
 
-    <img ng-click="FavKontrol(sozluk[itemId], localStorage.getItem('user_id'))" class="full-image rr"
+    <img style="position: absolute; right: 20px; max-height: 32px; max-width: auto;" ng-click="FavKontrol(sozluk[itemId], localStorage.getItem('user_id'))" class="full-image rr"
     src="img/icons/r5.png">
 
     <div class="list list-inset" >
@@ -22,9 +22,7 @@
 
     <a class="item item-body hkd" href="#/tab/dictionary">
       
-      <p style="font-size: 22px;font-family: Avenir-Book;">{{sozluk[itemId].DESCRIPTION}} <div style="margin-top: -20%;
-      margin-left: 90%;
-      min-width:185%;" class="ion-compose edit_i"></div></p>
+      <p style="font-size: 22px;font-family: Avenir-Book;">{{sozluk[itemId].DESCRIPTION}} <div style="position: absolute; right: 20px; max-height: 32px; max-width: auto;" class="ion-compose edit_i"></div></p>
 
     </a>
   </div>
