@@ -16,7 +16,7 @@
 
     <form ng-submit="doLogin()" ng-if="!kayittab || kayittab==0">
       <br><br>
-      <div class="list" style="padding:1px;">
+      <div class="list ortala" style="padding:1px;">
         <br><br>
         <label class="item item-input kd">
           <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
@@ -33,13 +33,13 @@
         <br><br>
 
 
-        <button style="margin-left: 16%;" ng-disabled="!loginData.email || !loginData.password"
+        <button ng-disabled="!loginData.email || !loginData.password"
           class="button button-dark beton2" type="submit">{{diller[16].kelime}}</button>
 
 
         <br><br>
 
-        <button style="margin-left: 16%" class="button button-dark beton1" type="button" ng-click="kayitButon(1)">
+        <button class="button button-dark beton1" type="button" ng-click="kayitButon(1)">
           <p class="dil"> {{diller[20].kelime}}</p>
         </button>
         <br><br>
