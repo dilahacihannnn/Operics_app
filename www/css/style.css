@@ -7,7 +7,15 @@
   background: #e41a28;
   margin-top: 17px;
 }
-
+.referans_style
+{
+width: auto; height: 70%;
+ max-width: 125px;
+ max-height: 109px;
+ padding: 20px; 
+ border: solid 1px darkgrey;
+ border-radius: 10px;
+}
 .sagda_simge{
 position: absolute; 
 right: 20px; 
