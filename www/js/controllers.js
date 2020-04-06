@@ -15,33 +15,42 @@ angular.module('starter.controllers', [])
     }
 
     $scope.userlist = [
-    {"id":"0","isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","imgURL":"https://lh3.googleusercontent.com/proxy/75vv19Nso8OD9Gx3M2MlZgxh9nM7lzRp7urRZCiAthHrzINV3Wd7rW6wb-jmq04Q-ucei5Z_1HS06kN2ncQ"},
+    {"id":"0","isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","imgURL":"https://icon-library.net/images/username-icon/username-icon-28.jpg"},
     {"id":"1","isim":"Nur Taşkara","telefon":"0123456789","mail":"nur@mail","sirket":"operics","imgURL":"https://img.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg?size=338&ext=jpg"}
     ]
+
     $scope.aboutus_ekle = function(tab_no) {
 
-      switch (tab_no) {
-
-        case 0:
+      if (!tab_no) {
           $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
             $scope.modal = modal;
             $scope.modal.show();
           });
-        break;
+      } else {
 
-         case 1:
-          $ionicModal.fromTemplateUrl('templates/add-reference.html', { scope: $scope }).then(function (modal) {
-            $scope.modal = modal;
-            $scope.modal.show();
-          });
-        break;
+        switch (tab_no) {
 
-         case 2:
-          $ionicModal.fromTemplateUrl('templates/add-team.html', { scope: $scope }).then(function (modal) {
-            $scope.modal = modal;
-            $scope.modal.show();
-          });
-        break;
+          case 0:
+            $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          break;
+
+           case 1:
+            $ionicModal.fromTemplateUrl('templates/add-reference.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          break;
+
+           case 2:
+            $ionicModal.fromTemplateUrl('templates/add-team.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          break;
+        }
       }  
     }
 
