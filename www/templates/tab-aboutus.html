@@ -60,12 +60,25 @@
 
 
 <!-- Referanslar Tab -->
+<div style="margin-top: 30px;" class="row ortala" >
+  <div class="col col-50">
+    <div style="background-color: white;" class="col" ng-repeat="referans in referanslar" ng-if="referans.ID%2==0">
+      <img style="width: auto; height: 70%; max-width: 120px;max-height: 120px;padding: 20px; border: solid 1px darkgrey;border-radius: 10px;" ng-src="{{referans.REF_PHOTO}}">
+    </div>
+  </div>
+  <div class="col col-50">
+    <div style="background-color: white;" class="col" ng-repeat="referans in referanslar" ng-if="referans.ID%2==1">
+      <img style="width: auto; height: 70%; max-width: 120px;max-height: 120px;padding: 20px; border: solid 1px darkgrey;border-radius: 10px;" src="{{referans.REF_PHOTO}}">
+    </div>
+  </div>
+</div>
 
-<div ng-if="abouttab==1" class="row ">
+<!--
 
-  <div class="col " >
+<div ng-if="abouttab==1" class="row">
+  <div class="col" >
     <br>
-    <div class="col.col-50 " ng-repeat="referans in referanslar ">
+    <div class="col.col-50 " ng-repeat="referans in referanslar">
       <div class="item item-thumbnail- h "  href="#" ng-if="referans.ID%2!=0">
         <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
       </div>
@@ -73,7 +86,7 @@
     </div>
   </div>
   <div class="col ">
-    <div class="col.col-50 " ng-repeat="referans in referanslar ">
+    <div class="col.col-50 " ng-repeat="referans in referanslar">
       <div class="item item-thumbnail- h " href="#" ng-if="referans.ID%2==0">
         <img class="rfr " ng-src="{{referans.REF_PHOTO}}">
       </div>
@@ -81,6 +94,7 @@
     </div>
   </div>
 </div>
+-->
 
 
 <!-- Ekibimiz Tab -->
