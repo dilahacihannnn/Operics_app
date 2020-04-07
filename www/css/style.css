@@ -12,7 +12,7 @@
   width: auto; height: 70%;
   max-width: 125px;
   max-height: 109px;
-  padding: 24%; 
+  padding: 28%; 
   border: solid 1px darkgrey;
   border-radius: 10px;
   padding-top: 16%;
@@ -21,14 +21,14 @@
 {
   background-color: white;
   padding-left: 13% !important;
-  margin-top: -21%;
-  padding: 20%;
+  margin-top: -46%;
+  padding: 39%;
 
 }
 .referans_icon
 {
   float: right;
-  margin-right: 8px;
+  margin-right: -18px;
   font-size: 134%;
   contain: size;
 }
@@ -48,7 +48,7 @@
 }
 .edit_i
 {
-  
+
   font-size: 33px;
   margin-top: -48px;"
 }
