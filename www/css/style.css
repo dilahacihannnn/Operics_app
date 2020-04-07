@@ -5,7 +5,7 @@
   height: 60px;
   border-radius: 8px;
   background: #e41a28;
-  margin-top: 17px;
+  margin-top: 7%;
 }
 .referans_style
 {
@@ -15,6 +15,7 @@ width: auto; height: 70%;
  padding: 20px; 
  border: solid 1px darkgrey;
  border-radius: 10px;
+ padding-top: 28px;
 }
 .sagda_simge{
 position: absolute; 

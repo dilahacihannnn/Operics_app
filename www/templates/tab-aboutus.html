@@ -61,11 +61,11 @@
 
 <!-- Referanslar Tab -->
 
-<div style="margin-top: 30px;" class="row ortala" ng-if="abouttab==1">
+<div style="margin-top: 30px;" class="row ortala " ng-if="abouttab==1">
   <div class="col col-50">
-    <div style="background-color: white;" class="col" ng-repeat="referans in referanslar" ng-if="referans.ID%2==0">
-      <img class="referans_style" ng-src="{{referans.REF_PHOTO}}">
-    </div>
+    <div style="background-color: white;" class="col " ng-repeat="referans in referanslar" ng-if="referans.ID%2==0">
+      <img class="referans_style " ng-src="{{referans.REF_PHOTO}}">
+    </div> 
   </div>
   <div class="col col-50">
     <div style="background-color: white;" class="col" ng-repeat="referans in referanslar" ng-if="referans.ID%2==1">
