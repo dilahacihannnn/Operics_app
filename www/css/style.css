@@ -7,9 +7,18 @@
   background: #e41a28;
   margin-top: 7%;
 }
+.ekibimiz_style{
+ padding: 5px;
+ border-radius: 11px;
+ height: 155px;
+ padding-top: 4%;
+ width: 100%;
+ box-shadow: 1px 5px rgb(245,248,249);
+}
 .referans_style
 {
-  width: auto; height: 70%;
+  width: auto; 
+  height: 70%;
   max-width: 125px;
   max-height: 109px;
   padding: 28%; 
@@ -252,14 +261,12 @@
   color: white;
 }
 .rectangle {
- z-index: 4;
+
  width: 326px;
  height: 171px;
  margin-left: 24px;
- border-radius: 26px;
  border-radius: 12px;
  border: solid 0.5px #e2e2e2;
- background: #ffffff;
  box-shadow: 1px 5px rgb(245,248,249);
  border-bottom: inset;
 
