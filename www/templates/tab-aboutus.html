@@ -22,8 +22,36 @@
 
 <ion-content>
   <br> <br> <br>
+ <div class="ortala" ng-click="aboutus_ekle(abouttab)">
+    <button class="button button-assertive ekle_b ">
+      <h3 style=" color: white;font-family: monospace;">  + Ekle</h3>
+    </button>
+  </div>
+<center> 
+  <div class="col col-100">
+  <div ng-if="(abouttab==0||!abouttab)" ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"
+  ng-click="modalgosterici('service',{{$index}})">
+  <div class="col col-60" style="    border-radius: 8px;
+    border: solid 1px darkgrey;height: 222px;width: auto;">
+  <img style="max-width: 39%;"class="col-50 full-image" ng-src="{{hizmet.SERVICE_IMAGE}}" >
+<div class="col-100">
+  <h2 style="font-size: 17px;color: #424242;
+    font-family: -webkit-body;"align="center" class="col">{{hizmet.SERVICE_NAME}}
+  <hr width="100%" size="1">
+  </h2></div><div class="col-100">
+  <p style="font-size: 12px;
+    color: #6e6767;" align="center">
+      {{hizmet.DESCRIPTION}}
+    </p></div>
+  </div></div>
+</div>
 
-  <!-- Hizmetlerimiz Tab -->
+
+
+
+
+</center>
+  <!-- Hizmetlerimiz Tab 
   <div class="ortala" ng-click="deneme()">
     <button class="button button-assertive ekle_b ">
       Deneme
@@ -55,7 +83,7 @@
 
 </div>
 
-
+-->
 
 
 
