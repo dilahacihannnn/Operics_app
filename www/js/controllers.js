@@ -165,9 +165,7 @@ angular.module('starter.controllers', [])
           name: $scope.kayitData.name,
           phone: $scope.kayitData.number,
           email: $scope.kayitData.email,
-          sifre: $scope.kayitData.password,
-          company: $scope.kayitData.company,
-          position: $scope.kayitData.position
+          sifre: $scope.kayitData.password
         }
 
         // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
@@ -323,7 +321,6 @@ angular.module('starter.controllers', [])
       localStorage.setItem('loginStatus', 0);
       $scope.loginStatus = localStorage.getItem('loginStatus');
       $state.go('login');
-      
     }
 
     // Çağrılacak servisler:
