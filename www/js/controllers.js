@@ -1,18 +1,11 @@
 angular.module('starter.controllers', [])
 
-  .controller('MainCtrl', function ($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
+  .controller('MainCtrl', function ($scope, $state, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
     $scope.pictureUrl = "http://placehold.it/200x200";
 
 
-
-    $scope.deneme = function(){
-      $ionicModal.fromTemplateUrl('templates/list-users.html', { scope: $scope }).then(function (modal) {
-        $scope.modal = modal;
-        $scope.modal.show();
-      });   
-    }
 
     $scope.userlist = [
     {"id":"0","isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","imgURL":"https://icon-library.net/images/username-icon/username-icon-28.jpg"},
@@ -146,8 +139,8 @@ angular.module('starter.controllers', [])
           // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
           $scope.userId = localStorage.getItem('user_id');
           $ionicPopup.alert({ template: "Sn. " + $scope.giris.user_name + ", Operics'e hoşgeldiniz!.." });
-          $scope.modal.hide();
           console.log("Login Status = " + $scope.loginStatus);
+          $state.go('tab.main');
 
         } else {
 
@@ -329,6 +322,7 @@ angular.module('starter.controllers', [])
 
       localStorage.setItem('loginStatus', 0);
       $scope.loginStatus = localStorage.getItem('loginStatus');
+      $state.go('login');
       
     }
 
