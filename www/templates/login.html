@@ -10,7 +10,7 @@
     <center><img style="    width: 42%;
     " src="img/logo.PNG" /></center>
    
-    
+    <!-- Kullanıcı Giriş Form Yapısı -->
 
     <form ng-submit="doLogin()" ng-if="!kayittab || kayittab==0">
       <br><br>
@@ -41,12 +41,14 @@
           <p class="dil"> {{diller[20].kelime}}</p>
         </button>
         <br><br>
-        <button class="button button-block button-light">
+        <button class="button button-block button-light" type="button" ng-click="kayitButon(2)">
           <a class="y">{{diller[22].kelime}}</a>
         </button>
 
       </div>
     </form>
+
+    <!-- Kullanıcı Kayıt Form Yapısı -->
 
     <form ng-submit="registerUser()" ng-if="kayittab==1">
 
@@ -116,6 +118,32 @@
       <br>
     </form>
 
+    <!-- Şifremi Unuttum Form Yapısı -->
+
+    <form ng-submit="paswordRes()" ng-if="kayittab==2">
+        <br><br>
+          <center><h4> Lütfen E-mail adresinizi giriniz. </h4></center>
+        <br>
+        <div class="list ortala" style="padding:1px;">
+          <br><br>
+          <label class="item item-input kd">
+            <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
+            <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;" placeholder="{{diller[15].kelime}}"
+            ng-model="resetPass.email">
+          </label>
+          <br><br>
+          <button ng-disabled="!resetPass.email"
+          class="button button-dark beton2" type="submit">Şifremi Sıfırla
+          </button>
+
+
+          <br><br>
+          <button class="button button-block button-light" type="button" ng-click="kayitButon(0)">
+          <a class="y">Geri</a>
+          </button>
+
+        </div>
+      </form>
 
 
     <center>
@@ -126,10 +154,8 @@
           src="img/login/aa.png"></button>
 
       <button class="button button-clear button-light" ng-click="tiklabayrak('TR')"><img class="full-image l3"
-          src="img/login/tt.png"></button></center>
-
-
-
+          src="img/login/tt.png"></button>
+    </center>
 
 
   </ion-content>
