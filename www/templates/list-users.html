@@ -7,14 +7,14 @@
 		 
 		</div>
 	    <ion-list>
-	      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="veri in userlist" type="item-text-wrap" href="#/tab/userprofile/{{veri.id}}">
+	      <ion-item class="item-remove-animate item-avatar item-icon-right " ng-repeat="veri in userlist" type="item-text-wrap" href="#/tab/userprofile/{{veri.id}}">
 	        <img ng-src="{{veri.imgURL}}">
-	        <h2>{{veri.isim}}</h2> <h2>{{veri.telefon}}</h2>
-	        <p>{{veri.mail}}</p>
+	        <h2 class="{{veri.status=='banned' ? 'engellenmis_kullanici' : ''}}">{{veri.isim}} - {{veri.sirket}}{{veri.status=='banned' ? ' (Yasaklı Kullanıcı)' : ''}}</h2>
+	        <p>{{veri.mail}} - {{veri.telefon}}</p>
 	        <i class="icon ion-chevron-right icon-accessory"></i>
 
 	        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-	          Delete
+	          Engelle
 	        </ion-option-button>
 	      </ion-item>
 	    </ion-list>

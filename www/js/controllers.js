@@ -8,8 +8,8 @@ angular.module('starter.controllers', [])
 
 
     $scope.userlist = [
-    {"id":"0","isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","imgURL":"https://icon-library.net/images/username-icon/username-icon-28.jpg"},
-    {"id":"1","isim":"Nur Taşkara","telefon":"0123456789","mail":"nur@mail","sirket":"operics","imgURL":"https://img.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg?size=338&ext=jpg"}
+    {"id":"0","isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","status":"active","imgURL":"https://icon-library.net/images/username-icon/username-icon-28.jpg"},
+    {"id":"1","isim":"Nur Taşkara","telefon":"0123456789","mail":"nur@mail","sirket":"operics","status":"banned","imgURL":"https://img.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg?size=338&ext=jpg"}
     ]
 
     $scope.aboutus_ekle = function(tab_no) {

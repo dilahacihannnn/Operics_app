@@ -32,8 +32,12 @@
   padding-left: 13% !important;
   margin-top: -46%;
   padding: 39%;
-
 }
+
+.engellenmis_kullanici{
+  background: rgb(255,0,0,0.2);
+}
+
 .referans_icon
 {
   float: right;
@@ -41,6 +45,7 @@
   font-size: 134%;
   contain: size;
 }
+
 .sagda_simge{
   position: absolute; 
   right: 20px; 
