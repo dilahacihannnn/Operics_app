@@ -74,8 +74,6 @@ angular.module('starter.controllers', [])
 
       } else {
 
-        $state.go('tab.main');
-
         // Çağrılacak servisler:
 
         if ((!$scope.hikayeler || $scope.hikayelerVersionChck == false) && $scope.loginStatus == 1) {
@@ -171,7 +169,9 @@ angular.module('starter.controllers', [])
                 $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
             })
         } 
-        */   
+        */ 
+
+        $state.go('tab.main'); 
         
       }
     }
@@ -322,7 +322,7 @@ angular.module('starter.controllers', [])
         if ($scope.sms_verify.create_status == "true") {
           localStorage.setItem('loginStatus', 1);
           $scope.loginStatus = localStorage.getItem('loginStatus');
-          $scope.loadData();
+          $scope.loadData(); 
           $scope.modal.hide();
           console.log($scope.loginStatus);
         }
