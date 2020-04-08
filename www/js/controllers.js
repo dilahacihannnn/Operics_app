@@ -132,8 +132,9 @@ angular.module('starter.controllers', [])
 
         //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
         if ($scope.giris.login_status == true) {
-
+          
           $scope.loadData();
+          $state.go('tab.main');
           localStorage.setItem('user_id', $scope.giris.id);
           localStorage.setItem('loginStatus', 1);
           $scope.loginStatus = localStorage.getItem('loginStatus');
@@ -142,7 +143,7 @@ angular.module('starter.controllers', [])
           $scope.userId = localStorage.getItem('user_id');
           $ionicPopup.alert({ template: "Sn. " + $scope.giris.user_name + ", Operics'e hoşgeldiniz!.." });
           console.log("Login Status = " + $scope.loginStatus);
-          $state.go('tab.main');
+          
 
         } else {
 
@@ -202,10 +203,10 @@ angular.module('starter.controllers', [])
         $scope.sms_verify = data[0]
         if ($scope.sms_verify.create_status == "true") {
           $scope.loadData();
+          $state.go('tab.main');
           localStorage.setItem('loginStatus', 1);
           $scope.loginStatus = localStorage.getItem('loginStatus');
           $scope.modal.hide();
-          $state.go('tab.main');
           console.log($scope.loginStatus);
         }
       })
@@ -359,7 +360,9 @@ angular.module('starter.controllers', [])
       if (!$scope.loginStatus || $scope.loginStatus == 0) {
 
         $state.go('login');
+
       } else {
+
         $state.go('tab.main');
 
         if ((!$scope.hikayeler || $scope.hikayelerVersionChck == false) && $scope.loginStatus == 1) {
