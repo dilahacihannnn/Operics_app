@@ -472,6 +472,6 @@ angular.module('starter.controllers', [])
 
     //Login Durum Kontrolü
     
-    
+    $scope.loadData();
     
   });
