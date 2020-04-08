@@ -411,7 +411,7 @@ angular.module('starter.controllers', [])
       }
 
       
-      if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
+      /*if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
           var ServiceRequest = {
               service_type: "profil",
               language: localStorage.getItem('language'),
@@ -423,7 +423,8 @@ angular.module('starter.controllers', [])
               localStorage.setItem('profilJson', JSON.stringify(data));
               $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
           })
-      }    
+      } 
+      */   
       
     }
   });
