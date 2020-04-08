@@ -13,7 +13,7 @@
  height: 155px;
  padding-top: 4%;
  width: 100%;
- box-shadow: 1px 5px rgb(245,248,249);
+ box-shadow: 1px 5px 6px 2px #e5e5e5;
 }
 .referans_style
 {
@@ -283,17 +283,7 @@
 {
   color: white;
 }
-.rectangle {
 
- width: 326px;
- height: 171px;
- margin-left: 24px;
- border-radius: 12px;
- border: solid 0.5px #e2e2e2;
- box-shadow: 1px 5px rgb(245,248,249);
- border-bottom: inset;
-
-}
 .ea {
   margin-left: 63px;
   width: 220px;
@@ -345,16 +335,16 @@
 }
 .profile{
   border-radius: 130px !important;
-  width: 44%;
-  height: 117px;
-  margin-left: 28%;
+  width: 49%;
+  height: 27%;
 
 }
-.pi
+.mstory_image
 {
-  width: 481%;
-  margin-left: -347%;
-  margin-top: -64%;
+ max-width: 100%;
+ margin-left: -5%;
+ height: 86px;
+ margin-top: 4%;
 }
 
 .ic{
