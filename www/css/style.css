@@ -8,6 +8,10 @@
   margin-top: 17px;
 }
 
+.engellenmis_kullanici{
+  background: rgb(255,0,0,0.2);
+}
+
 .sagda_simge{
 position: absolute; 
 right: 20px; 
