@@ -64,6 +64,15 @@ angular.module('starter.controllers', [])
     $scope.sozluk                       = JSON.parse(localStorage.getItem('sozlukJson'));
     $scope.profil                       = JSON.parse(localStorage.getItem('profilJson'));
 
+    //Login Durum Kontrol düzeltme
+
+    if (!$scope.loginStatus) {
+      localStorage.setItem('loginStatus', 0);
+      $scope.loginStatus = localStorage.getItem('loginStatus');
+      $scope.loadData();
+    }
+
+
     //Version Kontrolü
     var ServiceRequest = {
       service_type: "versionChck"
@@ -132,12 +141,11 @@ angular.module('starter.controllers', [])
 
         //Gelen veriler girlenler ile uyuşuyorsa kullanıcı ismi ve maili lokale kaydedilir.
         if ($scope.giris.login_status == true) {
-          
-          $scope.loadData();
-          $state.go('tab.main');
+
           localStorage.setItem('user_id', $scope.giris.id);
           localStorage.setItem('loginStatus', 1);
           $scope.loginStatus = localStorage.getItem('loginStatus');
+          $scope.loadData();
 
           // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
           $scope.userId = localStorage.getItem('user_id');
@@ -202,10 +210,9 @@ angular.module('starter.controllers', [])
       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
         $scope.sms_verify = data[0]
         if ($scope.sms_verify.create_status == "true") {
-          $scope.loadData();
-          $state.go('tab.main');
           localStorage.setItem('loginStatus', 1);
           $scope.loginStatus = localStorage.getItem('loginStatus');
+          $scope.loadData();
           $scope.modal.hide();
           console.log($scope.loginStatus);
         }
@@ -353,17 +360,19 @@ angular.module('starter.controllers', [])
       }
     };
 
-    // Çağrılacak servisler:
+    //Login Durum Kontrolü
     
     $scope.loadData = function (){
     
-      if (!$scope.loginStatus || $scope.loginStatus == 0) {
+      if ($scope.loginStatus == 0) {
 
         $state.go('login');
 
       } else {
 
         $state.go('tab.main');
+
+        // Çağrılacak servisler:
 
         if ((!$scope.hikayeler || $scope.hikayelerVersionChck == false) && $scope.loginStatus == 1) {
           var ServiceRequest = {
@@ -462,5 +471,5 @@ angular.module('starter.controllers', [])
         
       }
     }
-    $scope.loadData();
+    
   });
