@@ -9,27 +9,32 @@
 
 
     <h4 align="center">Müşteri Hikayeleri</h4>
-
+    <div class="ortala" ng-click="aboutus_ekle(abouttab)">
+      <button class="button button-assertive ekle_b ">
+        <h3 style=" color: white;font-family: monospace;">  + Ekle</h3>
+      </button>
+    </div>
+<br>
     <center>
       <div class="col col-90" >
        <div class="col item item-body" style="border-radius: 12px;height: 560px;"> 
          <br>
          <br>
-        <div  class="ion-compose edit_i detail_edit"></div>
+         <div  class="ion-compose edit_i detail_edit"></div>
 
 
-        <div class="col item  ekip_detay" style=" border-radius: 509%;
-    border: solid 2px red;
-    max-width: 43%;
-    padding: 6%;"> <img class="mstory_image" ng-src="{{hikayeler[itemId].STR_IMAGE}}"></div>
-        
-        <h2 align="center" style="font-size: 21px;">{{hikayeler[itemId].STR_HEAD}} </h2>
-        <br>
-        <p style="font-size: 15px;" align="center">{{hikayeler[itemId].STR_DESCRIPTION}}</p>
-      </div></div>
+         <div class="col item  ekip_detay" style=" border-radius: 509%;
+         border: solid 2px red;
+         max-width: 43%;
+         padding: 6%;"> <img class="mstory_image" ng-src="{{hikayeler[itemId].STR_IMAGE}}"></div>
+
+         <h2 align="center" style="font-size: 21px;">{{hikayeler[itemId].STR_HEAD}} </h2>
+         <br>
+         <p style="font-size: 15px;" align="center">{{hikayeler[itemId].STR_DESCRIPTION}}</p>
+       </div></div>
 
 
-    </center>
+     </center>
 
 
 
