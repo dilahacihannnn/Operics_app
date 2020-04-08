@@ -50,6 +50,7 @@ angular.module('starter.controllers', [])
     //Girişte sorgulanacak parametreler
     $scope.loginData                    = {};
     $scope.kayitData                    = {};
+    $scope.resetPass                    = {};
     $scope.smsVerify                    = {};
     $scope.language                     = localStorage.getItem('language');
     $scope.userId                       = localStorage.getItem('user_id');
@@ -156,7 +157,7 @@ angular.module('starter.controllers', [])
         }
 
         
-        /*if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
+        if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
             var ServiceRequest = {
                 service_type: "profil",
                 language: localStorage.getItem('language'),
@@ -169,7 +170,7 @@ angular.module('starter.controllers', [])
                 $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
             })
         } 
-        */ 
+         
 
         location.href = "#/tab/main";
         
@@ -300,6 +301,21 @@ angular.module('starter.controllers', [])
             $scope.modal.show();
           });
         }
+      })
+
+    };
+
+    // Kullanıcı Şifre
+
+    $scope.passwordRes = function () {
+      
+      var ServiceRequest = {
+        service_type: "pass_res",
+        email: $scope.resetPass.email
+      }
+
+      // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
       })
 
     };
