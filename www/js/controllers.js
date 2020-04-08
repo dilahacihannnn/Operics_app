@@ -173,7 +173,7 @@ angular.module('starter.controllers', [])
         $scope.kullanici = data
 
         if ($scope.kullanici.create_status == 1) {
-
+          $state.go('sms');
         }
       })
 

@@ -43,6 +43,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'MainCtrl'
       })
 
+      .state('sms', {
+        url: '/sms',
+        templateUrl: 'templates/sms.html',
+        controller: 'MainCtrl'
+      })
+
       // setup an abstract state for the tabs directive
 
       .state('tab', {
