@@ -410,7 +410,7 @@ angular.module('starter.controllers', [])
         })
       }
 
-      /*
+      
       if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
           var ServiceRequest = {
               service_type: "profil",
@@ -424,6 +424,6 @@ angular.module('starter.controllers', [])
               $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
           })
       }    
-      */
+      
     }
   });
