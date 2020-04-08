@@ -6,12 +6,14 @@ angular.module('starter.controllers', [])
     $scope.pictureUrl = "http://placehold.it/200x200";
 
 
+    var ServiceRequest = {
+      service_type: "admin_users_detail",
+    }
 
-    $scope.userlist = [
-    {"id":"0","isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","status":"active","imgURL":"https://icon-library.net/images/username-icon/username-icon-28.jpg"},
-    {"id":"1","isim":"Nur Taşkara","telefon":"0123456789","mail":"nur@mail","sirket":"operics","status":"banned","imgURL":"https://img.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg?size=338&ext=jpg"}
-    ]
-
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+      $scope.userlist = data
+    })    
+    
     $scope.aboutus_ekle = function(tab_no) {
 
       if (!tab_no) {
