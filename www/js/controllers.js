@@ -50,6 +50,7 @@ angular.module('starter.controllers', [])
     //Girişte sorgulanacak parametreler
     $scope.loginData                    = {};
     $scope.kayitData                    = {};
+    $scope.smsVerify                    = {};
     $scope.language                     = localStorage.getItem('language');
     $scope.userId                       = localStorage.getItem('user_id');
     $scope.loginStatus                  = localStorage.getItem('loginStatus');
@@ -173,7 +174,6 @@ angular.module('starter.controllers', [])
         $scope.kullanici = data[0]
         localStorage.setItem('user_id', $scope.kullanici.user_id)
 
-
         if ($scope.kullanici.create_status == 1 ) {
           $ionicModal.fromTemplateUrl('templates/sms.html', { scope: $scope }).then(function (modal) {
             $scope.modal = modal;
@@ -184,22 +184,27 @@ angular.module('starter.controllers', [])
 
     };
 
+    
+    
     // Sms Onay
 
     $scope.smsOnay = function () {
       $scope.userId = localStorage.getItem('user_id');
-      $state.go('login');
-      $scope.modal.hide();
-      $scope.kayittab = 0;
       var ServiceRequest = {
         service_type: "sms_verify",
         user_id: $scope.userId,
-        sms_code: $scope.smsKod
+        sms_code: $scope.smsVerify.kod1 + $scope.smsVerify.kod2 + $scope.smsVerify.kod3 + $scope.smsVerify.kod4
       }
+      console.log(ServiceRequest);
 
       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
         $scope.sms_verify = data[0]
-        console.log($scope.sms_verify);
+        console.log($scope.loginStatus);
+        if ($scope.sms_verify.create_status == "true") {
+          localStorage.setItem('loginStatus', 1);
+          $state.go('tab.main');
+          $scope.modal.hide();
+        }
       })
     }
 
