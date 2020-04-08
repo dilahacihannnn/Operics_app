@@ -22,8 +22,36 @@
 
 <ion-content>
   <br> <br> <br>
+ <div class="ortala" ng-click="aboutus_ekle(abouttab)">
+    <button class="button button-assertive ekle_b ">
+      <h3 style=" color: white;font-family: monospace;">  + Ekle</h3>
+    </button>
+  </div>
+<center> 
+  <div class="col col-100">
+  <div ng-if="(abouttab==0||!abouttab)" ng-repeat="hizmet in hizmetler" style="margin-top: 30px;"
+  ng-click="modalgosterici('service',{{$index}})">
+  <div class="col col-60" style="    border-radius: 8px;
+    border: solid 1px darkgrey;height: 222px;width: auto;">
+  <img style="max-width: 39%;"class="col-50 full-image" ng-src="{{hizmet.SERVICE_IMAGE}}" >
+<div class="col-100">
+  <h2 style="font-size: 17px;color: #424242;
+    font-family: -webkit-body;"align="center" class="col">{{hizmet.SERVICE_NAME}}
+  <hr width="100%" size="1">
+  </h2></div><div class="col-100">
+  <p style="font-size: 12px;
+    color: #6e6767;" align="center">
+      {{hizmet.DESCRIPTION}}
+    </p></div>
+  </div></div>
+</div>
 
-  <!-- Hizmetlerimiz Tab -->
+
+
+
+
+</center>
+  <!-- Hizmetlerimiz Tab 
   <div class="ortala" ng-click="deneme()">
     <button class="button button-assertive ekle_b ">
       Deneme
@@ -55,23 +83,25 @@
 
 </div>
 
-
+-->
 
 
 
 <!-- Referanslar Tab -->
 
-<div style="margin-top: 30px;" class="row ortala" ng-if="abouttab==1">
+<div style="margin-top: 30px;" class="row ortala " ng-if="abouttab==1">
   <div class="col col-50">
-    <div style="background-color: white;" class="col" ng-repeat="referans in referanslar" ng-if="referans.ID%2==0">
-      <img style="width: auto; height: 70%; max-width: 120px;max-height: 120px;padding: 20px; border: solid 1px darkgrey;border-radius: 10px;" ng-src="{{referans.REF_PHOTO}}">
-    </div>
+    <div class="col referans_konum" ng-repeat="referans in referanslar" ng-if="referans.ID%2==0">
+  <i class="ion-compose referans_icon" ></i>
+    <img class="referans_style " ng-src="{{referans.REF_PHOTO}}">
+  </div> 
+</div>
+<div class="col col-50">
+  <div  class="col referans_konum " ng-repeat="referans in referanslar" ng-if="referans.ID%2==1">
+    <i class="ion-compose referans_icon" ></i>
+    <img class="referans_style" src="{{referans.REF_PHOTO}}">
   </div>
-  <div class="col col-50">
-    <div style="background-color: white;" class="col" ng-repeat="referans in referanslar" ng-if="referans.ID%2==1">
-      <img style="width: auto; height: 70%; max-width: 120px;max-height: 120px;padding: 20px; border: solid 1px darkgrey;border-radius: 10px;" src="{{referans.REF_PHOTO}}">
-    </div>
-  </div>
+</div>
 </div>
 
 <!--
@@ -99,21 +129,22 @@
 
 
 <!-- Ekibimiz Tab -->
-
-<div ng-if="abouttab==2" ng-repeat="takim in ekip" ng-click="modalgosterici('team',{{$index}})"
-style="margin-top: 30px;" class="card rectangle groupi">
-<div class="item item-text-wrap ">
+ <div class="col">
+ <div ng-if="abouttab==2" ng-repeat="takim in ekip" ng-click="modalgosterici('team',{{$index}})"
+ class="col col-100" style="padding: 4%;"> 
+ <div class="col item item-text-wrap ekibimiz_style">
   <img class="im" ng-src="{{takim.IMAGE}}">
   <h2><i class="ei">{{takim.NAME}}</i></h2>
   <h2><i class="es">{{takim.POSITION}}</i></h2>
   <p class="ea">{{text_truncate(takim.ABOUT,100)}}</p>
+ </div>
+
+ </div>
 </div>
-</div>
 
 
 
 
 
-<br><br><br><br><br><br>
 </ion-content>
 </ion-view>

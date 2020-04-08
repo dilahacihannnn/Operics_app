@@ -5,30 +5,64 @@
   height: 60px;
   border-radius: 8px;
   background: #e41a28;
-  margin-top: 17px;
+  margin-top: 7%;
+}
+.ekibimiz_style{
+ padding: 5px;
+ border-radius: 11px;
+ height: 155px;
+ padding-top: 4%;
+ width: 100%;
+ box-shadow: 1px 5px rgb(245,248,249);
+}
+.referans_style
+{
+  width: auto; 
+  height: 70%;
+  max-width: 125px;
+  max-height: 109px;
+  padding: 28%; 
+  border: solid 1px darkgrey;
+  border-radius: 10px;
+  padding-top: 16%;
+}
+.referans_konum
+{
+  background-color: white;
+  padding-left: 13% !important;
+  margin-top: -46%;
+  padding: 39%;
 }
 
 .engellenmis_kullanici{
   background: rgb(255,0,0,0.2);
 }
 
+.referans_icon
+{
+  float: right;
+  margin-right: -18px;
+  font-size: 134%;
+  contain: size;
+}
+
 .sagda_simge{
-position: absolute; 
-right: 20px; 
-max-height: 32px; 
-max-width: 32px;
+  position: absolute; 
+  right: 20px; 
+  max-height: 32px; 
+  max-width: 32px;
 }
 
 .bar_i{
-font-size: 160%;
-margin-left: 84%;
+  font-size: 160%;
+  margin-left: 84%;
 }
 .ortala{
   text-align: center;
 }
 .edit_i
 {
-  
+
   font-size: 33px;
   margin-top: -48px;"
 }
@@ -40,6 +74,24 @@ margin-left: 84%;
 
   font-size: 130%;
 
+}
+.sms
+{
+ width: 20%;
+ height: 60px;
+ border: solid 1px #f0f0f0
+ margin-top: 12%;
+ border: solid 0px #e2e2e2;
+ box-shadow: 0px 0px 14px 0px #e5e5e5;
+
+}
+.sms_button
+{
+  width: 238px;
+  height: 44px;
+  border-radius: 2px;
+  background-color: black;
+  color: white;
 }
 /* Empty. Add your own CSS if you like */
 .title-image {
@@ -182,8 +234,8 @@ margin-left: 84%;
 }
 .i{
   width: 40%;
-  margin-left: 55px;
-  margin-top: -14px;
+  margin-left: -1%;
+  margin-top: -3%;
 }
 .id{
   width: 40%;
@@ -232,14 +284,12 @@ margin-left: 84%;
   color: white;
 }
 .rectangle {
- z-index: 4;
+
  width: 326px;
  height: 171px;
  margin-left: 24px;
- border-radius: 26px;
  border-radius: 12px;
  border: solid 0.5px #e2e2e2;
- background: #ffffff;
  box-shadow: 1px 5px rgb(245,248,249);
  border-bottom: inset;
 

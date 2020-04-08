@@ -35,7 +35,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // Each state's controller can be found in controllers.js
     $stateProvider
 
+      // setup an independent states
+      
+      .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'MainCtrl'
+      })
+
       // setup an abstract state for the tabs directive
+
       .state('tab', {
         url: '/tab',
         abstract: true,
@@ -96,14 +105,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           }
         }
       })
-      .state('tab.login', {
-        url: '/login',
-        views: {
-          'tab-contact': {
-            templateUrl: 'templates/login.html'
-          }
-        }
-      })
       .state('tab.userprofile', {
         url: '/userprofile/:userID',
         views: {
@@ -122,6 +123,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/login');
+    $urlRouterProvider.otherwise('/login');
 
   });

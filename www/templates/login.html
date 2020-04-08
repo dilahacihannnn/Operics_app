@@ -20,13 +20,13 @@
         <br><br>
         <label class="item item-input kd">
           <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
-          <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;" placeholder="simiz@mailadresi.com"
+          <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;" placeholder="{{diller[15].kelime}}"
             ng-model="loginData.email">
         </label>
         <br><br>
         <label class="item item-input kd">
           <i class="ion-ios-unlocked-outline" style="margin-right: 10%;font-size: 124%;"></i>
-          <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;" placeholder="Şifre"
+          <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;" placeholder="{{diller[13].kelime}}"
             ng-model="loginData.password">
         </label>
 
@@ -61,7 +61,7 @@
 
           <br><br><br>
           <input type="text" style="font-size:103%;margin-top: -1%;
-          margin-left: 5%;" placeholder="İsim Soyisim" ng-model="kayitData.name">
+          margin-left: 5%;" placeholder="{{diller[14].kelime}}" ng-model="kayitData.name">
         </label>
 
 
@@ -69,14 +69,14 @@
           <i class="ion-ios-telephone-outline" style="margin-right: 1%;font-size: 124%;"></i>
 
           <input type="text" style="font-size:103%;margin-top: -1%;
-          margin-left: 5%;" placeholder="Telefon Numarası" ng-model="kayitData.number">
+          margin-left: 5%;" placeholder="{{diller[12].kelime}}" ng-model="kayitData.number">
         </label>
 
         <label class="item item-input  kd">
           <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
 
           <input type="text" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;" placeholder="john@suhr.com" ng-model="kayitData.email">
+         margin-left: 5%;" placeholder="{{diller[15].kelime}}" ng-model="kayitData.email">
         </label>
 
 
@@ -84,37 +84,20 @@
           <i class="ion-ios-unlocked-outline" style="margin-right: 1%;font-size: 124%;"></i>
 
           <input type="password" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;" placeholder="Şifre" ng-model="kayitData.password">
+         margin-left: 5%;" placeholder="{{diller[13].kelime}}" ng-model="kayitData.password">
         </label>
 
 
         <label class="item item-input kd">
           <i class="ion-ios-unlocked-outline" style="margin-right: 1%;font-size: 124%;"></i>
           <input type="password" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;" placeholder="Şifre Tekrar" ng-model="kayitData.passwordChck">
+         margin-left: 5%;" placeholder="{{diller[17].kelime}}" ng-model="kayitData.passwordChck">
         </label>
-
-        <label class="item item-input  kd">
-          <i class="ion-ios-briefcase-outline" style="margin-right: 1%;font-size: 124%;"></i>
-
-          <input type="text" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;" placeholder="Çalıştığınız Firma" ng-model="kayitData.company">
-        </label>
-
-        <label class="item item-input  kd">
-          <i class="ion-ios-color-wand-outline" style="margin-right: 1%;font-size: 124%;"></i>
-
-          <input type="text" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;" placeholder="Pozisyonunuz" ng-model="kayitData.position">
-        </label>
-
 
 
 
       </div>
       <div>
-
-
 
         <button style="margin-left: 60px;" class="button button-dark beton2"
           ng-disabled="!kayitData.name || !kayitData.number || !kayitData.email || kayitData.password.length<8 || (kayitData.password!=kayitData.passwordChck)"
@@ -151,8 +134,7 @@
 
 
 
-
-
+{{kullanici[0]}}
 
 
 

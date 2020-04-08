@@ -1,18 +1,11 @@
 angular.module('starter.controllers', [])
 
-  .controller('MainCtrl', function ($scope, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
+  .controller('MainCtrl', function ($scope, $state, $rootScope, $stateParams, $ionicModal, $http, $ionicPopup) {
 
     $rootScope.webServiceUrl = "http://www.microwebservice.net/operics_web/webservice.php";
     $scope.pictureUrl = "http://placehold.it/200x200";
 
 
-
-    $scope.deneme = function(){
-      $ionicModal.fromTemplateUrl('templates/list-users.html', { scope: $scope }).then(function (modal) {
-        $scope.modal = modal;
-        $scope.modal.show();
-      });   
-    }
 
     $scope.userlist = [
     {"id":"0","isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","status":"active","imgURL":"https://icon-library.net/images/username-icon/username-icon-28.jpg"},
@@ -146,8 +139,8 @@ angular.module('starter.controllers', [])
           // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
           $scope.userId = localStorage.getItem('user_id');
           $ionicPopup.alert({ template: "Sn. " + $scope.giris.user_name + ", Operics'e hoşgeldiniz!.." });
-          $scope.modal.hide();
           console.log("Login Status = " + $scope.loginStatus);
+          $state.go('tab.main');
 
         } else {
 
@@ -165,23 +158,25 @@ angular.module('starter.controllers', [])
     // Kullanıcı Kayıt Fonksiyonu
 
     $scope.registerUser = function () {
-      if (!$scope.kayittab == 1) {
-        var ServiceRequest = {
-          service_type: "create_user",
-          photo: "img/pp.jfif",
-          name: $scope.kayitData.name,
-          phone: $scope.kayitData.number,
-          email: $scope.kayitData.email,
-          sifre: $scope.kayitData.password,
-          company: $scope.kayitData.company,
-          position: $scope.kayitData.position
-        }
+      
+      var ServiceRequest = {
+        service_type: "create_user",
+        photo: "img/pp.jfif",
+        name: $scope.kayitData.name,
+        phone: $scope.kayitData.number,
+        email: $scope.kayitData.email,
+        sifre: $scope.kayitData.password
+      }
 
-        // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
-        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-          $scope.kullanici = data
-        })
-      };
+      // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+        $scope.kullanici = data
+
+        if ($scope.kullanici.create_status == 1) {
+
+        }
+      })
+
     };
 
     //Logout işlemi
@@ -237,9 +232,11 @@ angular.module('starter.controllers', [])
 
       // Onay kutusu
       $scope.ConfirmApplication = function () {
+
+
         var confirmPopup = $ionicPopup.alert({
           title: "Başarılı",
-          template: "Sn. Ahmet Yılmaz “Endüstriyel Tasarımlar ve Teknikler Eğitimi için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
+          template: "Sn. Ahmet Yılmaz " + $scope.egitimler[$scope.itemId].CRS_NAME + " için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
         });
 
         confirmPopup.then(function (res) {
@@ -247,8 +244,8 @@ angular.module('starter.controllers', [])
             $scope.aktifmi = true;
             var ServiceRequest = {
               service_type: "kursa_katil",
-              user_id: "3",
-              course_id: "2"
+              user_id: $scope.userId,
+              course_id: $scope.itemId
             }
 
             $http.post($rootScope.webServiceUrl, ServiceRequest)
@@ -329,103 +326,104 @@ angular.module('starter.controllers', [])
 
       localStorage.setItem('loginStatus', 0);
       $scope.loginStatus = localStorage.getItem('loginStatus');
-      
-    }
-
+      $state.go('login');
+    } else {
+      $state.go('tab.main');
     // Çağrılacak servisler:
 
-    if ((!$scope.hikayeler || $scope.hikayelerVersionChck == false) && $scope.loginStatus == 1) {
-      var ServiceRequest = {
-        service_type: "hikayeler",
-        language: localStorage.getItem('language')
-      }
-
-      // Yeni user isteği post edilir ve veritabanına eklenir.
-      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-        localStorage.setItem('hikayeJson', JSON.stringify(data));
-        $scope.hikayeler = JSON.parse(localStorage.getItem('hikayeJson'));
-      })
-    }
-
-    if ((!$scope.hizmetler || $scope.hizmetlerVersionChck == false) && $scope.loginStatus == 1) {
-      var ServiceRequest = {
-        service_type: "hizmetler",
-        language: localStorage.getItem('language')
-      }
-
-      // Yeni user isteği post edilir ve veritabanına eklenir.
-      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-        localStorage.setItem('hizmetJson', JSON.stringify(data));
-        $scope.hizmetler = JSON.parse(localStorage.getItem('hizmetJson'));
-      })
-    }
-
-    if ((!$scope.ekip || $scope.ekipVersionChck == false) && $scope.loginStatus == 1) {
-      var ServiceRequest = {
-        service_type: "ekip",
-        language: localStorage.getItem('language')
-      }
-
-      // Yeni user isteği post edilir ve veritabanına eklenir.
-      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-        localStorage.setItem('ekipJson', JSON.stringify(data));
-        $scope.ekip = JSON.parse(localStorage.getItem('ekipJson'));
-      })
-    }
-
-    if ((!$scope.referanslar || $scope.referanslarVersionChck == false) && $scope.loginStatus == 1) {
-      var ServiceRequest = {
-        service_type: "referanslar",
-        language: localStorage.getItem('language')
-      }
-
-      // Yeni user isteği post edilir ve veritabanına eklenir.
-      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-        localStorage.setItem('referansJson', JSON.stringify(data));
-        $scope.referanslar = JSON.parse(localStorage.getItem('referansJson'));
-      })
-    }
-
-    if ((!$scope.egitimler || $scope.egitimVersionChckk == false) && $scope.loginStatus == 1) {
-      var ServiceRequest = {
-        service_type: "egitimler",
-        language: localStorage.getItem('language')
-      }
-
-      // Yeni user isteği post edilir ve veritabanına eklenir.
-      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-        localStorage.setItem('egitimJson', JSON.stringify(data));
-        $scope.egitimler = JSON.parse(localStorage.getItem('egitimJson'));
-      })
-    }
-
-
-    if ((!$scope.sozluk || $scope.sozlukVersionChck == false) && $scope.loginStatus == 1) {
-      var ServiceRequest = {
-        service_type: "sozluk",
-        user_id: localStorage.getItem('user_id')
-      }
-
-      // Yeni user isteği post edilir ve veritabanına eklenir.
-      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-        localStorage.setItem('sozlukJson', JSON.stringify(data));
-        $scope.sozluk = JSON.parse(localStorage.getItem('sozlukJson'));
-      })
-    }
-
-    /*
-    if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
+      if ((!$scope.hikayeler || $scope.hikayelerVersionChck == false) && $scope.loginStatus == 1) {
         var ServiceRequest = {
-            service_type: "profil",
-            language: localStorage.getItem('language'),
-            userId: $scope.userId
+          service_type: "hikayeler",
+          language: localStorage.getItem('language')
         }
 
         // Yeni user isteği post edilir ve veritabanına eklenir.
-        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
-            localStorage.setItem('profilJson', JSON.stringify(data));
-            $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+          localStorage.setItem('hikayeJson', JSON.stringify(data));
+          $scope.hikayeler = JSON.parse(localStorage.getItem('hikayeJson'));
         })
-    }    
-    */
+      }
+
+      if ((!$scope.hizmetler || $scope.hizmetlerVersionChck == false) && $scope.loginStatus == 1) {
+        var ServiceRequest = {
+          service_type: "hizmetler",
+          language: localStorage.getItem('language')
+        }
+
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+          localStorage.setItem('hizmetJson', JSON.stringify(data));
+          $scope.hizmetler = JSON.parse(localStorage.getItem('hizmetJson'));
+        })
+      }
+
+      if ((!$scope.ekip || $scope.ekipVersionChck == false) && $scope.loginStatus == 1) {
+        var ServiceRequest = {
+          service_type: "ekip",
+          language: localStorage.getItem('language')
+        }
+
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+          localStorage.setItem('ekipJson', JSON.stringify(data));
+          $scope.ekip = JSON.parse(localStorage.getItem('ekipJson'));
+        })
+      }
+
+      if ((!$scope.referanslar || $scope.referanslarVersionChck == false) && $scope.loginStatus == 1) {
+        var ServiceRequest = {
+          service_type: "referanslar",
+          language: localStorage.getItem('language')
+        }
+
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+          localStorage.setItem('referansJson', JSON.stringify(data));
+          $scope.referanslar = JSON.parse(localStorage.getItem('referansJson'));
+        })
+      }
+
+      if ((!$scope.egitimler || $scope.egitimVersionChckk == false) && $scope.loginStatus == 1) {
+        var ServiceRequest = {
+          service_type: "egitimler",
+          language: localStorage.getItem('language')
+        }
+
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+          localStorage.setItem('egitimJson', JSON.stringify(data));
+          $scope.egitimler = JSON.parse(localStorage.getItem('egitimJson'));
+        })
+      }
+
+
+      if ((!$scope.sozluk || $scope.sozlukVersionChck == false) && $scope.loginStatus == 1) {
+        var ServiceRequest = {
+          service_type: "sozluk",
+          user_id: localStorage.getItem('user_id')
+        }
+
+        // Yeni user isteği post edilir ve veritabanına eklenir.
+        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+          localStorage.setItem('sozlukJson', JSON.stringify(data));
+          $scope.sozluk = JSON.parse(localStorage.getItem('sozlukJson'));
+        })
+      }
+
+      
+      if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
+          var ServiceRequest = {
+              service_type: "profil",
+              language: localStorage.getItem('language'),
+              userId: $scope.userId
+          }
+
+          // Yeni user isteği post edilir ve veritabanına eklenir.
+          $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
+              localStorage.setItem('profilJson', JSON.stringify(data));
+              $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
+          })
+      }    
+      
+    }
   });
