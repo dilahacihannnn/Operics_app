@@ -199,7 +199,7 @@ angular.module('starter.controllers', [])
 
       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
         $scope.sms_verify = data[0]
-        console.log($scope.sms_verify);
+        console.log($scope.loginStatus);
         if ($scope.sms_verify.create_status == "true") {
           localStorage.setItem('loginStatus', 1);
           $state.go('tab.main');
