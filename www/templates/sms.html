@@ -1,4 +1,4 @@
-<ion-view>
+<ion-modal-view>
   <ion-header-bar>
   		<button class="button button-clear button-assertive ion-chevron-left" ng-click="modal.hide()"></button>
   </ion-header-bar>
@@ -6,7 +6,8 @@
   <ion-content class="padding">
 
 
-    <!-- Anasayfa Tab -->
+    <!-- Sms Body -->
+<form ng-submit="smsOnay()">
 <center>
 <i style="font-size: 133px;"class="ion-android-textsms"></i>
 
@@ -19,17 +20,18 @@ gelen kodu giriniz.</label>
    
 
 <div class="col-100" style="margin-top: 8%;">
-<input type="" name="" style="margin-right: 4%;"class="sms">
+<input type="" name="" style="margin-right: 4%;"class="sms" ng-modal="smsKod">
 <input type="" name=""style="margin-right: 4%;" class="sms">
 <input type="" name="" style="margin-right: 4%;"class="sms">
 <input type="" name="" class="sms"></div>
 
 
-<button style="margin-top: 14%"class="button  sms_button">Onayla</button>
+<button style="margin-top: 14%"class="button  sms_button" type="submit">Onayla</button>
 
 
 
 
 </center>
+</form>
   </ion-content>
-</ion-view>
+</ion-modal-view>

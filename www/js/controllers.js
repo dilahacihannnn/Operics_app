@@ -153,7 +153,7 @@ angular.module('starter.controllers', [])
     $scope.kayitButon = function (kayittab) {
       $scope.kayittab = kayittab;
       console.log($scope.kayittab);
-    }
+    };
 
     // Kullanıcı Kayıt Fonksiyonu
 
@@ -170,14 +170,38 @@ angular.module('starter.controllers', [])
 
       // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-        $scope.kullanici = data
+        $scope.kullanici = data[0]
+        localStorage.setItem('user_id', $scope.kullanici.user_id)
 
-        if ($scope.kullanici.create_status == 1) {
-          $state.go('sms');
+
+        if ($scope.kullanici.create_status == 1 ) {
+          $ionicModal.fromTemplateUrl('templates/sms.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
         }
       })
 
     };
+
+    // Sms Onay
+
+    $scope.smsOnay = function () {
+      $scope.userId = localStorage.getItem('user_id');
+      $state.go('login');
+      $scope.modal.hide();
+      $scope.kayittab = 0;
+      var ServiceRequest = {
+        service_type: "sms_verify",
+        user_id: $scope.userId,
+        sms_code: $scope.smsKod
+      }
+
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+        $scope.sms_verify = data[0]
+        console.log($scope.sms_verify);
+      })
+    }
 
     //Logout işlemi
 
@@ -322,10 +346,8 @@ angular.module('starter.controllers', [])
 
     //Login ve Kayıt işlemleri
 
-    if (!$scope.userId) {
+    if (!$scope.loginStatus || $scope.loginStatus == 0) {
 
-      localStorage.setItem('loginStatus', 0);
-      $scope.loginStatus = localStorage.getItem('loginStatus');
       $state.go('login');
     } else {
       $state.go('tab.main');
