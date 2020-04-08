@@ -158,21 +158,25 @@ angular.module('starter.controllers', [])
     // Kullanıcı Kayıt Fonksiyonu
 
     $scope.registerUser = function () {
-      if (!$scope.kayittab == 1) {
-        var ServiceRequest = {
-          service_type: "create_user",
-          photo: "img/pp.jfif",
-          name: $scope.kayitData.name,
-          phone: $scope.kayitData.number,
-          email: $scope.kayitData.email,
-          sifre: $scope.kayitData.password
-        }
+      
+      var ServiceRequest = {
+        service_type: "create_user",
+        photo: "img/pp.jfif",
+        name: $scope.kayitData.name,
+        phone: $scope.kayitData.number,
+        email: $scope.kayitData.email,
+        sifre: $scope.kayitData.password
+      }
 
-        // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
-        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-          $scope.kullanici = data
-        })
-      };
+      // Service request değişkeni web service post edilir. Gelen yanıt $scope.kullanici isimli değişkene atanır.
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+        $scope.kullanici = data
+
+        if ($scope.kullanici.create_status == 1) {
+
+        }
+      })
+
     };
 
     //Logout işlemi
@@ -228,9 +232,11 @@ angular.module('starter.controllers', [])
 
       // Onay kutusu
       $scope.ConfirmApplication = function () {
+
+
         var confirmPopup = $ionicPopup.alert({
           title: "Başarılı",
-          template: "Sn. Ahmet Yılmaz “Endüstriyel Tasarımlar ve Teknikler Eğitimi için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
+          template: "Sn. Ahmet Yılmaz " + $scope.egitimler[$scope.itemId]. + "için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
         });
 
         confirmPopup.then(function (res) {
@@ -238,8 +244,8 @@ angular.module('starter.controllers', [])
             $scope.aktifmi = true;
             var ServiceRequest = {
               service_type: "kursa_katil",
-              user_id: "3",
-              course_id: "2"
+              user_id: $scope.userId,
+              course_id: $scope.itemId
             }
 
             $http.post($rootScope.webServiceUrl, ServiceRequest)
