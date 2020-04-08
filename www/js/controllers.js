@@ -55,6 +55,7 @@ angular.module('starter.controllers', [])
     $scope.language                     = localStorage.getItem('language');
     $scope.userId                       = localStorage.getItem('user_id');
     $scope.loginStatus                  = localStorage.getItem('loginStatus');
+    $scope.isAdmin                      = localStorage.getItem('isAdmin');
     $scope.languageOld                  = localStorage.getItem('languageOld');
     $scope.diller                       = JSON.parse(localStorage.getItem('dillerJson'));
     $scope.hikayeler                    = JSON.parse(localStorage.getItem('hikayeJson'));
@@ -161,16 +162,18 @@ angular.module('starter.controllers', [])
             var ServiceRequest = {
                 service_type: "profil",
                 language: localStorage.getItem('language'),
-                userId: $scope.userId
+                user_id: $scope.userId
             }
 
             // Yeni user isteği post edilir ve veritabanına eklenir.
             $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
                 localStorage.setItem('profilJson', JSON.stringify(data));
                 $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
+                if ($scope.profil) {}
             })
         } 
          
+        console.log($scope.profil.USER_TYPE);
 
         location.href = "#/tab/main";
         
