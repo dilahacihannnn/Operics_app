@@ -236,7 +236,7 @@ angular.module('starter.controllers', [])
 
         var confirmPopup = $ionicPopup.alert({
           title: "Başarılı",
-          template: "Sn. Ahmet Yılmaz " + $scope.egitimler[$scope.itemId]. + "için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
+          template: "Sn. Ahmet Yılmaz " + $scope.egitimler[$scope.itemId].CRS_NAME + " için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
         });
 
         confirmPopup.then(function (res) {
