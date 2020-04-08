@@ -70,7 +70,7 @@ angular.module('starter.controllers', [])
     
       if ($scope.loginStatus == 0) {
 
-        $state.go('login');
+        location.href = "#/login";
 
       } else {
 
@@ -171,7 +171,7 @@ angular.module('starter.controllers', [])
         } 
         */ 
 
-        $state.go('tab.main'); 
+        location.href = "#/tab/main";
         
       }
     }
