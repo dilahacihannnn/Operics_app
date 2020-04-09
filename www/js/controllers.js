@@ -390,14 +390,6 @@ angular.module('starter.controllers', [])
       })
     }
 
-    // Autotab Algoritması
-
-    $scope.autotab = function autotab(current,to) {
-      if (current.getAttribute && current.value.length==current.getAttribute("maxlength")) {
-        to.focus() 
-      }
-    }
-
     //Logout işlemi
 
     $scope.cikis = function () {
