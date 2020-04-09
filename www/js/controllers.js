@@ -174,7 +174,13 @@ angular.module('starter.controllers', [])
             $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
                 localStorage.setItem('profilJson', JSON.stringify(data));
                 $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
-                if ($scope.profil[0].USER_TYPE == "admin") {}
+                if ($scope.profil[0].USER_TYPE == "admin") {
+                  localStorage.setItem('isAdmin', 1);
+                  $scope.isAdmin = localStorage.getItem('isAdmin');
+                } else {
+                  localStorage.setItem('isAdmin', 0);
+                  $scope.isAdmin = localStorage.getItem('isAdmin');
+                }
             })
         } 
          
