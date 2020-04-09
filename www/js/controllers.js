@@ -213,7 +213,6 @@ angular.module('starter.controllers', [])
             localStorage.setItem('iletisimJson', JSON.stringify(data));
             $scope.iletisim = JSON.parse(localStorage.getItem('iletisimJson'));
           })
-          localStorage.removeItem('savedVersionJson');
         }
         */
 
@@ -240,10 +239,13 @@ angular.module('starter.controllers', [])
                 $scope.isAdmin = localStorage.getItem('isAdmin');
               }
           })
-        } 
+        }
+
+        localStorage.removeItem('savedVersionJson');
+        localStorage.setItem('savedVersionJson', JSON.stringify($scope.versions));
+        $scope.savedVersions = JSON.parse(localStorage.getItem('savedVersionJson')); 
          
         location.href = "#/tab/main";
-        
       }
     }
     
