@@ -13,7 +13,8 @@
  height: 155px;
  padding-top: 4%;
  width: 100%;
- box-shadow: 1px 5px rgb(245,248,249);
+ box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+
 }
 .referans_style
 {
@@ -75,6 +76,18 @@
   font-size: 130%;
 
 }
+.sms_text
+{
+  font-size: 193%;
+  text-align: center;
+}
+.ekip_rsm
+{
+  width:420%;
+  margin-top: -70%;
+  margin-left: -239%;
+
+}
 .sms
 {
  width: 20%;
@@ -82,7 +95,7 @@
  border: solid 1px #f0f0f0
  margin-top: 12%;
  border: solid 0px #e2e2e2;
- box-shadow: 0px 0px 14px 0px #e5e5e5;
+ box-shadow: 0px 5px 14px 8px #e5e5e5;
 
 }
 .sms_button
@@ -134,22 +147,16 @@
   margin-left: 8px;
 }
 
-.group {
+.teams_style {
   height: 86px;
   width: 238px;
   height: 118px;
   border-radius: 12px;
   margin-left: 9px;
-  
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+
 }
 
-.groupi {
-  height: 86px;
-  width: 292px;
-  height: 141px;
-  border-radius: 12px;
-  margin-left: 40px;
-}
 
 .hiz{
   max-inline-size: -webkit-fill-available;
@@ -212,33 +219,15 @@
  height: 58.62px;
  border-radius: 31px;
 }
-.hk {
-  z-index: 3;
-  width: 60%;
-  height: 226px;
-  border-radius: 15px;
-  border: solid 0.5px #e5e5e5;
-  background: #ffffff;
-  margin-left: 71px;
-  margin-top: 30px;
 
-}
-.hkd {
-  z-index: 3;
-  width: 79%;
-  height: 516px;
-  border-radius: 26px;
-  background: #ffffff;
-  margin-left: 38px;
-  margin-top: -56px;
-}
+
 .i{
   width: 40%;
   margin-left: -1%;
   margin-top: -3%;
 }
 .id{
-  width: 40%;
+  width: 33%;
   margin-left: 95px;
   margin-top: -14px;
 }
@@ -283,17 +272,7 @@
 {
   color: white;
 }
-.rectangle {
 
- width: 326px;
- height: 171px;
- margin-left: 24px;
- border-radius: 12px;
- border: solid 0.5px #e2e2e2;
- box-shadow: 1px 5px rgb(245,248,249);
- border-bottom: inset;
-
-}
 .ea {
   margin-left: 63px;
   width: 220px;
@@ -345,16 +324,16 @@
 }
 .profile{
   border-radius: 130px !important;
-  width: 44%;
-  height: 117px;
-  margin-left: 28%;
+  width: 49%;
+  height: 27%;
 
 }
-.pi
+.mstory_image
 {
-  width: 481%;
-  margin-left: -347%;
-  margin-top: -64%;
+ max-width: 100%;
+ margin-left: -5%;
+ height: 86px;
+ margin-top: 4%;
 }
 
 .ic{

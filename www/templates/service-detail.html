@@ -7,14 +7,19 @@
 
   <ion-content>
 
+
     <h4 align="center">Hizmetlerimiz</h4>
-    <br><br><br>
+    <br>
 
-    <div class="item item-body hkd ">
+    <center>
+<div class="col col-90" >
+    <div class=" item item-body " style="border-radius:12px;height: 560px;">
       <br><br>
-      <div  class="ion-compose edit_i detail_edit"></div>
+      <div  class="ion-compose edit_i detail_edit" ng-if="isAdmin==1"></div>
 
-      <img style="margin-left:30%;" class="full-image id" ng-src="{{hizmetler[itemId].SERVICE_IMAGE}}">
+      <i class="col list" style="height: 102px;">
+     
+      <img style="margin-left:3%;" class="full-image id" ng-src="{{hizmetler[itemId].SERVICE_IMAGE}}"></i>
 
       <div class="">
         <h2 align="center">{{hizmetler[itemId].SERVICE_NAME}}
@@ -23,6 +28,6 @@
       </div>
       <p style="font-size: 12px;" align="center">{{hizmetler[itemId].SUB_DESCRIPTION}}</p>
     </div>
-    </div>
+    </div></div></div></i></div></div></center>
   </ion-content>
 </ion-modal-view>

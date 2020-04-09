@@ -2,9 +2,10 @@
 	<ion-content>
 
 		<div class="all">İletişim</div>
-		<div class="ortala">
-			<button class="button button-assertive ekle_b ">
-				<h3 style=" color: white;font-family: monospace;">+ Ekle</h3>
+		<!--Ekleme Butonu-->
+		<div class="ortala" ng-if="isAdmin==1">
+			<button class="button button-assertive ekle_b" ng-click="editgosterici('editCon')">
+				<h3 style=" color: white;font-family: monospace;">Güncelle</h3>
 			</button></div>
 
 			<!-- konum bilgisi eklenek -->

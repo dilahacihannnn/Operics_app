@@ -3,12 +3,17 @@
 
 		<br>
 		<h4 align="center">{{diller[6].kelime}}</h4>
-		<div class="ortala">
-			<button class="button button-assertive ekle_b ">
-				<h3 style=" color: white;font-family: monospace;">+ Ekle</h3>
-			</button></div>
 
+		<!--Ekleme Butonu-->
+		<div class="ortala" ng-if="isAdmin==1">
+			<button class="button button-assertive ekle_b" ng-click="editgosterici('editCourse')" >
+				<h3 style=" color: white;font-family: monospace;">+ Ekle</h3>
+			</button>
+		</div>
+
+		<div class="col col-100">
 			<div ng-repeat="egitim in egitimler" ng-click="modalgosterici('course',{{$index}})">
+				
 				<div class="card" style="border-radius: 10px;height: 188px;">
 					<div style="background: url('{{egitim.CRS_PHOTO}}'); height: 200px;margin-top: -2%;background-size: 105%;margin-left: -3%;"
 					class="item item-text-wrap ">
@@ -20,8 +25,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
 
-
-	</ion-content>
+</ion-content>
 </ion-view>
