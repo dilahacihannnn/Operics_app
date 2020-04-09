@@ -85,7 +85,7 @@ angular.module('starter.controllers', [])
 
     // Uygulama dilinin belirlenmesi
    
-    if (!$scope.language || !$scope.diller ||($scope.savedVersions != $scope.versions)) {
+    if (!$scope.language || !$scope.diller ) {
       localStorage.setItem('language', "TR");
       $scope.language = localStorage.getItem('language');
       localStorage.removeItem('dillerJson');
