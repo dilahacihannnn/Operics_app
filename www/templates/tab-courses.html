@@ -8,7 +8,9 @@
 				<h3 style=" color: white;font-family: monospace;">+ Ekle</h3>
 			</button></div>
 
+			<div class="col col-100">
 			<div ng-repeat="egitim in egitimler" ng-click="modalgosterici('course',{{$index}})">
+				
 				<div class="card" style="border-radius: 10px;height: 188px;">
 					<div style="background: url('{{egitim.CRS_PHOTO}}'); height: 200px;margin-top: -2%;background-size: 105%;margin-left: -3%;"
 					class="item item-text-wrap ">
@@ -20,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-
+</div>
 
 
 	</ion-content>
