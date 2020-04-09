@@ -1,5 +1,5 @@
 <ion-view>
- 
+
 
 
 
@@ -9,30 +9,33 @@
 
     <center><img style="    width: 42%;
     " src="img/logo.PNG" /></center>
-   
+
     <!-- Kullanıcı Giriş Form Yapısı -->
 
     <form ng-submit="doLogin()" ng-if="!kayittab || kayittab==0">
       <br><br>
       <div class="list ortala" style="padding:1px;">
+
         <br><br>
+
         <label class="item item-input kd">
           <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
           <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;" placeholder="{{diller[15].kelime}}"
             ng-model="loginData.email">
         </label>
+
         <br><br>
+
         <label class="item item-input kd">
           <i class="ion-ios-unlocked-outline" style="margin-right: 10%;font-size: 124%;"></i>
-          <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;" placeholder="{{diller[13].kelime}}"
-            ng-model="loginData.password">
+          <input type="password" style="font-size:103%;margin-left: -5%;margin-top: 0%;"
+            placeholder="{{diller[13].kelime}}" ng-model="loginData.password">
         </label>
 
         <br><br>
 
-
-        <button ng-disabled="!loginData.email || !loginData.password"
-          class="button button-dark beton2" type="submit">{{diller[16].kelime}}</button>
+        <button ng-disabled="!loginData.email || !loginData.password" class="button button-dark beton2"
+          type="submit">{{diller[16].kelime}}</button>
 
         <br><br>
 
@@ -54,94 +57,77 @@
 
         <label class="item item-input kd">
           <i class="ion-ios-person-outline" style="margin-right: 1%;font-size: 124%;"></i>
-
           <br><br><br>
-          <input type="text" style="font-size:103%;margin-top: -1%;
-          margin-left: 5%;" placeholder="{{diller[14].kelime}}" ng-model="kayitData.name">
-        </label>
 
+          <input type="text" style="font-size:103%;margin-top: -1%; margin-left: 5%;"
+            placeholder="{{diller[14].kelime}}" ng-model="kayitData.name" required>
+        </label>
 
         <label class="item item-input kd">
           <i class="ion-ios-telephone-outline" style="margin-right: 1%;font-size: 124%;"></i>
-
-          <input type="text" style="font-size:103%;margin-top: -1%;
-          margin-left: 5%;" placeholder="{{diller[12].kelime}}" ng-model="kayitData.number">
+          <input type="text" style="font-size:103%;margin-top: -1%; margin-left: 5%;"
+            placeholder="{{diller[12].kelime}}" ng-model="kayitData.number" required>
         </label>
 
         <label class="item item-input  kd">
           <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
-
-          <input type="text" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;" placeholder="{{diller[15].kelime}}" ng-model="kayitData.email">
+          <input type="text" style="font-size:103%;margin-top: -1%; margin-left: 5%;"
+            placeholder="{{diller[15].kelime}}" ng-model="kayitData.email" required>
         </label>
-
 
         <label class="item item-input  kd">
           <i class="ion-ios-unlocked-outline" style="margin-right: 1%;font-size: 124%;"></i>
-
-          <input type="password" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;" placeholder="{{diller[13].kelime}}" ng-model="kayitData.password">
+          <input type="password" style="font-size:103%;margin-top: -1%; margin-left: 5%;"
+            placeholder="{{diller[13].kelime}}" ng-model="kayitData.password" required>
         </label>
-
 
         <label class="item item-input kd">
           <i class="ion-ios-unlocked-outline" style="margin-right: 1%;font-size: 124%;"></i>
-          <input type="password" style="font-size:103%;margin-top: -1%;
-         margin-left: 5%;" placeholder="{{diller[17].kelime}}" ng-model="kayitData.passwordChck">
+          <input type="password" style="font-size:103%;margin-top: -1%; margin-left: 5%;"
+            placeholder="{{diller[17].kelime}}" ng-model="kayitData.passwordChck" required>
         </label>
-
-
-
       </div>
       <div>
-
         <button style="margin-left: 60px;" class="button button-dark beton2"
           ng-disabled="!kayitData.name || !kayitData.number || !kayitData.email || kayitData.password.length<8 || (kayitData.password!=kayitData.passwordChck)"
           type="submit">
           {{diller[20].kelime}}
         </button>
-
       </div>
-
-
       <br>
-
       <div>
-
         <button style="margin-left: 60px;" class="button button-dark beton1" type="button" ng-click="kayitButon(0)">
           <p class="dil">{{diller[16].kelime}}</p>
         </button>
       </div>
-
       <br>
     </form>
 
     <!-- Şifremi Unuttum Form Yapısı -->
 
     <form ng-submit="paswordRes()" ng-if="kayittab==2">
+      <br><br>
+      <center>
+        <h4> Lütfen E-mail adresinizi giriniz. </h4>
+      </center>
+      <br>
+      <div class="list ortala" style="padding:1px;">
         <br><br>
-          <center><h4> Lütfen E-mail adresinizi giriniz. </h4></center>
-        <br>
-        <div class="list ortala" style="padding:1px;">
-          <br><br>
-          <label class="item item-input kd">
-            <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
-            <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;" placeholder="{{diller[15].kelime}}"
+        <label class="item item-input kd">
+          <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
+          <input type="text" style="font-size:103%;margin-left: 3%;margin-top: 0%;" placeholder="{{diller[15].kelime}}"
             ng-model="resetPass.email">
-          </label>
-          <br><br>
-          <button ng-disabled="!resetPass.email"
-          class="button button-dark beton2" type="submit">Şifremi Sıfırla
-          </button>
-
-
-          <br><br>
-          <button class="button button-block button-light" type="button" ng-click="kayitButon(0)">
+        </label>
+        <br><br>
+        <button ng-disabled="!resetPass.email" class="button button-dark beton2" type="submit">Şifremi Sıfırla
+        </button>
+        <br><br>
+        <button class="button button-block button-light" type="button" ng-click="kayitButon(0)">
           <a class="y">Geri</a>
-          </button>
+        </button>
 
-        </div>
-      </form>
+      </div>
+    </form>
 
 
     <center>
@@ -154,6 +140,98 @@
       <button class="button button-clear button-light" ng-click="tiklabayrak('TR')"><img class="full-image l3"
           src="img/login/tt.png"></button>
     </center>
+
+    <!-- Kullanıcı Kayıt Form Yapısı Yeni -->
+    <form name="kayit_form" ng-submit="registerUser()" ng-if="kayittab==1" novalidate>
+
+      <div class="form-fields-outer list list-inset" style="padding:10px;">
+
+        <!-- Name -->
+        <div class="form_group">
+          <label class="item item-input kd"
+            ng-class="{ 'has_error' : kayit_form.name.$invalid && !kayit_form.name.$pristine }">
+            <i class="ion-ios-person-outline" style="margin-right: 1%;font-size: 124%;"></i>
+            <br><br><br>
+            <input type="text" style="font-size:103%;margin-top: -1%; margin-left: 5%;" placeholder="Ad ve soyad"
+              name="name" ng-model="kayitData.name" class="form_control" required>
+          </label>
+          <p ng-show="kayit_form.name.$invalid && !kayit_form.name.$pristine" class="help-block">Adınız gerekli.</p>
+        </div>
+        <br>
+
+        <!-- Phone -->
+        <div class="form_group">
+          <label class="item item-input kd"
+            ng-class="{ 'has_error' : (kayit_form.phone.$invalid && !kayit_form.phone.$pristine)}">
+            <i class="ion-ios-telephone-outline" style="margin-right: 1%;font-size: 124%;"></i>
+
+            <input type="tel" style="font-size:103%;margin-top: -1%; margin-left: 5%;" ng-model="kayitData.number"
+              name="phone" placeholder="Phone" class="form_control" ng-pattern="/^[0-9]+$/" required>
+          </label>
+          <p ng-show="kayit_form.phone.$invalid && !kayit_form.phone.$pristine && !kayit_form.phone.$error.validPhone && !kayit_form.phone.$error.pattern"
+            class="help-block">Telefonunuz gerekli.</p>
+          <p ng-show="kayit_form.phone.$error.validPhone && !kayit_form.phone.$error.pattern" class="help-block">Enter a
+            valid phone.</p>
+          <p ng-show="kayit_form.phone.$error.pattern" class="help-block">Yalnızca sayılara izin verilir.</p>
+        </div>
+        <br>
+
+        <!-- Email -->
+        <div class="form_group">
+          <label class="item item-input kd"
+            ng-class="{ 'has_error' : kayit_form.email.$invalid && !kayit_form.email.$pristine }">
+            <i class="ion-ios-email-outline" style="margin-right: 1%;font-size: 124%;"></i>
+
+            <input type="email" style="font-size:103%;margin-top: -1%; margin-left: 5%;" placeholder="Email"
+              name="email" ng-model="kayitData.email" class="form_control" required>
+          </label>
+          <p ng-show="!kayit_form.email.$pristine && kayit_form.email.$invalid" class="help-block">Enter a valid email.
+          </p>
+        </div>
+        <br>
+
+        <!-- Password (+ confirm password) -->
+        <div class="form_group">
+          <label class="item item-input kd"
+            ng-class="{ 'has_error' : kayit_form.password.$invalid && !kayit_form.password.$pristine }">
+            <i class="ion-ios-unlocked-outline" style="margin-right: 1%;font-size: 124%;"></i>
+
+            <input type="password" style="font-size:103%;margin-top: -1%; margin-left: 5%;" placeholder="Password"
+              name="password" ng-model="kayitData.password" ng-minlength="5"
+              ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required>
+          </label>
+          <p ng-show="!kayit_form.password.$pristine && kayit_form.password.$invalid && !kayit_form.password.$error.minlength && !kayit_form.password.$error.pattern"
+            class="help-block">Parolanız gerekiyor.</p>
+          <p ng-show="kayit_form.password.$error.minlength" class="help-block">Parolanız çok kısa.</p>
+          <p ng-show="kayit_form.password.$error.pattern && !kayit_form.password.$error.minlength" class="help-block">
+            Şifreniz bir küçük ve büyük harf ve bir alfa olmayan karakter içermelidir.</p>
+        </div>
+        <br>
+
+        <div class="form_group">
+          <label class="item item-input kd"
+            ng-class="{ 'has_error' : (kayit_form.passwordChck.$invalid && !kayit_form.passwordChck.$pristine) || match_password }">
+            <i class="ion-ios-unlocked-outline" style="margin-right: 1%;font-size: 124%;"></i>
+
+            <input type="password" style="font-size:103%;margin-top: -1%; margin-left: 5%;"
+              placeholder="Confirm Password" name="passwordChck" ng-model-options="{ debounce: 500 }"
+              ng-model="kayitData.passwordChck" confirm-password="kayitData.password" required>
+          </label>
+          <p ng-show="kayit_form.passwordChck.$invalid && !kayit_form.passwordChck.$pristine && !kayit_form.passwordChck.$error.password_Chck"
+            class="help-block">Parolanızı onaylamanız gerekir.</p>
+          <p ng-show="kayit_form.passwordChck.$error.password_Chck" class="help-block">Şifreniz uyuşmuyor.</p>
+        </div>
+        <br>
+
+        <!-- Finally, submit! -->
+        <button class="button button-dark beton2" style="margin-left: 60px;" ng-click="submit(kayitData)"
+          ng-disabled="kayit_form.$invalid" type="submit">
+
+          {{diller[20].kelime}}
+        </button>
+      </div>
+    </form>
+
 
 
   </ion-content>
