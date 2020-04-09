@@ -73,6 +73,7 @@ angular.module('starter.controllers', [])
     //Login Durum Kontrol düzeltme
 
     $scope.loadData = function (){
+
     
       if ($scope.loginStatus == 0) {
 
@@ -177,7 +178,6 @@ angular.module('starter.controllers', [])
             })
         } 
          
-        console.log($scope.profil[0].USER_TYPE);
 
         location.href = "#/tab/main";
         
@@ -255,9 +255,10 @@ angular.module('starter.controllers', [])
         if ($scope.giris.login_status == true) {
 
           localStorage.setItem('user_id', $scope.giris.id);
-          $scope.userId = localStorage.getItem('user_id');
           localStorage.setItem('loginStatus', 1);
           $scope.loginStatus = localStorage.getItem('loginStatus');
+          $scope.userId = localStorage.getItem('user_id');
+          console.log ($scope.userId);
           $scope.loadData();
 
           // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
