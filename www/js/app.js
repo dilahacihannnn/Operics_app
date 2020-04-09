@@ -105,7 +105,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           }
         }
       })
-      .state('tab.userprofile', {
+      /*.state('tab.userprofile', {
         url: '/userprofile/:userID',
         views: {
           'tab-contact': {
@@ -113,14 +113,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           }
         }
       })
-       .state('tab.userlist', {
-        url: '/userlist',
-        views: {
-          'tab-contact': {
-            templateUrl: 'templates/list-users.html'
-          }
-        }
-      });
+      */;
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');

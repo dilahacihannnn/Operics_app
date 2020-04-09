@@ -14,40 +14,7 @@ angular.module('starter.controllers', [])
       $scope.userlist = data
     })    
     
-    $scope.aboutus_ekle = function(tab_no) {
-
-      if (!tab_no) {
-          $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
-            $scope.modal = modal;
-            $scope.modal.show();
-          });
-      } else {
-
-        switch (tab_no) {
-
-          case 0:
-            $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
-              $scope.modal = modal;
-              $scope.modal.show();
-            });
-          break;
-
-           case 1:
-            $ionicModal.fromTemplateUrl('templates/add-reference.html', { scope: $scope }).then(function (modal) {
-              $scope.modal = modal;
-              $scope.modal.show();
-            });
-          break;
-
-           case 2:
-            $ionicModal.fromTemplateUrl('templates/add-team.html', { scope: $scope }).then(function (modal) {
-              $scope.modal = modal;
-              $scope.modal.show();
-            });
-          break;
-        }
-      }  
-    }
+  
 
     //Girişte sorgulanacak parametreler
     $scope.loginData                    = {};
@@ -388,66 +355,72 @@ angular.module('starter.controllers', [])
       console.log(kelime_id, kullanici_id);
     };
 
+    
+
+    $scope.text_truncate = function (str, length, ending) {
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+          return str;
+      }
+    }
+
+    // Onay kutusu
+    $scope.ConfirmApplication = function () {
+
+      var confirmPopup = $ionicPopup.alert({
+        title: "Başarılı",
+        template: "Sn. Ahmet Yılmaz " + $scope.egitimler[$scope.itemId].CRS_NAME + " için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
+      });
+
+      confirmPopup.then(function (res) {
+        if (res) {
+          $scope.aktifmi = true;
+          var ServiceRequest = {
+            service_type: "kursa_katil",
+            user_id: $scope.userId,
+            course_id: $scope.itemId
+          }
+
+          $http.post($rootScope.webServiceUrl, ServiceRequest)
+        }
+      });
+    };
+
+    // A confirm dialog
+
+    $scope.CancelApplication = function () {
+      var confirmPopup = $ionicPopup.alert({
+        title: "İptal Edildi",
+        template: "İptal onaylanmıştır."
+      });
+
+      confirmPopup.then(function (res) {
+        if (res) {
+          $scope.aktifmi = false;
+          var ServiceRequest = {
+            service_type: "kursu_iptal_et",
+            user_id: "3",
+            course_id: "2"
+          }
+
+          $http.post($rootScope.webServiceUrl, ServiceRequest)
+          }
+      });
+    };
+
+
+
+    //Detay sayfası filtreleme algoritması
+
     $scope.modalgosterici = function (tur, id) {
       $scope.itemId = id;
-
-      $scope.text_truncate = function (str, length, ending) {
-        if (length == null) {
-          length = 100;
-        }
-        if (ending == null) {
-          ending = '...';
-        }
-        if (str.length > length) {
-          return str.substring(0, length - ending.length) + ending;
-        } else {
-          return str;
-        }
-      }
-
-      // Onay kutusu
-      $scope.ConfirmApplication = function () {
-
-
-        var confirmPopup = $ionicPopup.alert({
-          title: "Başarılı",
-          template: "Sn. Ahmet Yılmaz " + $scope.egitimler[$scope.itemId].CRS_NAME + " için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
-        });
-
-        confirmPopup.then(function (res) {
-          if (res) {
-            $scope.aktifmi = true;
-            var ServiceRequest = {
-              service_type: "kursa_katil",
-              user_id: $scope.userId,
-              course_id: $scope.itemId
-            }
-
-            $http.post($rootScope.webServiceUrl, ServiceRequest)
-          }
-        });
-      };
-
-      // A confirm dialog
-      $scope.CancelApplication = function () {
-        var confirmPopup = $ionicPopup.alert({
-          title: "İptal Edildi",
-          template: "İptal onaylanmıştır."
-        });
-
-        confirmPopup.then(function (res) {
-          if (res) {
-            $scope.aktifmi = false;
-            var ServiceRequest = {
-              service_type: "kursu_iptal_et",
-              user_id: "3",
-              course_id: "2"
-            }
-
-            $http.post($rootScope.webServiceUrl, ServiceRequest)
-          }
-        });
-      };
 
       switch (tur) {
 
@@ -488,6 +461,83 @@ angular.module('starter.controllers', [])
 
         case 'dictionary':
           $ionicModal.fromTemplateUrl('templates/dictionary-detail.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+      }
+    };
+
+    //Admin İçerik Düzenleme arayüzlerine erişim
+
+    $scope.editgosterici = function (tur) {
+
+      switch (tur) {
+
+        case 'editAbout':
+          if ($scope.abouttab == 1) {
+            $ionicModal.fromTemplateUrl('templates/add-referance.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          } else if ($scope.abouttab == 2) {
+            $ionicModal.fromTemplateUrl('templates/add-teams.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          } else {
+            $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          }
+          break;
+
+        case 'editCourse':
+          $ionicModal.fromTemplateUrl('templates/add-course.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          })
+          break;
+
+        case 'editStory':
+          $scope.modal.hide();
+          $ionicModal.fromTemplateUrl('templates/add-story.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'editProfile':
+          $ionicModal.fromTemplateUrl('templates/profile-detail.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'editTeam':
+          $ionicModal.fromTemplateUrl('templates/add-teams.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'editDic':
+          $ionicModal.fromTemplateUrl('templates/add-dictionary.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'editCon':
+          $ionicModal.fromTemplateUrl('templates/add-contact.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'listUsers':
+          $ionicModal.fromTemplateUrl('templates/list-users.html', { scope: $scope }).then(function (modal) {
             $scope.modal = modal;
             $scope.modal.show();
           });
