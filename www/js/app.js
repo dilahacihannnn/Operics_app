@@ -32,17 +32,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           var lang = locale.value.split("-")[0];
           console.log(lang);
 
-          if(lang == 'tr' || lang == 'de') {
-            $rootScope.selectLang(lang);
+          if (lang == 'tr') {
+            localStorage.setItem('language', "TR");
+          } else if(lang == 'de') {
+            localStorage.setItem('language', "DE");
           } else {
-            $rootScope.selectLang('en');
+            localStorage.setItem('language', "EN");
           }
         }
 
         function onError() {
-          $rootScope.selectLang('en');
+          localStorage.setItem('language', "EN");;
         }
       }
+      
       getLanguage();
     });
   })

@@ -177,7 +177,7 @@ angular.module('starter.controllers', [])
     })
 
     if (!$scope.language || !$scope.diller || $scope.dillerVersionChck == false) {
-      localStorage.setItem('language', "TR");
+      localStorage.setItem('language', "EN");
       $scope.language = localStorage.getItem('language');
       var ServiceRequest = {
         service_type: "diller",
