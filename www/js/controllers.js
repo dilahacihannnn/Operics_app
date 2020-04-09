@@ -72,7 +72,7 @@ angular.module('starter.controllers', [])
         localStorage.setItem('versionJson', JSON.stringify(data));
         $scope.versions = JSON.parse(localStorage.getItem('versionJson'));
 
-        if (!$scope.savedVersions || ($scope.savedVersions != $scope.versions)) {
+        if (!$scope.savedVersions) {
           localStorage.setItem('savedVersionJson', JSON.stringify($scope.versions));
           $scope.savedVersions = JSON.parse(localStorage.getItem('savedVersionJson'));
         }
@@ -225,7 +225,6 @@ angular.module('starter.controllers', [])
     if (!$scope.loginStatus) {
       localStorage.setItem('loginStatus', 0);
       $scope.loginStatus = localStorage.getItem('loginStatus');
-      $scope.loadData();
     }
 
 
