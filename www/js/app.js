@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs).
@@ -24,6 +24,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         // remove the status bar on iOS or change it to use white instead of dark colors.
         StatusBar.styleDefault();
       }
+      function getLanguage() {
+        navigator.globalization.getPreferredLanguage(onSuccess,onError);
+
+        function onSuccess(locale) {
+          //alert('locale: ' +locale.value.split("-")[0]);
+          var lang = locale.value.split("-")[0];
+          console.log(lang);
+
+          if(lang == 'tr' || lang == 'de') {
+            $rootScope.selectLang(lang);
+          } else {
+            $rootScope.selectLang('en');
+          }
+        }
+
+        function onError() {
+          $rootScope.selectLang('en');
+        }
+      }
+      getLanguage();
     });
   })
 
