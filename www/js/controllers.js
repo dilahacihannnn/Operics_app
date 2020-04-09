@@ -14,6 +14,28 @@ angular.module('starter.controllers', [])
       $scope.userlist = data
     })    
     
+    $scope.user_yasakla = function(userId){
+      var ServiceRequest = {
+        service_type: "admin_user_block",
+        user_id: userId
+      }
+
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+      })
+    }
+
+    $scope.user_yasak_kaldir = function(userId){
+      var ServiceRequest = {
+        service_type: "admin_user_unblock",
+        user_id: userId
+      }
+
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+      })
+    }
+
+
+
     $scope.aboutus_ekle = function(tab_no) {
 
       if (!tab_no) {
