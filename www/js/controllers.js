@@ -44,7 +44,6 @@ angular.module('starter.controllers', [])
     $scope.kayitData                    = {};
     $scope.resetPass                    = {};
     $scope.smsVerify                    = {};
-    $scope.versions                      = {};
     $scope.language                     = localStorage.getItem('language');
     $scope.userId                       = localStorage.getItem('user_id');
     $scope.loginStatus                  = localStorage.getItem('loginStatus');
@@ -58,7 +57,8 @@ angular.module('starter.controllers', [])
     $scope.egitimler                    = JSON.parse(localStorage.getItem('egitimJson'));
     $scope.sozluk                       = JSON.parse(localStorage.getItem('sozlukJson'));
     $scope.profil                       = JSON.parse(localStorage.getItem('profilJson'));
-    $scope.savedVersions                = JSON.parse(localStorage.getItem('versionJson'));
+    $scope.versions                     = JSON.parse(localStorage.getItem('versionJson'));
+    $scope.savedVersions                = JSON.parse(localStorage.getItem('savedVersionJson'));
      
    
     // Version Kontrolü
@@ -70,11 +70,12 @@ angular.module('starter.controllers', [])
 
       // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
       $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-          $scope.versions = data
+          localStorage.setItem('versionJson', JSON.stringify(data));
+          $scope.versions = JSON.parse(localStorage.getItem('versionJson'));
 
-          if (!$scope.savedVersions) {
-            localStorage.setItem('versionJson', JSON.stringify($scope.versions));
-            $scope.savedVersions = JSON.parse(localStorage.getItem('versionJson'));
+          if (!$scope.savedVersions || ($scope.savedVersions != $scope.versions)) {
+            localStorage.setItem('savedVersionJson', JSON.stringify($scope.versions));
+            $scope.savedVersions = JSON.parse(localStorage.getItem('savedVersionJson'));
           }
       })
     }
@@ -96,8 +97,6 @@ angular.module('starter.controllers', [])
           localStorage.setItem('dillerJson', JSON.stringify(data));
           $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
         })
-        localStorage.removeItem('versionJson');
-        $scope.versionChk();
       };
     }
 
@@ -593,6 +592,6 @@ angular.module('starter.controllers', [])
     $scope.versionChk();
     $scope.langDetect();
     $scope.loadData();
-    console.log("Sözlük Tablosunun Versiyonu: " + $scope.versions[5]);
+    console.log("Sözlük Tablosunun Versiyonu: " + $scope.savedVersions[5].TABLE_VERSION);
     
   });
