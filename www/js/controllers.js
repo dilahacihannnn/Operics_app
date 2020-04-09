@@ -14,7 +14,66 @@ angular.module('starter.controllers', [])
       $scope.userlist = data
     })    
     
+
+    $scope.user_yasakla = function(userId){
+      var ServiceRequest = {
+        service_type: "admin_user_block",
+        user_id: userId
+      }
+
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+      })
+    }
+
+    $scope.user_yasak_kaldir = function(userId){
+      var ServiceRequest = {
+        service_type: "admin_user_unblock",
+        user_id: userId
+      }
+
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+      })
+    }
+
+
+
+    $scope.aboutus_ekle = function(tab_no) {
+
+      if (!tab_no) {
+          $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+      } else {
+
+        switch (tab_no) {
+
+          case 0:
+            $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          break;
+
+           case 1:
+            $ionicModal.fromTemplateUrl('templates/add-reference.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          break;
+
+           case 2:
+            $ionicModal.fromTemplateUrl('templates/add-team.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          break;
+        }
+      }  
+    }
+
   
+
 
     //Girişte sorgulanacak parametreler
     $scope.loginData                    = {};
