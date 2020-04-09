@@ -63,43 +63,42 @@ angular.module('starter.controllers', [])
    
     // Version Kontrolü
 
-    $scope.versionChk = function () { 
-      var ServiceRequest = {
-        service_type: "version_check"
-      }
-
-      // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
-      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-          localStorage.setItem('versionJson', JSON.stringify(data));
-          $scope.versions = JSON.parse(localStorage.getItem('versionJson'));
-
-          if (!$scope.savedVersions || ($scope.savedVersions != $scope.versions)) {
-            localStorage.setItem('savedVersionJson', JSON.stringify($scope.versions));
-            $scope.savedVersions = JSON.parse(localStorage.getItem('savedVersionJson'));
-          }
-      })
+    var ServiceRequest = {
+      service_type: "version_check"
     }
+
+    // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+        localStorage.setItem('versionJson', JSON.stringify(data));
+        $scope.versions = JSON.parse(localStorage.getItem('versionJson'));
+
+        if (!$scope.savedVersions || ($scope.savedVersions != $scope.versions)) {
+          localStorage.setItem('savedVersionJson', JSON.stringify($scope.versions));
+          $scope.savedVersions = JSON.parse(localStorage.getItem('savedVersionJson'));
+        }
+    })
+    
 
     
 
     // Uygulama dilinin belirlenmesi
-    $scope.langDetect = function () {
-      if (!$scope.language || !$scope.diller) {
-        localStorage.setItem('language', "TR");
-        $scope.language = localStorage.getItem('language');
-        localStorage.removeItem('dillerJson')
-        var ServiceRequest = {
-          service_type: "diller",
-          language: localStorage.getItem('language')
-        }
+   
+    if (!$scope.language || !$scope.diller) {
+      localStorage.setItem('language', "TR");
+      $scope.language = localStorage.getItem('language');
+      localStorage.removeItem('dillerJson')
+      var ServiceRequest = {
+        service_type: "diller",
+        language: localStorage.getItem('language')
+      }
 
-        $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-          localStorage.setItem('dillerJson', JSON.stringify(data));
-          $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
-        })
-      };
-    }
-
+      $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+        localStorage.setItem('dillerJson', JSON.stringify(data));
+        $scope.diller = JSON.parse(localStorage.getItem('dillerJson'));
+      })
+    };
+   
+    
 
     // Login Durum Kontrol düzeltme
 
@@ -153,7 +152,7 @@ angular.module('starter.controllers', [])
           })
         }
 
-        if ((!$scope.referanslar || $scope.referanslarVersionChck == false) && $scope.loginStatus == 1) {
+        if ((!$scope.referanslar || ($scope.savedVersions != $scope.versions)) && $scope.loginStatus == 1) {
           var ServiceRequest = {
             service_type: "referanslar",
             language: localStorage.getItem('language')
@@ -166,7 +165,7 @@ angular.module('starter.controllers', [])
           })
         }
 
-        if ((!$scope.egitimler || $scope.egitimVersionChckk == false) && $scope.loginStatus == 1) {
+        if ((!$scope.egitimler || ($scope.savedVersions != $scope.versions)) && $scope.loginStatus == 1) {
           var ServiceRequest = {
             service_type: "egitimler",
             language: localStorage.getItem('language')
@@ -180,7 +179,7 @@ angular.module('starter.controllers', [])
         }
 
 
-        if ((!$scope.sozluk || ($scope.version[5].TABLE_VERSION != $scope.versionOld[5].TABLE_VERSION)) && $scope.loginStatus == 1) {
+        if ((!$scope.sozluk || ($scope.savedVersions != $scope.versions)) && $scope.loginStatus == 1) {
           localStorage.removeItem('sozlukJson');
           var ServiceRequest = {
             service_type: "sozluk",
@@ -195,7 +194,7 @@ angular.module('starter.controllers', [])
         }
 
         
-        if ((!$scope.profil || $scope.profilVersionChck == false) && $scope.loginStatus == 1) {
+        if ((!$scope.profil || ($scope.savedVersions != $scope.versions)) && $scope.loginStatus == 1) {
             var ServiceRequest = {
                 service_type: "profil",
                 language: localStorage.getItem('language'),
@@ -252,6 +251,13 @@ angular.module('starter.controllers', [])
       console.log(language);
     };
 
+    // Kullanıcı girişi, Kullanıcı kaydı, Şifre yenileme Switch Algoritması
+
+    $scope.kayitButon = function (kayittab) {
+      $scope.kayittab = kayittab;
+      console.log($scope.kayittab);
+    };
+
     //Kullanıcı Giriş Fonksiyonu
 
     $scope.doLogin = function () {
@@ -290,11 +296,6 @@ angular.module('starter.controllers', [])
       })
     };
 
-    $scope.kayitButon = function (kayittab) {
-      $scope.kayittab = kayittab;
-      console.log($scope.kayittab);
-    };
-
     // Kullanıcı Kayıt Fonksiyonu
 
     $scope.registerUser = function () {
@@ -323,7 +324,7 @@ angular.module('starter.controllers', [])
 
     };
 
-    // Kullanıcı Şifre
+    // Kullanıcı Şifre Yenileme
 
     $scope.passwordRes = function () {
       
@@ -588,9 +589,6 @@ angular.module('starter.controllers', [])
     };
 
     //Sırası ile çağrılacak metodlar!..
-
-    $scope.versionChk();
-    $scope.langDetect();
     $scope.loadData();
     
   });
