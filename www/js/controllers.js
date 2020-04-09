@@ -67,6 +67,8 @@ angular.module('starter.controllers', [])
     $scope.egitimler                    = JSON.parse(localStorage.getItem('egitimJson'));
     $scope.sozluk                       = JSON.parse(localStorage.getItem('sozlukJson'));
     $scope.profil                       = JSON.parse(localStorage.getItem('profilJson'));
+    $scope.version                      = JSON.parse(localStorage.getItem('versionJson'));
+   
 
     //Login Durum Kontrol düzeltme
 
@@ -191,19 +193,13 @@ angular.module('starter.controllers', [])
 
     //Version Kontrolü
     var ServiceRequest = {
-      service_type: "versionChck"
+      service_type: "version_check"
     }
 
     // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-      $scope.dillerVersionChck        = data
-      $scope.hikayelerVersionChck     = data
-      $scope.hizmetlerVersionChck     = data
-      $scope.referanslarVersionChck   = data
-      $scope.ekipVersionChck          = data
-      $scope.egitimVersionChck        = data
-      $scope.sozlukVersionChck        = data
-      $scope.profilVersionChck        = data
+        localStorage.setItem('versionJson', JSON.stringify(data));
+        $scope.version = JSON.parse(localStorage.getItem('versionJson'));
     })
 
     if (!$scope.language || !$scope.diller || $scope.dillerVersionChck == false) {
