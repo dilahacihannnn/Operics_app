@@ -6,12 +6,14 @@ angular.module('starter.controllers', [])
     $scope.pictureUrl = "http://placehold.it/200x200";
 
 
+    var ServiceRequest = {
+      service_type: "admin_users_detail",
+    }
 
-    $scope.userlist = [
-    {"id":"0","isim":"Anıl Solmaz","telefon":"0123456789","mail":"anil@mail","sirket":"operics","status":"active","imgURL":"https://icon-library.net/images/username-icon/username-icon-28.jpg"},
-    {"id":"1","isim":"Nur Taşkara","telefon":"0123456789","mail":"nur@mail","sirket":"operics","status":"banned","imgURL":"https://img.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg?size=338&ext=jpg"}
-    ]
-
+    $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
+      $scope.userlist = data
+    })    
+    
     $scope.aboutus_ekle = function(tab_no) {
 
       if (!tab_no) {
@@ -169,11 +171,11 @@ angular.module('starter.controllers', [])
             $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
                 localStorage.setItem('profilJson', JSON.stringify(data));
                 $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
-                if ($scope.profil) {}
+                if ($scope.profil[0].USER_TYPE == "admin") {}
             })
         } 
          
-        console.log($scope.profil.USER_TYPE);
+        console.log($scope.profil[0].USER_TYPE);
 
         location.href = "#/tab/main";
         
@@ -257,12 +259,12 @@ angular.module('starter.controllers', [])
         if ($scope.giris.login_status == true) {
 
           localStorage.setItem('user_id', $scope.giris.id);
+          $scope.userId = localStorage.getItem('user_id');
           localStorage.setItem('loginStatus', 1);
           $scope.loginStatus = localStorage.getItem('loginStatus');
           $scope.loadData();
 
           // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
-          $scope.userId = localStorage.getItem('user_id');
           $ionicPopup.alert({ template: "Sn. " + $scope.giris.user_name + ", Operics'e hoşgeldiniz!.." });
           console.log("Login Status = " + $scope.loginStatus);
           
