@@ -592,6 +592,5 @@ angular.module('starter.controllers', [])
     $scope.versionChk();
     $scope.langDetect();
     $scope.loadData();
-    console.log("Sözlük Tablosunun Versiyonu: " + $scope.savedVersions[5].TABLE_VERSION);
     
   });
