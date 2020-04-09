@@ -6,23 +6,23 @@
   </ion-header-bar>
 
   <ion-content>
-   
- 
+
     <div class="all">{{sozluk[itemId].WORD}}</div>
 
-    <img  ng-click="FavKontrol(sozluk[itemId], localStorage.getItem('user_id'))" class="full-image sagda_simge rr"
-    src="img/icons/r5.png">
+    <img ng-click="FavKontrol(sozluk[itemId], localStorage.getItem('user_id'))" class="full-image sagda_simge rr"
+      src="img/icons/r5.png">
 
-  
-  
     <br>
-<center>
-<div class="col col-90" >
-    <a class="col item item-body " style="border-radius:12px;height: 560px;" href="#/tab/dictionary">
-      
-      <p style="font-size: 22px;font-family: Avenir-Book;margin-right: 25%;">{{sozluk[itemId].DESCRIPTION}}<div  class="ion-compose edit_i detail_edit" ng-if="isAdmin==1"></div></p>
+    <center>
+      <div class="col col-90">
+        <a class="col item item-body " style="border-radius:12px;height: 560px;" href="#/tab/dictionary">
 
-    </a>
-  </div></center>
-</ion-content>
+          <p style="font-size: 22px;font-family: Avenir-Book;margin-right: 25%;">{{sozluk[itemId].DESCRIPTION}}<div
+              class="ion-compose edit_i detail_edit" ng-if="isAdmin==1"></div>
+          </p>
+
+        </a>
+      </div>
+    </center>
+  </ion-content>
 </ion-modal-view>
