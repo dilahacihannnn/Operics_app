@@ -14,6 +14,7 @@ angular.module('starter.controllers', [])
       $scope.userlist = data
     })    
     
+
     $scope.user_yasakla = function(userId){
       var ServiceRequest = {
         service_type: "admin_user_block",
@@ -71,6 +72,9 @@ angular.module('starter.controllers', [])
       }  
     }
 
+  
+
+
     //Girişte sorgulanacak parametreler
     $scope.loginData                    = {};
     $scope.kayitData                    = {};
@@ -89,10 +93,13 @@ angular.module('starter.controllers', [])
     $scope.egitimler                    = JSON.parse(localStorage.getItem('egitimJson'));
     $scope.sozluk                       = JSON.parse(localStorage.getItem('sozlukJson'));
     $scope.profil                       = JSON.parse(localStorage.getItem('profilJson'));
+    $scope.version                      = JSON.parse(localStorage.getItem('versionJson'));
+   
 
     //Login Durum Kontrol düzeltme
 
     $scope.loadData = function (){
+
     
       if ($scope.loginStatus == 0) {
 
@@ -193,12 +200,18 @@ angular.module('starter.controllers', [])
             $http.post($rootScope.webServiceUrl, ServiceRequest).success(function(data) {
                 localStorage.setItem('profilJson', JSON.stringify(data));
                 $scope.profil = JSON.parse(localStorage.getItem('profilJson'));
-                if ($scope.profil[0].USER_TYPE == "admin") {}
+
+            // Kullanıcı tipi belirlenir.
+                if ($scope.profil[0].USER_TYPE == "admin") {
+                  localStorage.setItem('isAdmin', 1);
+                  $scope.isAdmin = localStorage.getItem('isAdmin');
+                } else {
+                  localStorage.setItem('isAdmin', 0);
+                  $scope.isAdmin = localStorage.getItem('isAdmin');
+                }
             })
         } 
          
-        console.log($scope.profil[0].USER_TYPE);
-
         location.href = "#/tab/main";
         
       }
@@ -213,23 +226,17 @@ angular.module('starter.controllers', [])
 
     //Version Kontrolü
     var ServiceRequest = {
-      service_type: "versionChck"
+      service_type: "version_check"
     }
 
     // Service request değişkeni web service post edilir. Gelen yanıt $scope.giris isimli değişkene atanır.
     $http.post($rootScope.webServiceUrl, ServiceRequest).success(function (data) {
-      $scope.dillerVersionChck        = data
-      $scope.hikayelerVersionChck     = data
-      $scope.hizmetlerVersionChck     = data
-      $scope.referanslarVersionChck   = data
-      $scope.ekipVersionChck          = data
-      $scope.egitimVersionChck        = data
-      $scope.sozlukVersionChck        = data
-      $scope.profilVersionChck        = data
+        localStorage.setItem('versionJson', JSON.stringify(data));
+        $scope.version = JSON.parse(localStorage.getItem('versionJson'));
     })
 
     if (!$scope.language || !$scope.diller || $scope.dillerVersionChck == false) {
-      localStorage.setItem('language', "TR");
+      localStorage.setItem('language', "EN");
       $scope.language = localStorage.getItem('language');
       var ServiceRequest = {
         service_type: "diller",
@@ -281,9 +288,10 @@ angular.module('starter.controllers', [])
         if ($scope.giris.login_status == true) {
 
           localStorage.setItem('user_id', $scope.giris.id);
-          $scope.userId = localStorage.getItem('user_id');
           localStorage.setItem('loginStatus', 1);
           $scope.loginStatus = localStorage.getItem('loginStatus');
+          $scope.userId = localStorage.getItem('user_id');
+          console.log ($scope.userId);
           $scope.loadData();
 
           // Kaydedilen bilgiler uygulamanın ilgili kısımlarında gösterilmek üzere kullanılır.
@@ -406,66 +414,72 @@ angular.module('starter.controllers', [])
       console.log(kelime_id, kullanici_id);
     };
 
+    
+
+    $scope.text_truncate = function (str, length, ending) {
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+          return str;
+      }
+    }
+
+    // Onay kutusu
+    $scope.ConfirmApplication = function () {
+
+      var confirmPopup = $ionicPopup.alert({
+        title: "Başarılı",
+        template: "Sn. Ahmet Yılmaz " + $scope.egitimler[$scope.itemId].CRS_NAME + " için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
+      });
+
+      confirmPopup.then(function (res) {
+        if (res) {
+          $scope.aktifmi = true;
+          var ServiceRequest = {
+            service_type: "kursa_katil",
+            user_id: $scope.userId,
+            course_id: $scope.itemId
+          }
+
+          $http.post($rootScope.webServiceUrl, ServiceRequest)
+        }
+      });
+    };
+
+    // A confirm dialog
+
+    $scope.CancelApplication = function () {
+      var confirmPopup = $ionicPopup.alert({
+        title: "İptal Edildi",
+        template: "İptal onaylanmıştır."
+      });
+
+      confirmPopup.then(function (res) {
+        if (res) {
+          $scope.aktifmi = false;
+          var ServiceRequest = {
+            service_type: "kursu_iptal_et",
+            user_id: "3",
+            course_id: "2"
+          }
+
+          $http.post($rootScope.webServiceUrl, ServiceRequest)
+          }
+      });
+    };
+
+
+
+    //Detay sayfası filtreleme algoritması
+
     $scope.modalgosterici = function (tur, id) {
       $scope.itemId = id;
-
-      $scope.text_truncate = function (str, length, ending) {
-        if (length == null) {
-          length = 100;
-        }
-        if (ending == null) {
-          ending = '...';
-        }
-        if (str.length > length) {
-          return str.substring(0, length - ending.length) + ending;
-        } else {
-          return str;
-        }
-      }
-
-      // Onay kutusu
-      $scope.ConfirmApplication = function () {
-
-
-        var confirmPopup = $ionicPopup.alert({
-          title: "Başarılı",
-          template: "Sn. Ahmet Yılmaz " + $scope.egitimler[$scope.itemId].CRS_NAME + " için ön başvurunuz alınmıuştır. En kısa sürede sizinle iritibata geçilecektir."
-        });
-
-        confirmPopup.then(function (res) {
-          if (res) {
-            $scope.aktifmi = true;
-            var ServiceRequest = {
-              service_type: "kursa_katil",
-              user_id: $scope.userId,
-              course_id: $scope.itemId
-            }
-
-            $http.post($rootScope.webServiceUrl, ServiceRequest)
-          }
-        });
-      };
-
-      // A confirm dialog
-      $scope.CancelApplication = function () {
-        var confirmPopup = $ionicPopup.alert({
-          title: "İptal Edildi",
-          template: "İptal onaylanmıştır."
-        });
-
-        confirmPopup.then(function (res) {
-          if (res) {
-            $scope.aktifmi = false;
-            var ServiceRequest = {
-              service_type: "kursu_iptal_et",
-              user_id: "3",
-              course_id: "2"
-            }
-
-            $http.post($rootScope.webServiceUrl, ServiceRequest)
-          }
-        });
-      };
 
       switch (tur) {
 
@@ -506,6 +520,83 @@ angular.module('starter.controllers', [])
 
         case 'dictionary':
           $ionicModal.fromTemplateUrl('templates/dictionary-detail.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+      }
+    };
+
+    //Admin İçerik Düzenleme arayüzlerine erişim
+
+    $scope.editgosterici = function (tur) {
+
+      switch (tur) {
+
+        case 'editAbout':
+          if ($scope.abouttab == 1) {
+            $ionicModal.fromTemplateUrl('templates/add-referance.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          } else if ($scope.abouttab == 2) {
+            $ionicModal.fromTemplateUrl('templates/add-teams.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          } else {
+            $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
+              $scope.modal = modal;
+              $scope.modal.show();
+            });
+          }
+          break;
+
+        case 'editCourse':
+          $ionicModal.fromTemplateUrl('templates/add-course.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          })
+          break;
+
+        case 'editStory':
+          $scope.modal.hide();
+          $ionicModal.fromTemplateUrl('templates/add-story.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'editProfile':
+          $ionicModal.fromTemplateUrl('templates/profile-detail.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'editTeam':
+          $ionicModal.fromTemplateUrl('templates/add-teams.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'editDic':
+          $ionicModal.fromTemplateUrl('templates/add-dictionary.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'editCon':
+          $ionicModal.fromTemplateUrl('templates/add-contact.html', { scope: $scope }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+          });
+          break;
+
+        case 'listUsers':
+          $ionicModal.fromTemplateUrl('templates/list-users.html', { scope: $scope }).then(function (modal) {
             $scope.modal = modal;
             $scope.modal.show();
           });

@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs).
@@ -24,6 +24,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         // remove the status bar on iOS or change it to use white instead of dark colors.
         StatusBar.styleDefault();
       }
+      function getLanguage() {
+        navigator.globalization.getPreferredLanguage(onSuccess,onError);
+
+        function onSuccess(locale) {
+          //alert('locale: ' +locale.value.split("-")[0]);
+          var lang = locale.value.split("-")[0];
+          console.log(lang);
+
+          if (lang == 'tr') {
+            localStorage.setItem('language', "TR");
+          } else if(lang == 'de') {
+            localStorage.setItem('language', "DE");
+          } else {
+            localStorage.setItem('language', "EN");
+          }
+        }
+
+        function onError() {
+          localStorage.setItem('language', "EN");;
+        }
+      }
+      
+      getLanguage();
     });
   })
 
@@ -105,7 +128,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           }
         }
       })
-      .state('tab.userprofile', {
+      /*.state('tab.userprofile', {
         url: '/userprofile/:userID',
         views: {
           'tab-contact': {
@@ -113,14 +136,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           }
         }
       })
-       .state('tab.userlist', {
-        url: '/userlist',
-        views: {
-          'tab-contact': {
-            templateUrl: 'templates/list-users.html'
-          }
-        }
-      });
+      */;
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');

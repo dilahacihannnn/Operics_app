@@ -20,13 +20,13 @@
    
 
 <div class="col-100" style="margin-top: 8%;">
-<input type="" name="" maxlength="1" style="margin-right: 4%;"class="sms sms_text" ng-model="smsVerify.kod1">
-<input type="" name="" maxlength="1" style="margin-right: 4%;" class="sms sms_text" maxlength="1" ng-model="smsVerify.kod2">
-<input type="" name="" maxlength="1" style="margin-right: 4%;"class="sms sms_text" ng-model="smsVerify.kod3">
-<input type="" name="" maxlength="1" class="sms sms_text" ng-model="smsVerify.kod4"></div>
+<input type="" name="" maxlength="1" style="margin-right: 4%;"class="sms sms_text" ng-model="smsVerify.kod1" tabindex="-1">
+<input type="" name="" maxlength="1" style="margin-right: 4%;" class="sms sms_text" maxlength="1" ng-model="smsVerify.kod2" tabindex="-1">
+<input type="" name="" maxlength="1" style="margin-right: 4%;"class="sms sms_text" ng-model="smsVerify.kod3" tabindex="-1">
+<input type="" name="" maxlength="1" class="sms sms_text" ng-model="smsVerify.kod4" tabindex="-1"></div>
 
 
-<button style="margin-top: 14%"class="button  sms_button" type="submit">Onayla</button>
+<button style="margin-top: 14%"class="button  sms_button" ng-if="(smsVerify.kod1>=0) && (smsVerify.kod2>=0) && (smsVerify.kod3>=0) && (smsVerify.kod4>=0)" type="submit">Onayla</button>
 
 
 

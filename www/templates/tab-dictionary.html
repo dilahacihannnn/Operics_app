@@ -12,8 +12,9 @@
 			</label>
 		</div>
 
-		<div class="ortala">
-			<button class="button button-assertive ekle_b ">
+		<!--Ekleme Butonu-->
+		<div class="ortala" ng-if="isAdmin==1">
+			<button class="button button-assertive ekle_b" ng-click="editgosterici('editDic')">
 				<h3 style=" color: white;font-family: monospace;">+ Ekle</h3>
 			</button></div>
 
