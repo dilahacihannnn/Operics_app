@@ -36,42 +36,6 @@ angular.module('starter.controllers', [])
     }
 
 
-
-    $scope.aboutus_ekle = function(tab_no) {
-
-      if (!tab_no) {
-          $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
-            $scope.modal = modal;
-            $scope.modal.show();
-          });
-      } else {
-
-        switch (tab_no) {
-
-          case 0:
-            $ionicModal.fromTemplateUrl('templates/add-service.html', { scope: $scope }).then(function (modal) {
-              $scope.modal = modal;
-              $scope.modal.show();
-            });
-          break;
-
-           case 1:
-            $ionicModal.fromTemplateUrl('templates/add-reference.html', { scope: $scope }).then(function (modal) {
-              $scope.modal = modal;
-              $scope.modal.show();
-            });
-          break;
-
-           case 2:
-            $ionicModal.fromTemplateUrl('templates/add-team.html', { scope: $scope }).then(function (modal) {
-              $scope.modal = modal;
-              $scope.modal.show();
-            });
-          break;
-        }
-      }  
-    }
-
   
 
 
