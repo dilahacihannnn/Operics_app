@@ -364,8 +364,6 @@ angular.module('starter.controllers', [])
       })
 
     };
-
-    
     
     // Sms Onay
 
@@ -389,6 +387,13 @@ angular.module('starter.controllers', [])
         }
       })
     }
+
+    $scope.moveToNext = function  (field1, maxlength, field2) {
+      if (document.getElementById(field1).length == maxlength) {
+        document.getElementById(field2).focus();
+      }
+    }
+    
 
     //Logout işlemi
 
@@ -617,3 +622,4 @@ angular.module('starter.controllers', [])
     
 
   });
+

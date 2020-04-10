@@ -5,41 +5,33 @@
 
 	<ion-content class="padding">
 
-		<script>
-			function autotab(current,to){
-				if (current.getAttribute && 
-					current.value.length==current.getAttribute("maxlength")) {
-					to.focus() 
-				}
-			}
-		</script>
-
-	<!-- Sms Body -->
-	<form name="input" ng-submit="smsOnay()">
-		<center>
-			<i style="font-size: 133px;"class="ion-android-textsms"></i>
+		<!-- Sms Body -->
+			
+		<form name="input" ng-submit="smsOnay()">
+			<center>
+				<i style="font-size: 133px;"class="ion-android-textsms"></i>
 
 
 
-			<div class="col col-100">
-				<label style="font-size: 23px;color: #616161;">Lütfen telefonunuza SMS olarak 
-				gelen kodu giriniz.</label>
-			</div>
+				<div class="col col-100">
+					<label style="font-size: 23px;color: #616161;">Lütfen telefonunuza SMS olarak gelen kodu giriniz.</label>
+				</div>
 
 
-			<div class="col-100" style="margin-top: 8%;">
-				<input type="" name="input1" size="1" maxlength="1" style="margin-right: 4%;"class="sms sms_text" ng-model="smsVerify.kod1" onkeydown="autotab(this, document.input.input2)">
-				<input type="" name="input2" size="1" maxlength="1" style="margin-right: 4%;" class="sms sms_text" ng-model="smsVerify.kod2" onkeydown="autotab(this, document.input.input3)">
-				<input type="" name="input3" size="1" maxlength="1" style="margin-right: 4%;"class="sms sms_text" ng-model="smsVerify.kod3" onkeydown="autotab(this, document.input.input4)">
-				<input type="" name="input4" size="1" maxlength="1" class="sms sms_text" ng-model="smsVerify.kod4"></div>
+				<div class="col-100 for" style="margin-top: 8%;">
+					<input type="" name="input1" size="1" maxlength="1" style="margin-right: 4%;"class="sms sms_text" ng-model="smsVerify.kod1" ng-keydown="moveToNext('input1', '1', 'input2')">
+					<input type="" name="input2" size="1" maxlength="1" style="margin-right: 4%;" class="sms sms_text" ng-model="smsVerify.kod2" ng-keydown="moveToNext('input2', '1', 'input3')">
+					<input type="" name="input3" size="1" maxlength="1" style="margin-right: 4%;"class="sms sms_text" ng-model="smsVerify.kod3" ng-keydown="moveToNext('input3', '1', 'input4')">
+					<input type="" name="input4" size="1" maxlength="1" class="sms sms_text" ng-model="smsVerify.kod4">
+				</div>
 
 
-				<button style="margin-top: 14%"class="button  sms_button" ng-if="(smsVerify.kod1>=0) && (smsVerify.kod2>=0) && (smsVerify.kod3>=0) && (smsVerify.kod4>=0)" type="submit">Onayla</button>
-
-
-
-
+				<button style="margin-top: 14%"class="button  sms_button" ng-hide="!smsVerify.kod1 || !smsVerify.kod2 || !smsVerify.kod3 || !smsVerify.kod4" type="submit">Onayla
+				</button>
 			</center>
 		</form>
+
+		{{smsVerify.kod1.length}}
+
 	</ion-content>
 </ion-modal-view>
