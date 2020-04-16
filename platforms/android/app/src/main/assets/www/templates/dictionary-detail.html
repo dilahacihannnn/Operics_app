@@ -1,0 +1,30 @@
+<ion-modal-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
+  <ion-header-bar class="bar-light">
+    <ion-header-buttons>
+      <button class="button button-clear ion-close" ng-click="modal.hide()"></button>
+    </ion-header-buttons>
+  </ion-header-bar>
+
+  <ion-content>
+
+    <div class="all">{{sozluk[itemId].WORD}}</div>
+
+    <img ng-click="FavKontrol(sozluk[itemId], localStorage.getItem('user_id'))" class="full-image sagda_simge rr"
+      src="img/icons/r5.png">
+
+    <br>
+    <center>
+      <div class="col col-90">
+        <a class="col item item-body " style="border-radius:12px;height: 560px;" href="#/tab/dictionary">
+
+          <p style="font-size: 22px;font-family: Avenir-Book;margin-right: 1%;margin-top: 14%;">{{sozluk[itemId].DESCRIPTION}}<div
+              class="ion-compose " ng-if="isAdmin==1" style=" font-size: 33px;
+  margin-top: -240px;margin-left: -802%;
+  text-align: right;"></div>
+          </p>
+
+        </a>
+      </div>
+    </center>
+  </ion-content>
+</ion-modal-view>

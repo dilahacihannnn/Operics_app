@@ -1,0 +1,64 @@
+<ion-modal-view view-title='<img class="title-image" src="img/logo.PNG"/ >'>
+  <ion-header-bar class="bar-light">
+    <ion-header-buttons>
+      <button class="button button-clear ion-close" ng-click="modal.hide()"></button>
+    </ion-header-buttons>
+  </ion-header-bar>
+
+
+  <ion-content>
+    <h4 align="center">Ekibimiz</h4>
+<br>
+<center>
+<div class="col col-90" >
+
+<div class="col item item-body" style="border-radius: 12px;height: 560px;">
+     <br><br>
+     <div  class="ion-compose edit_i detail_edit" ng-if="isAdmin==1"></div>
+     <center>
+     <i class="col list" style="height: 97px;">
+      <div style="border-color: red;
+    border-width: 2px;
+    border-radius: 153px;
+    width: 43%;margin-top:-39%;" class="item item-avatar ekip_detay ">
+        <img class="ekip_rsm" ng-src="{{ekip[itemId].IMAGE}}">
+      </i></div></i></center>
+   
+
+<h2 align="center" style="font-size: 21px;">{{ekip[itemId].NAME}}</h2>
+    <br>
+    <p style="font-size: 15px;" align="center">{{ekip[itemId].ABOUT}}
+
+      <a href="{{ekip[itemId].LINKEDIN}}">
+        <h2 align="center" style="margin-left: 10px;
+        font-size: 65px;
+        color: steelblue;" class="ion-social-linkedin y"></h2>
+      </a>
+      </div>
+    </div>
+</i></div></div></center>
+
+
+
+
+    <!--<div class="item item-body hkd">
+     <br><br>
+     <div  class="ion-compose edit_i detail_edit"></div>
+     <i class="list card ">
+      <div style="border-color: red;border-width: 2px;" class="item item-avatar profile ">
+        <img class="pi" ng-src="{{ekip[itemId].IMAGE}}">
+      </i>
+    </div>
+
+    <h2 align="center" style="font-size: 21px;">{{ekip[itemId].NAME}}</h2>
+    <br>
+    <p style="font-size: 15px;" align="center">{{ekip[itemId].ABOUT}}
+
+      <a href="{{ekip[itemId].LINKEDIN}}">
+        <h2 align="center" style="margin-left: 10px;
+        font-size: 65px;
+        color: steelblue;" class="ion-social-linkedin y"></h2>
+      </a>
+    </div>-->
+  </ion-content>
+</ion-modal-view>
