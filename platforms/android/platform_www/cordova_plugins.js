@@ -98,10 +98,10 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-camera": "4.1.0",
-    "cordova-plugin-device": "2.0.2",
     "cordova-plugin-androidx": "1.0.2",
     "cordova-plugin-androidx-adapter": "1.1.0",
+    "cordova-plugin-camera": "4.1.0",
+    "cordova-plugin-device": "2.0.2",
     "cordova-plugin-firebasex": "9.1.0-cli",
     "cordova-plugin-globalization": "1.11.0",
     "cordova-plugin-ionic-keyboard": "2.2.0",
